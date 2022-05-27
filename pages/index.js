@@ -1,11 +1,26 @@
 import { BsFillSunFill } from "react-icons/bs";
 import { BsMoonFill } from "react-icons/bs";
+import { useState } from "react";
 
 import Modal from "../components/Modal";
 import Head from "next/head";
 import { useTheme } from "next-themes";
+import { CircularButton } from "../components/CircularButton";
+
+const options = ["Mangoes", "Apples", "Oranges"];
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const toggling = () => setIsOpen(!isOpen);
+
+  const onOptionClicked = (value) => () => {
+    setSelectedOption(value);
+    setIsOpen(false);
+    console.log(selectedOption);
+  };
+
   const { systemTheme, theme, setTheme } = useTheme();
 
   // toggle responsible for changing the theme
@@ -13,23 +28,15 @@ export default function Home() {
     const currentTheme = theme === "system" ? systemTheme : theme;
     if (currentTheme === "dark") {
       return (
-        <button
-          onClick={() => setTheme("light")}
-          type="button"
-          className="p-2 text-2xl rounded-full text-primary hover:bg-primary hover:text-lptext transition-all duration-400 ease-in-out"
-        >
-          <BsMoonFill />
-        </button>
+        <CircularButton handleOnClick={() => setTheme("light")}>
+          <BsFillSunFill />
+        </CircularButton>
       );
     }
     return (
-      <button
-        onClick={() => setTheme("dark")}
-        type="button"
-        className="p-2 text-2xl rounded-full text-primary hover:bg-primary hover:text-dptext transition-all duration-400 ease-in-out"
-      >
-        <BsFillSunFill />
-      </button>
+      <CircularButton handleOnClick={() => setTheme("dark")}>
+        <BsMoonFill />
+      </CircularButton>
     );
   };
 
@@ -55,7 +62,7 @@ export default function Home() {
           </div>
           <nav>
             <ul class="list-reset flex items-center">
-              <li class="mr-7">{renderThemeToggle()}</li>
+              {/* <li class="mr-7">{renderThemeToggle()}</li> */}
               <li class="mr-4">{renderThemeToggle()}</li>
             </ul>
           </nav>
@@ -70,11 +77,23 @@ export default function Home() {
             type="text"
           />
           <button class="p-2 font-medium h-12 text-secondary bg-dptext dark:bg-lptext border-2 border-dstext dark:border-lstext focus:bg-dstext dark:focus:bg-lstext hover:bg-dstext dark:hover:bg-lstext absolute rounded-2xl -translate-x-16 transition-all duration-200 ease-in">
-            Submit
+            Snap
           </button>
         </form>
         {/* Modal */}
         <Modal />
+        <CircularButton handleOnClick={console.log("hello")}>
+          hello
+        </CircularButton>
+
+        <CircularButton handleOnClick={toggling}>drop</CircularButton>
+        {isOpen && (
+          <div className="">
+            <div className="p-1 mt-1">
+              <a>hello</a>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
