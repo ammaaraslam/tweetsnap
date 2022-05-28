@@ -1,11 +1,12 @@
-import { BsFillSunFill } from "react-icons/bs";
-import { BsMoonFill } from "react-icons/bs";
+import { MdOutlineCamera } from "react-icons/md";
 import { useState } from "react";
 
+import ThemeToggle from "../components/ThemeToggle";
 import Modal from "../components/Modal";
 import Head from "next/head";
-import { useTheme } from "next-themes";
-import { CircularButton } from "../components/CircularButton";
+import { RoundedButton } from "../components/RoundedButton";
+import Tweet from "../components/Tweet";
+import Settings from "../components/Settings";
 
 const options = ["Mangoes", "Apples", "Oranges"];
 
@@ -20,25 +21,7 @@ export default function Home() {
     setIsOpen(false);
     console.log(selectedOption);
   };
-
-  const { systemTheme, theme, setTheme } = useTheme();
-
-  // toggle responsible for changing the theme
-  const renderThemeToggle = () => {
-    const currentTheme = theme === "system" ? systemTheme : theme;
-    if (currentTheme === "dark") {
-      return (
-        <CircularButton handleOnClick={() => setTheme("light")}>
-          <BsFillSunFill />
-        </CircularButton>
-      );
-    }
-    return (
-      <CircularButton handleOnClick={() => setTheme("dark")}>
-        <BsMoonFill />
-      </CircularButton>
-    );
-  };
+  const credits = "</> with 💙 by Ammaar Aslam";
 
   return (
     <div>
@@ -49,6 +32,9 @@ export default function Home() {
       </Head>
 
       <main className="w-full h-screen bg-light dark:bg-dark overflow-hidden transition-all duration-200">
+        {/* Modal */}
+        <Modal />
+        {/* Header - Logo + Search + Theme Toggle */}
         <header class="flex items-center justify-between pt-8 pb-0">
           <div class="flex items-center justify-between mb-0 ml-4">
             <h1 class="leading-none text-2xl text-grey-darkest">
@@ -63,7 +49,9 @@ export default function Home() {
           <nav>
             <ul class="list-reset flex items-center">
               {/* <li class="mr-7">{renderThemeToggle()}</li> */}
-              <li class="mr-4">{renderThemeToggle()}</li>
+              <li class="mr-4">
+                <ThemeToggle />
+              </li>
             </ul>
           </nav>
         </header>
@@ -72,28 +60,29 @@ export default function Home() {
             Search
           </label>
           <input
-            class="h-12 font-medium text-secondary pl-2 pr-16 outline-none bg-dptext dark:bg-lptext border-2 border-dstext dark:border-lstext rounded-2xl w-full placeholder:text-secondary dark:placeholder:text-secondary focus:bg-dstext dark:focus:bg-lstext transition-all duration-200 ease-in"
+            class="h-12 font-medium text-secondary pl-2 pr-16 outline-none bg-text dark:bg-textDark border-2 border-textS dark:border-textSDark rounded-2xl w-full placeholder:text-secondary placeholder:mt-auto placeholder:mb-auto dark:placeholder:text-secondary focus:bg-textS dark:focus:bg-textSDark transition-all duration-200 ease-in"
             placeholder="Paste/Enter Link to you Tweet"
             type="text"
           />
-          <button class="p-2 font-medium h-12 text-secondary bg-dptext dark:bg-lptext border-2 border-dstext dark:border-lstext focus:bg-dstext dark:focus:bg-lstext hover:bg-dstext dark:hover:bg-lstext absolute rounded-2xl -translate-x-16 transition-all duration-200 ease-in">
-            Snap
+          <button class="p-2 font-medium w-16 h-12 items-center text-center text-secondary hover:text-textLight dark:hover:text-textDark bg-text dark:bg-textDark border-2 border-secondary dark:border-secondary focus:bg-secondary dark:focus:bg-secondary hover:bg-secondary dark:hover:bg-secondary absolute rounded-2xl -translate-x-16 transition-all duration-200 ease-in">
+            <MdOutlineCamera className="ml-auto mr-auto text-2xl" />
           </button>
         </form>
-        {/* Modal */}
-        <Modal />
-        <CircularButton handleOnClick={console.log("hello")}>
-          hello
-        </CircularButton>
-
-        <CircularButton handleOnClick={toggling}>drop</CircularButton>
-        {isOpen && (
-          <div className="">
-            <div className="p-1 mt-1">
-              <a>hello</a>
-            </div>
-          </div>
-        )}
+        {/* Main Body */}
+        <div className="w-full h-3/4 pt-5 md:flex items-center justify-between">
+          <Tweet />
+          <Settings />
+        </div>
+        {/* Footer */}
+        <div className="absolute inline-flex bottom-0 p-2 w-full justify-center items-center">
+          <a
+            href="https://twitter.com/itsammaar_7"
+            target="_blank"
+            className="text-center font-semibold text-textDark dark:text-textLight hover:text-secondary dark:hover:text-secondary"
+          >
+            {credits}
+          </a>
+        </div>
       </main>
     </div>
   );

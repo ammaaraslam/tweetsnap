@@ -9,9 +9,16 @@ module.exports = {
       scale: {
         101: "1.01",
       },
-      boxShadow: {
-        lightsh: "0 0 2px #000C14",
-        darksh: "0 0 2px #EBF7FF",
+      width: {
+        settings: "23%",
+      },
+      minWidth: {
+        5: "5.3rem",
+        6: "7.2rem",
+      },
+      maxWidth: {
+        5: "5.3rem",
+        6: "7.2rem",
       },
     },
     colors: {
@@ -21,10 +28,10 @@ module.exports = {
       lighterPrimary: "#20A5FE",
       secondary: "#FFB703",
       lighterSecondary: "#FFC533",
-      dptext: "#FFFFFF",
-      lptext: "#000000",
-      dstext: "#D6EFFF",
-      lstext: "#003152",
+      textLight: "#FFFFFF",
+      textDark: "#000000",
+      textS: "#D6EFFF",
+      textSDark: "#003152",
     },
   },
   plugins: [],
