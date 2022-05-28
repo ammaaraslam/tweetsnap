@@ -10,8 +10,8 @@ import { FiZoomIn } from "react-icons/fi";
 
 const Settings = () => {
   return (
-    <div className="w-settings h-5/6 bg-textS dark:bg-textSDark md:mr-20 rounded-3xl p-3 transition-all duration-200">
-      <div className="grid list-none justify-items-center grid-cols-2 gap-x-0 gap-y-9 pt-6 pb-9 pl-1 pr-1">
+    <div className="md:w-settings md:h-5/6 w-11/12 ml-auto mr-auto mt-4 md:mt-0 bg-textS dark:bg-textSDark md:mr-20 rounded-3xl p-3 transition-all duration-200">
+      <div className="grid list-none justify-items-center grid-cols-3 md:grid-cols-2 gap-x-0 md:gap-y-9 md:pt-6 md:pb-9 pb-3 md:pl-1 md:pr-1">
         <SettingsActionButton>
           <AiOutlineBgColors className="ml-auto mr-auto" />
           <SettingsBtnText>Background Color</SettingsBtnText>
@@ -68,7 +68,7 @@ const SettingsActionButton = ({ children, handleOnClick }) => {
     <button
       type="button"
       onClick={handleOnClick}
-      className={`p-2 text-3xl rounded-xl min-w-5 max-w-5 text-center text-textSDark  hover:text-textS hover:bg-textSDark dark:hover:bg-textS dark:text-textS dark:hover:text-textSDark`}
+      className={`p-2 md:text-3xl text-2xl rounded-xl min-w-5 max-w-5 text-center text-textSDark  hover:text-textS hover:bg-textSDark dark:hover:bg-textS dark:text-textS dark:hover:text-textSDark transition-all duration-200`}
     >
       {children}
     </button>
@@ -84,19 +84,20 @@ const SettingsButton = ({ children, handleOnClick, btnType }) => {
       <button
         type="button"
         onClick={handleOnClick}
-        className={`p-2 text-xl inline-flex items-center justify-center font-semibold rounded-xl min-w-full max-w-full text-center text-textS dark:text-textSDark bg-primary opacity-70 hover:opacity-100`}
+        className={`p-2 md:text-xl text-base inline-flex items-center justify-center font-semibold rounded-xl min-w-full max-w-full text-center text-textS dark:text-textSDark bg-primary opacity-70 hover:opacity-100 transition-all duration-200`}
+      >
+        {children}
+      </button>
+    );
+  } else {
+    return (
+      <button
+        type="button"
+        onClick={handleOnClick}
+        className={`p-2 md:text-base text-sm inline-flex items-center justify-center font-semibold rounded-xl min-w-5 max-w-6 text-center text-textS dark:text-textSDark bg-textSDark dark:bg-textS opacity-70 hover:opacity-100 transition-all duration-200`}
       >
         {children}
       </button>
     );
   }
-  return (
-    <button
-      type="button"
-      onClick={handleOnClick}
-      className={`p-2 text-base inline-flex items-center justify-center font-semibold rounded-xl min-w-6 max-w-6 text-center text-textS dark:text-textSDark bg-textSDark dark:bg-textS opacity-70 hover:opacity-100`}
-    >
-      {children}
-    </button>
-  );
 };

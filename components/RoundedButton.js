@@ -1,40 +1,26 @@
-// export function RoundedButton({
-//   children,
-//   handleOnClick,
-//   text,
-//   textDark,
-//   hoverBg,
-//   hoverBgDark,
-//   hoverText,
-//   hoverTextDark,
-// }) {
-//   return (
-//     <button
-//       onClick={handleOnClick}
-//       type="button"
-//       className={`p-2 text-2xl rounded-xl text-${text} dark:text-${textDark} hover:text-${hoverText} hover:bg-${hoverBg} dark:hover:bg-${hoverBgDark} dark:hover:text-${hoverTextDark} transition-all duration-400 ease-out`}
-//     >
-//       {children}
-//     </button>
-//   );
-// }
-export const RoundedButton = ({
-  children,
-  handleOnClick,
-  textHover,
-  textHoverDark,
-  hoverBg,
-  hoverBgDark,
-  textLight,
-  textDark,
-}) => {
-  return (
-    <button
-      type="button"
-      onClick={handleOnClick}
-      className={`p-2 text-2xl rounded-xl text-${textLight}  hover:text-${textHover} hover:bg-${hoverBg} dark:hover:bg-${hoverBgDark} dark:text-${textDark} dark:hover:text-${textHoverDark} `}
-    >
-      {children}
-    </button>
-  );
+const RoundedButton = ({ children, handleOnClick, btnType }) => {
+  const type = btnType;
+  if (type == "primary") {
+    return (
+      <button
+        type="button"
+        onClick={handleOnClick}
+        className={`p-2 text-xl inline-flex items-center justify-center font-semibold rounded-xl min-w-full max-w-full text-center text-textS dark:text-textSDark bg-primary opacity-70 hover:opacity-100`}
+      >
+        {children}
+      </button>
+    );
+  } else {
+    return (
+      <button
+        type="button"
+        onClick={handleOnClick}
+        className={`p-2 text-base inline-flex items-center justify-center font-semibold rounded-xl min-w-6 max-w-6 text-center text-textS dark:text-textSDark bg-textSDark dark:bg-textS opacity-70 hover:opacity-100`}
+      >
+        {children}
+      </button>
+    );
+  }
 };
+
+export default RoundedButton;

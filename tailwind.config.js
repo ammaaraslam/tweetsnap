@@ -18,7 +18,7 @@ module.exports = {
       },
       maxWidth: {
         5: "5.3rem",
-        6: "7.2rem",
+        6: "10rem",
       },
     },
     colors: {

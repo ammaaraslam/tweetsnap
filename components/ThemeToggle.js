@@ -1,9 +1,15 @@
 import { useTheme } from "next-themes";
-import { RoundedButton } from "./RoundedButton";
 import { FaSun } from "react-icons/fa";
 import { BsMoonStarsFill } from "react-icons/bs";
+import { useState, useEffect } from "react";
 
-const ThemeToggle = () => {
+function ThemeToggle() {
+  const [mounted, setMounted] = useState(false);
+  // When mounted on client, now we can show the UI
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
+
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
   if (currentTheme === "dark") {
@@ -26,6 +32,6 @@ const ThemeToggle = () => {
       <BsMoonStarsFill />
     </button>
   );
-};
+}
 
 export default ThemeToggle;
