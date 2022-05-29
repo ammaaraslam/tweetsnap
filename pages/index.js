@@ -1,36 +1,35 @@
 import { MdOutlineCamera } from "react-icons/md";
-import ThemeToggle from "../components/ThemeToggle";
+import ThemeToggle, { LogoChange } from "../components/ThemeToggle";
 import Modal from "../components/Modal";
 import Head from "next/head";
 import Tweet from "../components/Tweet";
 import Settings from "../components/Settings";
+import { useState } from "react";
 
 export default function Home() {
   const credits = "</> with 💙 by Ammaar Aslam";
+  const [bg, setBg] = useState(
+    "linear-gradient(106.8deg, rgb(117, 255, 220) 6%, rgb(163, 216, 255) 47.6%, rgb(248, 215, 251) 87.8%)"
+  );
+  const propsForSettings = {
+    bg,
+    setBg,
+  };
 
   return (
     <div>
       <Head>
         <title>Next.js and Tailwind starter</title>
         <meta name="description" content="Next.js and Tailwind starter" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/Logo.svg" />
       </Head>
 
-      <main className="w-full h-screen bg-light dark:bg-dark overflow-hidden transition-all duration-300">
+      <main className="w-full h-screen bg-light dark:bg-dark md:overflow-hidden transition-all duration-300">
         {/* Modal */}
         <Modal />
         {/* Header - Logo + Search + Theme Toggle */}
         <header className="flex items-center justify-between pt-8 pb-0">
-          <div className="flex items-center justify-between mb-0 ml-4">
-            <h1 className="leading-none text-2xl text-grey-darkest">
-              <a
-                className="no-underline text-primary hover:text-text-primary"
-                href="#"
-              >
-                TweetSnap
-              </a>
-            </h1>
-          </div>
+          <LogoChange />
           <nav>
             <ul className="list-reset flex items-center">
               {/* <li className="mr-7">{renderThemeToggle()}</li> */}
@@ -40,7 +39,7 @@ export default function Home() {
             </ul>
           </nav>
         </header>
-        <form className="w-3/4 mb-0 mt-9 w-3/4 md:w-1/2 ml-auto mr-auto md:-mt-9">
+        <form className="mb-0 mt-4 w-3/4 md:w-1/2 ml-auto mr-auto md:-mt-11">
           <label className="hidden" for="search-form">
             Search
           </label>
@@ -54,9 +53,9 @@ export default function Home() {
           </button>
         </form>
         {/* Main Body */}
-        <div className="w-full h-3/4 pt-5 md:flex items-center justify-between">
-          <Tweet />
-          <Settings />
+        <div className="w-full h-3/4 mt-7 md:flex items-center justify-between">
+          <Tweet bg={bg} />
+          <Settings props={propsForSettings} />
         </div>
         {/* Footer */}
         <div className="absolute inline-flex bottom-0 p-2 w-full justify-center items-center">

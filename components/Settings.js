@@ -1,41 +1,111 @@
+// Functions
+import { useEffect, useRef, useState } from "react";
+
+// Components
+import ColorSelectorModal from "./settings/ColorSelectorModal";
+
+// Assets
 import { AiOutlineBgColors } from "react-icons/ai";
-import { MdPhotoSizeSelectLarge } from "react-icons/md";
+import { MdPhotoSizeSelectLarge, MdOutlineColorLens } from "react-icons/md";
 import { GoSettings } from "react-icons/go";
-import { MdOutlineColorLens } from "react-icons/md";
 import { MdOpacity } from "react-icons/md";
-import { BsTextareaResize } from "react-icons/bs";
-import { BsDownload } from "react-icons/bs";
+import { BsTextareaResize, BsDownload } from "react-icons/bs";
 import { IoCopy } from "react-icons/io5";
 import { FiZoomIn } from "react-icons/fi";
+import { Popover } from "./Popover";
+import {
+  SettingsActionButton,
+  SettingsBtnText,
+  SettingsButton,
+} from "./settings/Buttons";
 
-const Settings = () => {
+const Settings = ({ props }) => {
+  // States
+  const [showModal, setShowModal] = useState(false);
+  // const [bgOpen, setBgOpen] = useState(false);
+  // const [cBgOpen, setCBgOpen] = useState(false);
+  const [sizeOpen, setSizeOpen] = useState(false);
+  const [cSizeOpen, setCSizeOpen] = useState(false);
+  const [opacityOpen, setOpacityOpen] = useState(false);
+  const [engagementsOpen, setEngagementsOpen] = useState(false);
+
+  // Toggle Functions
+  const togglingBg = () => setBgOpen(!bgOpen);
+  const togglingCBg = () => setCBgOpen(!cBgOpen);
+  const togglingSize = () => setSizeOpen(!bgOpen);
+  const togglingCSize = () => setCSizeOpen(!cBgOpen);
+  const togglingOpacity = () => setOpacityOpen(!bgOpen);
+  const togglingEngagements = () => setEngagementsOpen(!cBgOpen);
+
+  const ref = useRef();
+
+  // Detect Outside Click
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      if (
+        [sizeOpen, cSizeOpen, opacityOpen, engagementsOpen] &&
+        ref.current &&
+        !ref.current.contains(e.target)
+      ) {
+        // setBgOpen(false);
+        // setCBgOpen(false);
+        setSizeOpen(false);
+        setCSizeOpen(false);
+        setOpacityOpen(false);
+        setEngagementsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", checkIfClickedOutside);
+    return () => {
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [sizeOpen, cSizeOpen, opacityOpen, engagementsOpen]);
+
   return (
-    <div className="md:w-settings md:h-5/6 w-11/12 ml-auto mr-auto mt-4 md:mt-0 bg-textS dark:bg-textSDark md:mr-20 rounded-3xl p-3 transition-all duration-200">
+    <div
+      className={`md:w-settings md:h-4/5 w-11/12 ml-auto mr-auto mt-[5.5rem]  md:mt-0 bg-textS dark:bg-textSDark md:mr-22 rounded-3xl p-2 transition-all duration-200`}
+    >
       <div className="grid list-none justify-items-center grid-cols-3 md:grid-cols-2 gap-x-0 md:gap-y-9 md:pt-6 md:pb-9 pb-3 md:pl-1 md:pr-1">
-        <SettingsActionButton>
+        <SettingsActionButton handleOnClick={() => setShowModal(true)}>
           <AiOutlineBgColors className="ml-auto mr-auto" />
           <SettingsBtnText>Background Color</SettingsBtnText>
         </SettingsActionButton>
-        <SettingsActionButton>
-          <MdPhotoSizeSelectLarge className="ml-auto mr-auto" />
-          <SettingsBtnText>Resize Card</SettingsBtnText>
-        </SettingsActionButton>
-        <SettingsActionButton>
-          <GoSettings className="ml-auto mr-auto" />
-          <SettingsBtnText>Engagements</SettingsBtnText>
-        </SettingsActionButton>
-        <SettingsActionButton>
+        {showModal && (
+          <ColorSelectorModal
+            props={props}
+            onClose={() => setShowModal(false)}
+          />
+        )}
+        {/* {bgOpen && (
+          <Popover position="top" useRef={ref}>
+            <ColorSelector />
+          </Popover>
+        )} */}
+        <SettingsActionButton handleOnClick={togglingCBg}>
           <MdOutlineColorLens className="ml-auto mr-auto" />
           <SettingsBtnText>Card Color</SettingsBtnText>
         </SettingsActionButton>
-        <SettingsActionButton>
-          <MdOpacity className="ml-auto mr-auto" />
-          <SettingsBtnText>Card Opacity</SettingsBtnText>
+        {/* {cBgOpen && <Popover position="top" useRef={ref} />} */}
+        <SettingsActionButton handleOnClick={togglingSize}>
+          <MdPhotoSizeSelectLarge className="ml-auto mr-auto" />
+          <SettingsBtnText>Resize Card</SettingsBtnText>
         </SettingsActionButton>
-        <SettingsActionButton>
+        {sizeOpen && <Popover position="left" useRef={ref} />}
+        <SettingsActionButton handleOnClick={togglingCSize}>
           <BsTextareaResize className="ml-auto mr-auto" />
           <SettingsBtnText>Size</SettingsBtnText>
         </SettingsActionButton>
+        {cSizeOpen && <Popover position="right" useRef={ref} />}
+        <SettingsActionButton handleOnClick={togglingOpacity}>
+          <MdOpacity className="ml-auto mr-auto" />
+          <SettingsBtnText>Card Opacity</SettingsBtnText>
+        </SettingsActionButton>
+        {opacityOpen && <Popover position="left" useRef={ref} />}
+        <SettingsActionButton handleOnClick={togglingEngagements}>
+          <GoSettings className="ml-auto mr-auto" />
+          <SettingsBtnText>Engagements</SettingsBtnText>
+        </SettingsActionButton>
+        {engagementsOpen && <Popover position="right" useRef={ref} />}
       </div>
       <div className="p-1 items-center justify-center text-center">
         <div className="inline-flex items-center justify-center pb-2">
@@ -62,42 +132,3 @@ const Settings = () => {
 };
 
 export default Settings;
-
-const SettingsActionButton = ({ children, handleOnClick }) => {
-  return (
-    <button
-      type="button"
-      onClick={handleOnClick}
-      className={`p-2 md:text-3xl text-2xl rounded-xl min-w-5 max-w-5 text-center text-textSDark  hover:text-textS hover:bg-textSDark dark:hover:bg-textS dark:text-textS dark:hover:text-textSDark transition-all duration-200`}
-    >
-      {children}
-    </button>
-  );
-};
-const SettingsBtnText = ({ children }) => {
-  return <p className={`p-0 text-xs font-medium`}>{children}</p>;
-};
-const SettingsButton = ({ children, handleOnClick, btnType }) => {
-  const type = btnType;
-  if (type == "primary") {
-    return (
-      <button
-        type="button"
-        onClick={handleOnClick}
-        className={`p-2 md:text-xl text-base inline-flex items-center justify-center font-semibold rounded-xl min-w-full max-w-full text-center text-textS dark:text-textSDark bg-primary opacity-70 hover:opacity-100 transition-all duration-200`}
-      >
-        {children}
-      </button>
-    );
-  } else {
-    return (
-      <button
-        type="button"
-        onClick={handleOnClick}
-        className={`p-2 md:text-base text-sm inline-flex items-center justify-center font-semibold rounded-xl min-w-5 max-w-6 text-center text-textS dark:text-textSDark bg-textSDark dark:bg-textS opacity-70 hover:opacity-100 transition-all duration-200`}
-      >
-        {children}
-      </button>
-    );
-  }
-};
