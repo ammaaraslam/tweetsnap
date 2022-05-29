@@ -19,6 +19,10 @@ import {
   SettingsBtnText,
   SettingsButton,
 } from "./settings/Buttons";
+import { CardSizeSelector } from "./settings/CardSizeSelector";
+import { ImageSizeSelector } from "./settings/ImageSizeSelector";
+import OpacitySelector from "./settings/OpacitySelector";
+import { EngagementsSelector } from "./settings/EngagementsSelector";
 
 const Settings = ({ props }) => {
   // States
@@ -99,22 +103,38 @@ const Settings = ({ props }) => {
           <MdPhotoSizeSelectLarge className="ml-auto mr-auto" />
           <SettingsBtnText>Resize Card</SettingsBtnText>
         </SettingsActionButton>
-        {sizeOpen && <Popover position="left" useRef={ref} />}
+        {sizeOpen && (
+          <Popover position="left" useRef={ref}>
+            <CardSizeSelector />
+          </Popover>
+        )}
         <SettingsActionButton handleOnClick={togglingCSize}>
           <BsTextareaResize className="ml-auto mr-auto" />
           <SettingsBtnText>Size</SettingsBtnText>
         </SettingsActionButton>
-        {cSizeOpen && <Popover position="right" useRef={ref} />}
+        {cSizeOpen && (
+          <Popover position="right" useRef={ref}>
+            <ImageSizeSelector />
+          </Popover>
+        )}
         <SettingsActionButton handleOnClick={togglingOpacity}>
           <MdOpacity className="ml-auto mr-auto" />
           <SettingsBtnText>Card Opacity</SettingsBtnText>
         </SettingsActionButton>
-        {opacityOpen && <Popover position="left" useRef={ref} />}
+        {opacityOpen && (
+          <Popover position="left" useRef={ref}>
+            <OpacitySelector props={props} />
+          </Popover>
+        )}
         <SettingsActionButton handleOnClick={togglingEngagements}>
           <GoSettings className="ml-auto mr-auto" />
           <SettingsBtnText>Engagements</SettingsBtnText>
         </SettingsActionButton>
-        {engagementsOpen && <Popover position="right" useRef={ref} />}
+        {engagementsOpen && (
+          <Popover position="right" useRef={ref}>
+            <EngagementsSelector />
+          </Popover>
+        )}
       </div>
       <div className="p-1 items-center justify-center text-center">
         <div className="inline-flex items-center justify-center pb-2">

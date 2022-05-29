@@ -16,3 +16,10 @@
   background: transpatent;
   border-radius: 100vh;
 }
+input[type="range"][orient="vertical"] {
+  writing-mode: bt-lr; /* IE */
+  -webkit-appearance: slider-vertical; /* Chromium */
+  width: 2rem;
+  height: 25rem;
+  appearance: none;
+}
