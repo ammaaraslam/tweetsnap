@@ -11,9 +11,13 @@ export default function Home() {
   const [bg, setBg] = useState(
     "linear-gradient(106.8deg, rgb(117, 255, 220) 6%, rgb(163, 216, 255) 47.6%, rgb(248, 215, 251) 87.8%)"
   );
+  const [cardColor, setCardColor] = useState("rgb(255, 67, 5)");
+
   const propsForSettings = {
     bg,
     setBg,
+    cardColor,
+    setCardColor,
   };
 
   return (
@@ -54,7 +58,7 @@ export default function Home() {
         </form>
         {/* Main Body */}
         <div className="w-full h-3/4 mt-7 md:flex items-center justify-between">
-          <Tweet bg={bg} />
+          <Tweet bg={bg} cardColor={cardColor} />
           <Settings props={propsForSettings} />
         </div>
         {/* Footer */}

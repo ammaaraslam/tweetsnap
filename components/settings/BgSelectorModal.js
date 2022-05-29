@@ -1,4 +1,4 @@
-import { IoClose } from "react-icons/io5";
+import SettingsModal from "./SettingsModal";
 
 const gradients = [
   "linear-gradient(to right, #eecda3, #ef629f)",
@@ -23,36 +23,22 @@ const gradients = [
   "linear-gradient(110.7deg, rgb(9, 154, 151) 6.3%, rgb(21, 205, 168) 90.6%)",
 ];
 
-const ColorSelectorModal = ({ onClose, props }) => {
+const BgSelectorModal = ({ onClose, props }) => {
   return (
-    <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none backdrop-blur-lg">
-      <div className="bg-textLight dark:bg-textDark md:w-1/2 md:h-1/2 p-4 rounded-3xl">
-        <button
-          type="button"
-          onClick={onClose}
-          className="float-right p-1 text-2xl rounded-xl text-secondary border-2 border-secondary hover:text-dark hover:bg-secondary transition-all duration-200 ease-in-out"
-        >
-          <IoClose />
-        </button>
-        <h1 className="mt-0 text-3xl font-bold text-textSDark dark:text-textS">
-          Change Background Color
-        </h1>
-        <div className="flex flex-wrap justify-center ml-auto mr-auto overflow-auto whitespace-nowrap items-center h-9/10 mt-1 overflow-y-scroll">
-          {gradients.map((g) => (
-            <div
-              key={g}
-              className={`w-20 h-20 inline-flex m-2 rounded-xl ml-2 text-center`}
-              style={{ background: g }}
-              onClick={() => {
-                props.setBg(g);
-                onClose();
-              }}
-            ></div>
-          ))}
-        </div>
-      </div>
-    </div>
+    <SettingsModal title=" Select Background Color" onClose={onClose}>
+      {gradients.map((g) => (
+        <div
+          key={g}
+          className={`w-20 h-20 inline-flex m-2 rounded-xl ml-2 text-center`}
+          style={{ background: g }}
+          onClick={() => {
+            props.setBg(g);
+            onClose();
+          }}
+        ></div>
+      ))}
+    </SettingsModal>
   );
 };
 
-export default ColorSelectorModal;
+export default BgSelectorModal;

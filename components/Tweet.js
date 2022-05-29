@@ -1,10 +1,13 @@
-const Tweet = ({ bg }) => {
+const Tweet = ({ bg, cardColor }) => {
   return (
     <div
-      className="md:w-1/2 md:h-4/6 w-5/6 h-2/5 ml-auto mr-auto md:ml-20 rounded-3xl p-3"
+      className="md:w-1/2 md:h-4/6 w-5/6 h-2/5 ml-auto mr-auto md:ml-20 rounded-3xl p-3 flex justify-center items-center"
       style={{ background: bg }}
     >
-      Tweet
+      <div
+        className="md:w-1/2 md:h-4/6 w-5/6 h-2/5 rounded-3xl p-3"
+        style={{ background: cardColor }}
+      ></div>
     </div>
   );
 };

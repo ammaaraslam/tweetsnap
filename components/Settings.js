@@ -2,7 +2,8 @@
 import { useEffect, useRef, useState } from "react";
 
 // Components
-import ColorSelectorModal from "./settings/ColorSelectorModal";
+import BgSelectorModal from "./settings/BgSelectorModal";
+import CardColorSelectorModal from "./settings/CardColorSelectorModal";
 
 // Assets
 import { AiOutlineBgColors } from "react-icons/ai";
@@ -21,7 +22,8 @@ import {
 
 const Settings = ({ props }) => {
   // States
-  const [showModal, setShowModal] = useState(false);
+  const [showBgModal, setShowBgModal] = useState(false);
+  const [showColorModal, setShowColorModal] = useState(false);
   // const [bgOpen, setBgOpen] = useState(false);
   // const [cBgOpen, setCBgOpen] = useState(false);
   const [sizeOpen, setSizeOpen] = useState(false);
@@ -30,12 +32,12 @@ const Settings = ({ props }) => {
   const [engagementsOpen, setEngagementsOpen] = useState(false);
 
   // Toggle Functions
-  const togglingBg = () => setBgOpen(!bgOpen);
-  const togglingCBg = () => setCBgOpen(!cBgOpen);
-  const togglingSize = () => setSizeOpen(!bgOpen);
-  const togglingCSize = () => setCSizeOpen(!cBgOpen);
-  const togglingOpacity = () => setOpacityOpen(!bgOpen);
-  const togglingEngagements = () => setEngagementsOpen(!cBgOpen);
+  // const togglingBg = () => setBgOpen(!bgOpen);
+  // const togglingCBg = () => setCBgOpen(!cBgOpen);
+  const togglingSize = () => setSizeOpen(!sizeOpen);
+  const togglingCSize = () => setCSizeOpen(!cSizeOpen);
+  const togglingOpacity = () => setOpacityOpen(!opacityOpen);
+  const togglingEngagements = () => setEngagementsOpen(!engagementsOpen);
 
   const ref = useRef();
 
@@ -66,14 +68,14 @@ const Settings = ({ props }) => {
       className={`md:w-settings md:h-4/5 w-11/12 ml-auto mr-auto mt-[5.5rem]  md:mt-0 bg-textS dark:bg-textSDark md:mr-22 rounded-3xl p-2 transition-all duration-200`}
     >
       <div className="grid list-none justify-items-center grid-cols-3 md:grid-cols-2 gap-x-0 md:gap-y-9 md:pt-6 md:pb-9 pb-3 md:pl-1 md:pr-1">
-        <SettingsActionButton handleOnClick={() => setShowModal(true)}>
+        <SettingsActionButton handleOnClick={() => setShowBgModal(true)}>
           <AiOutlineBgColors className="ml-auto mr-auto" />
           <SettingsBtnText>Background Color</SettingsBtnText>
         </SettingsActionButton>
-        {showModal && (
-          <ColorSelectorModal
+        {showBgModal && (
+          <BgSelectorModal
             props={props}
-            onClose={() => setShowModal(false)}
+            onClose={() => setShowBgModal(false)}
           />
         )}
         {/* {bgOpen && (
@@ -81,10 +83,17 @@ const Settings = ({ props }) => {
             <ColorSelector />
           </Popover>
         )} */}
-        <SettingsActionButton handleOnClick={togglingCBg}>
+        <SettingsActionButton handleOnClick={setShowColorModal}>
           <MdOutlineColorLens className="ml-auto mr-auto" />
           <SettingsBtnText>Card Color</SettingsBtnText>
         </SettingsActionButton>
+        {showColorModal && (
+          <CardColorSelectorModal
+            props={props}
+            onClose={() => setShowColorModal(false)}
+          />
+        )}
+
         {/* {cBgOpen && <Popover position="top" useRef={ref} />} */}
         <SettingsActionButton handleOnClick={togglingSize}>
           <MdPhotoSizeSelectLarge className="ml-auto mr-auto" />
