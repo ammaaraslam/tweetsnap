@@ -5,8 +5,9 @@ import Head from "next/head";
 import Tweet from "../components/Tweet";
 import Settings from "../components/Settings";
 import { useState } from "react";
+import axios from "axios";
 
-export default function Home() {
+export default function Home({ articles }) {
   const credits = "</> with 💙 by Ammaar Aslam";
   const [bg, setBg] = useState(
     "linear-gradient(106.8deg, rgb(117, 255, 220) 6%, rgb(163, 216, 255) 47.6%, rgb(248, 215, 251) 87.8%)"
@@ -22,6 +23,7 @@ export default function Home() {
     opacity,
     setOpacity,
   };
+  console.log(articles);
 
   return (
     <div>
@@ -78,3 +80,20 @@ export default function Home() {
     </div>
   );
 }
+
+const headers = {
+  Authorization: `Bearer AAAAAAAAAAAAAAAAAAAAAOOIdAEAAAAAX1glYT8gJk%2FhCgNKS0rioot%2F140%3DIDGbmPq2jjz9F1d55HlzpgztNDrx1cd6YXiTLV8b2wgcO8J65q`,
+};
+
+export const getStaticProps = async () => {
+  const res = await fetch(
+    `https://api.twitter.com/2/tweets/1375809527690317825?expansions=author_id,attachments.media_keys&user.fields=profile_image_url,verified&tweet.fields=created_at,attachments,public_metrics,entities,source&media.fields=preview_image_url,url`,
+    { headers }
+  );
+  const articles = await res.json();
+  return {
+    props: {
+      articles,
+    },
+  };
+};
