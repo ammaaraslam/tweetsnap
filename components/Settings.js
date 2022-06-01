@@ -114,7 +114,7 @@ const Settings = ({ props }) => {
         </SettingsActionButton>
         {cSizeOpen && (
           <Popover position="right" useRef={ref}>
-            <ImageSizeSelector />
+            <ImageSizeSelector props={props} />
           </Popover>
         )}
         <SettingsActionButton handleOnClick={togglingOpacity}>

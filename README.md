@@ -1,34 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <a href="https://tweetsnap.vercel.app/" target="blank">
+    <img alt="TweetSnap" src="public/LogoDark.svg" width="125" />
+  </a>
+</p>
+<h1 align="center">
+  <a href="https://tweetsnap.vercel.app" target="blank">TweetSnap</a>
+</h1>
 
-## Getting Started
+<p align="center">
+  Create Beautiful Images of Tweets
+</p>
 
-First, run the development server:
+<p align="center">
+  <a href="https://vercel.com/" target="blank">Request Feature</a> 
+  ·
+  <a href="https://vercel.com/" target="blank">Report Bug</a> 
+  ·
+  <a href="https://vercel.com/" target="blank">Contribute</a>
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<p align="center">
+<a href="https://github.com/ammaaraslam/tweetsnap/fork" target="blank">
+<img src="https://img.shields.io/github/forks/ammaaraslam/tweetsnap?style=for-the-badge" alt="tweetsnap forks"/>
+</a>
+<a href="https://github.com/ammaaraslam/tweetsnap/stargazers" target="blank">
+<img src="https://img.shields.io/github/stars/ammaaraslam/tweetsnap?style=for-the-badge" alt="tweetsnap stars"/>
+</a>
+<a href="https://github.com/ammaaraslam/tweetsnap/blob/master/LICENSE" target="blank">
+<img src="https://img.shields.io/github/license/ammaaraslam/tweetsnap?style=for-the-badge" alt="tweetsnap licence" />
+</a>
+<a href="https://github.com/ammaaraslam/tweetsnap/issues" target="blank">
+<img src="https://img.shields.io/github/issues/ammaaraslam/tweetsnap?style=for-the-badge" alt="tweetsnap issues"/>
+</a>
+<a href="https://github.com/ammaaraslam/tweetsnap/pulls" target="blank">
+<img src="https://img.shields.io/github/issues-pr/ammaaraslam/tweetsnap?style=for-the-badge" alt="tweetsnap pull-requests"/>
+</a>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+</p>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<p align="center">
 
-## Learn More
+</p>
 
-To learn more about Next.js, take a look at the following resources:
+<p align="center">
+<a href="https://nextjs.org/" target="blank">
+<img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" alt="nextjs" />
+</a>
+<a href="https://tailwindcss.com/" target="blank">
+<img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="tailwindcss" />
+</a>
+<a href="https://vercel.com/" target="blank">
+<img src="https://img.shields.io/badge/Vercel-black?style=for-the-badge&logo=vercel&logoColor=white" alt="vercel" />
+</a>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<!-- <a href="https://github.com/ammaaraslam/tweetsnap/blob/master/LICENSE" target="blank">
+<img src="https://img.shields.io/github/license-black?style=for-the-badge/ammaaraslam/tweetsnap?style=flat-square" alt="tweetsnap licence" />
+</a>
+<a href="https://github.com/ammaaraslam/tweetsnap/fork" target="blank">
+<img src="https://img.shields.io/github/forks/ammaaraslam/tweetsnap?style=flat-square" alt="tweetsnap forks"/>
+</a>
+<a href="https://github.com/ammaaraslam/tweetsnap/stargazers" target="blank">
+<img src="https://img.shields.io/github/stars/ammaaraslam/tweetsnap?style=flat-square" alt="tweetsnap stars"/>
+</a>
+<a href="https://github.com/ammaaraslam/tweetsnap/issues" target="blank">
+<img src="https://img.shields.io/github/issues/ammaaraslam/tweetsnap?style=flat-square" alt="tweetsnap issues"/>
+</a>
+<a href="https://github.com/ammaaraslam/tweetsnap/pulls" target="blank">
+<img src="https://img.shields.io/github/issues-pr/ammaaraslam/tweetsnap?style=flat-square" alt="tweetsnap pull-requests"/>
+</a>
+<a href="https://twitter.com/intent/tweet?text=Checkout%20slickr.vercel.app%20by%20@saviomartin7.%20The%20most%20powerful%20way%20to%20create%20awesome%20cover%20images%20for%20your%20@hashnode%20blog%20🔥"><img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Fsaviomartin%2Fslickr?style=flat-square"></a>
+ -->
