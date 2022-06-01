@@ -56,22 +56,4 @@
 </a>
 
 
-
-
-<!-- <a href="https://github.com/ammaaraslam/tweetsnap/blob/master/LICENSE" target="blank">
-<img src="https://img.shields.io/github/license-black?style=for-the-badge/ammaaraslam/tweetsnap?style=flat-square" alt="tweetsnap licence" />
-</a>
-<a href="https://github.com/ammaaraslam/tweetsnap/fork" target="blank">
-<img src="https://img.shields.io/github/forks/ammaaraslam/tweetsnap?style=flat-square" alt="tweetsnap forks"/>
-</a>
-<a href="https://github.com/ammaaraslam/tweetsnap/stargazers" target="blank">
-<img src="https://img.shields.io/github/stars/ammaaraslam/tweetsnap?style=flat-square" alt="tweetsnap stars"/>
-</a>
-<a href="https://github.com/ammaaraslam/tweetsnap/issues" target="blank">
-<img src="https://img.shields.io/github/issues/ammaaraslam/tweetsnap?style=flat-square" alt="tweetsnap issues"/>
-</a>
-<a href="https://github.com/ammaaraslam/tweetsnap/pulls" target="blank">
-<img src="https://img.shields.io/github/issues-pr/ammaaraslam/tweetsnap?style=flat-square" alt="tweetsnap pull-requests"/>
-</a>
-<a href="https://twitter.com/intent/tweet?text=Checkout%20slickr.vercel.app%20by%20@saviomartin7.%20The%20most%20powerful%20way%20to%20create%20awesome%20cover%20images%20for%20your%20@hashnode%20blog%20🔥"><img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Fsaviomartin%2Fslickr?style=flat-square"></a>
- -->
+>🚨🚧Still Under Construction🚧🚨<br>
