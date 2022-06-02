@@ -1,6 +1,6 @@
 import { PopoverBtns, PopoverBtnText } from "../Popover";
 
-import { IoLogoWhatsapp, IoIosDesktop } from "react-icons/io5";
+import { IoLogoWhatsapp } from "react-icons/io5";
 import { useState } from "react";
 
 import {

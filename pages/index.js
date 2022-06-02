@@ -4,9 +4,9 @@ import Modal from "../components/Modal";
 import Head from "next/head";
 import Tweet from "../components/Tweet";
 import Settings from "../components/Settings";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
-export default function Home({ fetchedTweet }) {
+export default function Home() {
   const credits = "</> with 💙 by Ammaar Aslam";
   const [bg, setBg] = useState(
     "linear-gradient(106.8deg, rgb(117, 255, 220) 6%, rgb(163, 216, 255) 47.6%, rgb(248, 215, 251) 87.8%)"
@@ -14,8 +14,6 @@ export default function Home({ fetchedTweet }) {
   const [cardColor, setCardColor] = useState("rgb(255, 67, 5)");
   const [opacity, setOpacity] = useState(1);
   const [scale, setScale] = useState(1.0);
-
-  const [ID, setID] = useState("");
 
   const propsForSettings = {
     bg,
@@ -27,26 +25,11 @@ export default function Home({ fetchedTweet }) {
     scale,
     setScale,
   };
-  const fetchNewTweet = async () => {
-    const headers = {
-      Authorization: `Bearer AAAAAAAAAAAAAAAAAAAAAOOIdAEAAAAAX1glYT8gJk%2FhCgNKS0rioot%2F140%3DIDGbmPq2jjz9F1d55HlzpgztNDrx1cd6YXiTLV8b2wgcO8J65q`,
-    };
-
-    const res = await fetch(
-      `https://api.twitter.com/2/tweets/1375809527690317825?expansions=author_id,attachments.media_keys&user.fields=profile_image_url,verified&tweet.fields=created_at,attachments,public_metrics,entities,source&media.fields=preview_image_url,url`,
-      { headers }
-    );
-    const result = await res.json();
-
-    return result;
-  };
 
   const onSubmit = async (e) => {
     e.preventDefault();
   };
 
-  console.log(ID);
-  console.log(fetchedTweet);
   return (
     <div>
       <Head>
@@ -78,12 +61,9 @@ export default function Home({ fetchedTweet }) {
             Search
           </label>
           <input
-            id="url-input"
             className="h-12 font-medium text-secondary pl-2 pr-16 outline-none bg-text dark:bg-textDark border-2 border-textS dark:border-textSDark rounded-2xl w-full placeholder:text-secondary placeholder:mt-auto placeholder:mb-auto dark:placeholder:text-secondary focus:bg-textS dark:focus:bg-textSDark transition-all duration-200"
             placeholder="Paste/Enter Link to you Tweet"
-            value={ID}
             type="text"
-            onChange={(e) => setID(e.target.value)}
           />
           <button
             type="submit"

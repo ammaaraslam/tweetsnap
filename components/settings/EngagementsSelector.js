@@ -4,7 +4,7 @@ import { AiOutlineRetweet } from "react-icons/ai";
 import { FaRegComment } from "react-icons/fa";
 import { FiShare } from "react-icons/fi";
 import { MdTripOrigin } from "react-icons/md";
-import { BsPhone, BsSuitHeartFill, BsClockFill } from "react-icons/bs";
+import { BsSuitHeartFill, BsClockFill } from "react-icons/bs";
 
 export const EngagementsSelector = () => {
   return (

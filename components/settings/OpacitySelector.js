@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PopoverBtns, PopoverBtnText } from "../Popover";
+import { PopoverBtns } from "../Popover";
 
 export default function OpacitySelector({ props }) {
   const [value, setValue] = useState(1);
