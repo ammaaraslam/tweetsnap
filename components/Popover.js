@@ -36,12 +36,12 @@ export const PopoverBtns = ({ handleOnClick, children }) => {
     <button
       type="button"
       onClick={handleOnClick}
-      className={`p-2 md:text-xl text-lg font-semibold rounded-2xl min-w-3 max-w-3 text-center text-textS  hover:text-textSDark  hover:bg-textS dark:hover:bg-textSDark dark:text-textSDark dark:hover:text-textS  transition-all duration-200`}
+      className={`p-2 md:text-xl text-lg font-semibold rounded-2xl min-w-3 max-w-3 text-center text-textS  hover:text-textSDark  hover:bg-textS dark:hover:bg-textSDark dark:text-textSDark dark:hover:text-textS  transition-all duration-200 break-words`}
     >
       {children}
     </button>
   );
 };
 export const PopoverBtnText = ({ children }) => {
-  return <p className={`p-0 text-xs font-medium`}>{children}</p>;
+  return <p className={`p-0 text-xs font-medium  break-words`}>{children}</p>;
 };
