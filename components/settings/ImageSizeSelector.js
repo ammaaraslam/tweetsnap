@@ -6,17 +6,17 @@ import { useState } from "react";
 import { BsPhone, BsFacebook, BsInstagram } from "react-icons/bs";
 
 export const ImageSizeSelector = ({ props }) => {
-  const defaultWidth = "600px";
-  const defaultHeight = "400px";
+  const defaultWidth = "625px";
+  const defaultHeight = "410px";
 
-  const igPostWidth = "800px";
-  const igPostHeight = "600px";
-  const igStoryWidth = "550px";
-  const igStoryHeight = "550px";
-  const fbPostWidth = "630px";
-  const fbPostHeight = "450px";
-  const waStatusWidth = "300px";
-  const waStatusHeight = "200px";
+  const igPostWidth = "500px";
+  const igPostHeight = "650px";
+  const igStoryWidth = "525px";
+  const igStoryHeight = "675px";
+  const fbPostWidth = "500px";
+  const fbPostHeight = "650px";
+  const waStatusWidth = "525px";
+  const waStatusHeight = "675px";
 
   const [wValue, setWValue] = useState(defaultWidth);
   const [hValue, setHValue] = useState(defaultHeight);
