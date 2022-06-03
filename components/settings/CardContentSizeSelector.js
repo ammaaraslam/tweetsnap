@@ -1,23 +1,38 @@
-import { PopoverBtns } from "../Popover";
+import { SettingsActionButton, SettingsBtnText } from "./Buttons";
+import { useState } from "react";
+import { AiOutlineFontSize } from "react-icons/ai";
 
-export const CardContentSizeSelector = () => {
+const small = "1.125rem";
+const big = "1.5rem";
+
+const CardContentSizeSelector = ({ props }) => {
+  const [contentSize, setContentSize] = useState(small);
+  const currentSize = contentSize;
+
+  if (currentSize === small) {
+    return (
+      <SettingsActionButton
+        handleOnClick={() => {
+          setContentSize(big);
+          props.setCardContentSize(contentSize);
+        }}
+      >
+        <AiOutlineFontSize className="ml-auto mr-auto text-lg" />
+        <SettingsBtnText>Card Theme</SettingsBtnText>
+      </SettingsActionButton>
+    );
+  }
   return (
-    <div className="p-2 flex flex-wrap justify-center ml-auto mr-auto overflow-auto whitespace-nowrap items-center">
-      <div className="md:mb-2 md:ml-0 ml-2">
-        <PopoverBtns>1x</PopoverBtns>
-      </div>
-      <div className="md:mb-2 md:ml-0 ml-2">
-        <PopoverBtns>2x</PopoverBtns>
-      </div>
-      <div className="md:mb-2 md:ml-0 ml-2">
-        <PopoverBtns>3x</PopoverBtns>
-      </div>
-      <div className="md:mb-2 md:ml-0 ml-2">
-        <PopoverBtns>4x</PopoverBtns>
-      </div>
-      <div className="md:mb-2 md:ml-0 ml-2">
-        <PopoverBtns>5x</PopoverBtns>
-      </div>
-    </div>
+    <SettingsActionButton
+      handleOnClick={() => {
+        setContentSize(small);
+        props.setCardContentSize(contentSize);
+      }}
+    >
+      <AiOutlineFontSize className="ml-auto mr-auto text-2xl" />
+      <SettingsBtnText>Card Theme</SettingsBtnText>
+    </SettingsActionButton>
   );
 };
+
+export default CardContentSizeSelector;

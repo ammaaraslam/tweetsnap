@@ -18,7 +18,7 @@ import {
   SettingsBtnText,
   SettingsButton,
 } from "./settings/Buttons";
-import { CardContentSizeSelector } from "./settings/CardContentSizeSelector";
+import CardContentSizeSelector from "./settings/CardContentSizeSelector";
 import { ImageSizeSelector } from "./settings/ImageSizeSelector";
 import OpacitySelector from "./settings/OpacitySelector";
 import { EngagementsSelector } from "./settings/EngagementsSelector";
@@ -89,15 +89,7 @@ const Settings = ({ props }) => {
         <CardThemeSelector props={props} />
 
         {/* {cBgOpen && <Popover position="top" useRef={ref} />} */}
-        <SettingsActionButton handleOnClick={togglingSize}>
-          <AiOutlineFontSize className="ml-auto mr-auto" />
-          <SettingsBtnText>Resize Card Content</SettingsBtnText>
-        </SettingsActionButton>
-        {sizeOpen && (
-          <Popover position="left" useRef={ref}>
-            <CardContentSizeSelector />
-          </Popover>
-        )}
+        <CardContentSizeSelector props={props} />
         <SettingsActionButton handleOnClick={togglingCSize}>
           <BsTextareaResize className="ml-auto mr-auto" />
           <SettingsBtnText>Size</SettingsBtnText>
