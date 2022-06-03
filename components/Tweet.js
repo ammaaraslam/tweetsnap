@@ -48,8 +48,7 @@ const Tweet = ({ bg, cardColor, opacity, width, height }) => {
               </svg>
             </span>
             <span class="text-gray-500" title="{`@naval`}">
-              {" "}
-              @naval{" "}
+              @naval
             </span>
           </a>
           <a
@@ -81,8 +80,7 @@ const Tweet = ({ bg, cardColor, opacity, width, height }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {" "}
-          3:27 AM - May 31, 2018{" "}
+          3:27 AM - May 31, 2018
         </a>
         <div class="flex text-gray-700 mt-2">
           <a

@@ -1,43 +1,39 @@
-import { FaSun } from "react-icons/fa";
-import { BsMoonStarsFill } from "react-icons/bs";
-import { SettingsBtnText } from "./Buttons";
+import { IoSunny } from "react-icons/io5";
+import { IoMoon } from "react-icons/io5";
+import { SettingsActionButton, SettingsBtnText } from "./Buttons";
 
 import { useState } from "react";
 
 const light = "#EBF7FF";
 const dark = "#000C14";
 
-const CardThemeSelector = ({ onClose, props }) => {
+const CardThemeSelector = ({ props }) => {
   const [theme, setTheme] = useState(light);
   const currentTheme = theme;
 
   if (currentTheme === light) {
     return (
-      <button
-        type="button"
-        onClick={() => {
+      <SettingsActionButton
+        handleOnClick={() => {
           setTheme(dark);
           props.setCardColor(theme);
         }}
-        className=""
       >
-        <FaSun className="ml-auto mr-auto" />
+        <IoSunny className="ml-auto mr-auto" />
         <SettingsBtnText>Card Theme</SettingsBtnText>
-      </button>
+      </SettingsActionButton>
     );
   }
   return (
-    <button
-      type="button"
-      onClick={() => {
+    <SettingsActionButton
+      handleOnClick={() => {
         setTheme(light);
         props.setCardColor(theme);
       }}
-      className=""
     >
-      <BsMoonStarsFill className="ml-auto mr-auto" />
+      <IoMoon className="ml-auto mr-auto" />
       <SettingsBtnText>Card Theme</SettingsBtnText>
-    </button>
+    </SettingsActionButton>
   );
 };
 

@@ -21,7 +21,7 @@ const Modal = () => {
               <div className="p-3 mt-3">
                 <div className="flex justify-center ml-auto mr-auto p-2 text-5xl font-extrabold text-center">
                   <h1>
-                    Welcome to{" "}
+                    Welcome to
                     <span className="bg-gradient-to-l from-primary to-secondary bg-no-repeat bg-[length:100%_0.8rem] bg-[0_88%] hover:bg-[length:100%_85%] focus:bg-[length:100%_85%] transition-all duration-300">
                       TweetSnap
                     </span>
@@ -34,14 +34,14 @@ const Modal = () => {
                   </p>
                   <p>
                     If you find TweetSnap to be useful, consider following me on
-                    twitter and sharing your valuable feedback{" "}
+                    twitter and sharing your valuable feedback
                     <a
                       href="https://twitter.com/itsammaar_7"
                       target="_blank"
                       className="text-primary"
                     >
                       @itsammaar_7
-                    </a>{" "}
+                    </a>
                     and let me know how I can improve this website.
                   </p>
                 </div>

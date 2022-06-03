@@ -7,7 +7,6 @@ import CardThemeSelector from "./settings/CardThemeSelector";
 
 // Assets
 import { AiOutlineBgColors, AiOutlineFontSize } from "react-icons/ai";
-import { MdOutlineColorLens } from "react-icons/md";
 import { GoSettings } from "react-icons/go";
 import { MdOpacity } from "react-icons/md";
 import { BsTextareaResize, BsDownload } from "react-icons/bs";
@@ -87,9 +86,7 @@ const Settings = ({ props }) => {
             <ColorSelector />
           </Popover>
         )} */}
-        <SettingsActionButton>
-          <CardThemeSelector props={props} />
-        </SettingsActionButton>
+        <CardThemeSelector props={props} />
 
         {/* {cBgOpen && <Popover position="top" useRef={ref} />} */}
         <SettingsActionButton handleOnClick={togglingSize}>
