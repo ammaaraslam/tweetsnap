@@ -21,7 +21,7 @@ export const LogoChange = () => {
             className="ml-3 font-extrabold text-3xl text-dark"
           >
             TweetSnap
-          </span>{" "}
+          </span>
         </a>
       </div>
     );
