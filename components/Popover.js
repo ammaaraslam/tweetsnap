@@ -13,7 +13,7 @@ export const Popover = ({ position, useRef, children }) => {
     return (
       <div
         ref={useRef}
-        className="absolute z-20 md:w-16 md:h-fit w-11/12 h-16 bg-textSDark dark:bg-textS text-center text-sm rounded-3xl md:right-[30.5%] md:top-[22.5%] ml-auto mr-auto top-[53.5%]"
+        className="absolute z-20 md:w-16 md:h-fit w-11/12 h-16 bg-textSDark dark:bg-textS text-center text-sm rounded-3xl md:right-[32.5%] md:top-[22.5%] ml-auto mr-auto top-[53.5%]"
       >
         {children}
       </div>
