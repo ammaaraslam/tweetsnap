@@ -14,7 +14,8 @@ export default function Home() {
   );
   const [cardColor, setCardColor] = useState("rgb(255, 67, 5)");
   const [opacity, setOpacity] = useState(1);
-  const [scale, setScale] = useState(1.0);
+  const [width, setWidth] = useState("600px");
+  const [height, setHeight] = useState("400px");
 
   const propsForSettings = {
     bg,
@@ -23,8 +24,10 @@ export default function Home() {
     setCardColor,
     opacity,
     setOpacity,
-    scale,
-    setScale,
+    width,
+    setWidth,
+    height,
+    setHeight,
   };
 
   const onSubmit = async (e) => {
@@ -61,7 +64,8 @@ export default function Home() {
             bg={bg}
             cardColor={cardColor}
             opacity={opacity}
-            scale={scale}
+            width={width}
+            height={height}
           />
           <Settings props={propsForSettings} />
         </div>

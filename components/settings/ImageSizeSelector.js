@@ -3,29 +3,20 @@ import { PopoverBtns, PopoverBtnText } from "../Popover";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { useState } from "react";
 
-import {
-  BsPhoneLandscape,
-  BsPhone,
-  BsFacebook,
-  BsInstagram,
-} from "react-icons/bs";
+import { BsPhone, BsFacebook, BsInstagram } from "react-icons/bs";
 
 export const ImageSizeSelector = ({ props }) => {
-  const defaultWidth = "1350px";
-  const defaultHeight = "1080px";
-  const defailtLandscapeWidth = "1080px";
-  const defaultLandscapeHeight = "1350px";
+  const defaultWidth = "600px";
+  const defaultHeight = "400px";
 
-  const igPostWidth = "1080px";
-  const igPostHeight = "1350px";
-  const igStoryWidth = "1080px";
-  const igStoryHeight = "1920px";
-  const fbPostWidth = "1200px";
-  const fbPostHeight = "630px";
-  const fbStoryWidth = "1080px";
-  const fbStoryHeight = "1920px";
-  const waStatusWidth = "1080px";
-  const waStatusHeight = "1920px";
+  const igPostWidth = "800px";
+  const igPostHeight = "600px";
+  const igStoryWidth = "550px";
+  const igStoryHeight = "550px";
+  const fbPostWidth = "630px";
+  const fbPostHeight = "450px";
+  const waStatusWidth = "300px";
+  const waStatusHeight = "200px";
 
   const [wValue, setWValue] = useState(defaultWidth);
   const [hValue, setHValue] = useState(defaultHeight);
@@ -35,8 +26,10 @@ export const ImageSizeSelector = ({ props }) => {
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setValue(0.5);
-            props.setScale(value);
+            setWValue(defaultWidth);
+            props.setWidth(wValue);
+            setHValue(defaultHeight);
+            props.setHeight(hValue);
           }}
         >
           <BsPhone className="ml-auto mr-auto" />
@@ -46,19 +39,10 @@ export const ImageSizeSelector = ({ props }) => {
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setValue(0.75);
-            props.setScale(value);
-          }}
-        >
-          <BsPhoneLandscape className="ml-auto mr-auto" />
-          <PopoverBtnText>Landscape</PopoverBtnText>
-        </PopoverBtns>
-      </div>
-      <div className="md:mb-2 md:ml-0 ml-2">
-        <PopoverBtns
-          handleOnClick={() => {
-            setValue(1);
-            props.setScale(value);
+            setWValue(igPostWidth);
+            props.setWidth(wValue);
+            setHValue(igPostHeight);
+            props.setHeight(hValue);
           }}
         >
           <BsInstagram className="ml-auto mr-auto" />
@@ -68,8 +52,10 @@ export const ImageSizeSelector = ({ props }) => {
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setValue(1.5);
-            props.setScale(value);
+            setWValue(igStoryWidth);
+            props.setWidth(wValue);
+            setHValue(igStoryHeight);
+            props.setHeight(hValue);
           }}
         >
           <BsInstagram className="ml-auto mr-auto" />
@@ -79,8 +65,10 @@ export const ImageSizeSelector = ({ props }) => {
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setValue(1.75);
-            props.setScale(value);
+            setWValue(fbPostWidth);
+            props.setWidth(wValue);
+            setHValue(fbPostHeight);
+            props.setHeight(hValue);
           }}
         >
           <BsFacebook className="ml-auto mr-auto" />
@@ -88,7 +76,14 @@ export const ImageSizeSelector = ({ props }) => {
         </PopoverBtns>
       </div>
       <div className="md:mb-2 md:ml-0 ml-2">
-        <PopoverBtns>
+        <PopoverBtns
+          handleOnClick={() => {
+            setWValue(waStatusWidth);
+            props.setWidth(wValue);
+            setHValue(waStatusHeight);
+            props.setHeight(hValue);
+          }}
+        >
           <IoLogoWhatsapp className="ml-auto mr-auto" />
           <PopoverBtnText>Whatsapp Status</PopoverBtnText>
         </PopoverBtns>
