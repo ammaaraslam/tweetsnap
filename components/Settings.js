@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 // Components
 import BgSelectorModal from "./settings/BgSelectorModal";
-import CardColorSelectorModal from "./settings/CardColorSelectorModal";
+import CardThemeSelector from "./settings/CardThemeSelector";
 
 // Assets
 import { AiOutlineBgColors, AiOutlineFontSize } from "react-icons/ai";
@@ -87,16 +87,9 @@ const Settings = ({ props }) => {
             <ColorSelector />
           </Popover>
         )} */}
-        <SettingsActionButton handleOnClick={setShowColorModal}>
-          <MdOutlineColorLens className="ml-auto mr-auto" />
-          <SettingsBtnText>Card Color</SettingsBtnText>
+        <SettingsActionButton>
+          <CardThemeSelector props={props} />
         </SettingsActionButton>
-        {showColorModal && (
-          <CardColorSelectorModal
-            props={props}
-            onClose={() => setShowColorModal(false)}
-          />
-        )}
 
         {/* {cBgOpen && <Popover position="top" useRef={ref} />} */}
         <SettingsActionButton handleOnClick={togglingSize}>
