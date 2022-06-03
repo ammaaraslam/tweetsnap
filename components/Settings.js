@@ -6,8 +6,8 @@ import BgSelectorModal from "./settings/BgSelectorModal";
 import CardColorSelectorModal from "./settings/CardColorSelectorModal";
 
 // Assets
-import { AiOutlineBgColors } from "react-icons/ai";
-import { MdPhotoSizeSelectLarge, MdOutlineColorLens } from "react-icons/md";
+import { AiOutlineBgColors, AiOutlineFontSize } from "react-icons/ai";
+import { MdOutlineColorLens } from "react-icons/md";
 import { GoSettings } from "react-icons/go";
 import { MdOpacity } from "react-icons/md";
 import { BsTextareaResize, BsDownload } from "react-icons/bs";
@@ -19,7 +19,7 @@ import {
   SettingsBtnText,
   SettingsButton,
 } from "./settings/Buttons";
-import { CardSizeSelector } from "./settings/CardSizeSelector";
+import { CardContentSizeSelector } from "./settings/CardContentSizeSelector";
 import { ImageSizeSelector } from "./settings/ImageSizeSelector";
 import OpacitySelector from "./settings/OpacitySelector";
 import { EngagementsSelector } from "./settings/EngagementsSelector";
@@ -100,12 +100,12 @@ const Settings = ({ props }) => {
 
         {/* {cBgOpen && <Popover position="top" useRef={ref} />} */}
         <SettingsActionButton handleOnClick={togglingSize}>
-          <MdPhotoSizeSelectLarge className="ml-auto mr-auto" />
-          <SettingsBtnText>Resize Card</SettingsBtnText>
+          <AiOutlineFontSize className="ml-auto mr-auto" />
+          <SettingsBtnText>Resize Card Content</SettingsBtnText>
         </SettingsActionButton>
         {sizeOpen && (
           <Popover position="left" useRef={ref}>
-            <CardSizeSelector />
+            <CardContentSizeSelector />
           </Popover>
         )}
         <SettingsActionButton handleOnClick={togglingCSize}>

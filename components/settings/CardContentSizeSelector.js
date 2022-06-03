@@ -1,6 +1,6 @@
-import { PopoverBtns, PopoverBtnText } from "../Popover";
+import { PopoverBtns } from "../Popover";
 
-export const CardSizeSelector = () => {
+export const CardContentSizeSelector = () => {
   return (
     <div className="p-2 flex flex-wrap justify-center ml-auto mr-auto overflow-auto whitespace-nowrap items-center">
       <div className="md:mb-2 md:ml-0 ml-2">
