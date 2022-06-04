@@ -1,6 +1,6 @@
 import { useTheme } from "next-themes";
-import { FaSun } from "react-icons/fa";
-import { BsMoonStarsFill } from "react-icons/bs";
+import { IoSunny } from "react-icons/io5";
+import { IoMoon } from "react-icons/io5";
 import { useState, useEffect } from "react";
 
 function ThemeToggle() {
@@ -19,7 +19,7 @@ function ThemeToggle() {
         onClick={() => setTheme("light")}
         className="p-2 text-2xl rounded-xl text-primary border-2 border-primary hover:text-dark hover:bg-primary transition-all duration-200 ease-in-out"
       >
-        <FaSun />
+        <IoSunny />
       </button>
     );
   }
@@ -29,7 +29,7 @@ function ThemeToggle() {
       onClick={() => setTheme("dark")}
       className="p-2 text-2xl rounded-xl text-primary border-2 border-primary hover:text-light hover:bg-primary transition-all duration-200 ease-in-out"
     >
-      <BsMoonStarsFill />
+      <IoMoon />
     </button>
   );
 }
