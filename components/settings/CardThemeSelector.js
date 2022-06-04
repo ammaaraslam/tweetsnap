@@ -4,8 +4,8 @@ import { SettingsActionButton, SettingsBtnText } from "./Buttons";
 
 import { useState } from "react";
 
-const light = "#EBF7FF";
-const dark = "#000C14";
+const light = "#FFFFFF";
+const dark = "#000000";
 
 const CardThemeSelector = ({ props }) => {
   const [theme, setTheme] = useState(light);

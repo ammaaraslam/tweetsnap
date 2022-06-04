@@ -17,8 +17,8 @@ const CardContentSizeSelector = ({ props }) => {
           props.setCardContentSize(contentSize);
         }}
       >
-        <AiOutlineFontSize className="ml-auto mr-auto text-lg" />
-        <SettingsBtnText>Card Theme</SettingsBtnText>
+        <AiOutlineFontSize className="ml-auto mr-auto text-2xl" />
+        <SettingsBtnText>Text Size</SettingsBtnText>
       </SettingsActionButton>
     );
   }
@@ -29,8 +29,8 @@ const CardContentSizeSelector = ({ props }) => {
         props.setCardContentSize(contentSize);
       }}
     >
-      <AiOutlineFontSize className="ml-auto mr-auto text-2xl" />
-      <SettingsBtnText>Card Theme</SettingsBtnText>
+      <AiOutlineFontSize className="ml-auto mr-auto text-3xl" />
+      <SettingsBtnText>Text Size</SettingsBtnText>
     </SettingsActionButton>
   );
 };

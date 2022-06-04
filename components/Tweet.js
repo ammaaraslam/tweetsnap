@@ -40,7 +40,7 @@ const Tweet = ({ bg, cardColor, opacity, width, height, cardContentSize }) => {
               class="flex items-center font-bold text-gray-900 leading-5"
               title="{author.name}"
             >
-              Naval
+              TweetGuy
               <svg
                 aria-label="Verified Account"
                 class="ml-1 text-blue-500 inline h-4 w-4"
@@ -52,7 +52,7 @@ const Tweet = ({ bg, cardColor, opacity, width, height, cardContentSize }) => {
               </svg>
             </span>
             <span class="text-gray-500" title="{`@naval`}">
-              @naval
+              @tweetguy
             </span>
           </a>
           <a
@@ -75,8 +75,7 @@ const Tweet = ({ bg, cardColor, opacity, width, height, cardContentSize }) => {
           </a>
         </div>
         <div class="mt-4 mb-2 leading-normal whitespace-pre-wrap text-lg text-gray-700">
-          Learn to sell. Learn to build. If you can do both, you will be
-          unstoppable.
+          Some thing something something something something.
         </div>
         <a
           class="text-gray-500 text-sm hover:underline"
@@ -84,7 +83,7 @@ const Tweet = ({ bg, cardColor, opacity, width, height, cardContentSize }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          3:27 AM - May 31, 2018
+          8:27 AM - June 01, 2022
         </a>
         <div class="flex text-gray-700 mt-2">
           <a
