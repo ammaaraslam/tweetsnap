@@ -12,7 +12,9 @@ export default function Home() {
   const [bg, setBg] = useState(
     "linear-gradient(106.8deg, rgb(117, 255, 220) 6%, rgb(163, 216, 255) 47.6%, rgb(248, 215, 251) 87.8%)"
   );
-  const [cardColor, setCardColor] = useState("#EBF7FF");
+  const [cardColor, setCardColor] = useState("#FFFFFF");
+  const [cardFontColor, setCardFontColor] = useState("#000000");
+
   const [opacity, setOpacity] = useState(1);
   const [width, setWidth] = useState("600px");
   const [height, setHeight] = useState("400px");
@@ -31,6 +33,8 @@ export default function Home() {
     setHeight,
     cardContentSize,
     setCardContentSize,
+    cardFontColor,
+    setCardFontColor,
   };
 
   const onSubmit = async (e) => {
@@ -70,6 +74,7 @@ export default function Home() {
             width={width}
             height={height}
             cardContentSize={cardContentSize}
+            cardFontColor={cardFontColor}
           />
           <Settings props={propsForSettings} />
         </div>

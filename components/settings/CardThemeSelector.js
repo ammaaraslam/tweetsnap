@@ -9,6 +9,7 @@ const dark = "#000000";
 
 const CardThemeSelector = ({ props }) => {
   const [theme, setTheme] = useState(light);
+  const [fontColor, setFontColor] = useState(dark);
   const currentTheme = theme;
 
   if (currentTheme === light) {
@@ -16,7 +17,9 @@ const CardThemeSelector = ({ props }) => {
       <SettingsActionButton
         handleOnClick={() => {
           setTheme(dark);
+          setFontColor(light);
           props.setCardColor(theme);
+          props.setCardFontColor(fontColor);
         }}
       >
         <IoSunny className="ml-auto mr-auto" />
@@ -29,6 +32,8 @@ const CardThemeSelector = ({ props }) => {
       handleOnClick={() => {
         setTheme(light);
         props.setCardColor(theme);
+        setFontColor(dark);
+        props.setCardFontColor(fontColor);
       }}
     >
       <IoMoon className="ml-auto mr-auto" />

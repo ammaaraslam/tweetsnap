@@ -1,4 +1,12 @@
-const Tweet = ({ bg, cardColor, opacity, width, height, cardContentSize }) => {
+const Tweet = ({
+  bg,
+  cardColor,
+  opacity,
+  width,
+  height,
+  cardContentSize,
+  cardFontColor,
+}) => {
   return (
     <div
       className="md:w-1/2 md:h-4/6 w-5/6 h-2/5 ml-auto mr-auto md:ml-20 rounded-3xl flex justify-center items-center"
@@ -15,6 +23,7 @@ const Tweet = ({ bg, cardColor, opacity, width, height, cardContentSize }) => {
           background: cardColor,
           opacity: opacity,
           fontSize: cardContentSize,
+          color: cardFontColor,
         }}
       >
         <div class="flex items-center">
