@@ -2,7 +2,6 @@ import { PopoverBtns, PopoverBtnText } from "../Popover";
 
 import { AiOutlineRetweet } from "react-icons/ai";
 import { FaRegComment } from "react-icons/fa";
-import { FiShare } from "react-icons/fi";
 import { MdTripOrigin } from "react-icons/md";
 import { BsSuitHeartFill, BsClockFill } from "react-icons/bs";
 
@@ -27,13 +26,6 @@ export const EngagementsSelector = () => {
           <PopoverBtnText>Comments</PopoverBtnText>
         </PopoverBtns>
       </div>
-      <div className="md:mb-2 md:ml-0 ml-2">
-        <PopoverBtns>
-          <FiShare className="ml-auto mr-auto" />
-          <PopoverBtnText>Shares</PopoverBtnText>
-        </PopoverBtns>
-      </div>
-
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns>
           <BsClockFill className="ml-auto mr-auto" />

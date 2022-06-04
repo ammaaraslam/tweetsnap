@@ -1,3 +1,9 @@
+import { MdVerified } from "react-icons/md";
+import { AiOutlineRetweet } from "react-icons/ai";
+import { FaRegComment, FaTwitter } from "react-icons/fa";
+import { BsSuitHeartFill } from "react-icons/bs";
+import Image from "next/image";
+
 const Tweet = ({
   bg,
   cardColor,
@@ -12,11 +18,6 @@ const Tweet = ({
       className="md:w-1/2 md:h-4/6 w-5/6 h-2/5 ml-auto mr-auto md:ml-20 rounded-3xl flex justify-center items-center"
       style={{ background: bg, width: width, height: height }}
     >
-      {/* <div
-        id="tweet-card"
-        className="md:w-3/4 md:h-4/6 w-5/6 h-3/4 rounded-3xl p-3"
-        style={{ background: cardColor, opacity: opacity }}
-      ></div> */}
       <div
         class="md:w-5/6 md:h-2/3 w-5/6 h-3/4 rounded-3xl p-5"
         style={{
@@ -29,12 +30,14 @@ const Tweet = ({
         <div class="flex items-center">
           <a
             class="flex h-12 w-12 mr-3"
-            href="https://twitter.com/naval"
+            href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
+            <Image
               alt="Naval"
+              width={60}
+              height={60}
               src="https://pbs.twimg.com/profile_images/1256841238298292232/ycqwaMI2_400x400.jpg"
               class="rounded-full"
             />
