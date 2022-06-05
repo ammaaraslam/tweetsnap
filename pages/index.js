@@ -8,6 +8,9 @@ import { useRef, useState } from "react";
 import { useRouter } from "next/router";
 import SearchBar from "../components/SearchBar";
 import { MdOutlineCamera } from "react-icons/md";
+import domtoimage from "dom-to-image";
+import axios from "axios";
+import { saveAs } from "file-saver";
 
 export default function Home({ results }) {
   const credits = "</> with 💙 by Ammaar Aslam";
@@ -26,6 +29,49 @@ export default function Home({ results }) {
   const [sourceDisplay, setSourceDisplay] = useState("show");
   const [dateTimeDisplay, setDateTimeDisplay] = useState("show");
   const [replyDisplay, setReplyDisplay] = useState("show");
+
+  const tweetRef = useRef(null);
+
+  const convert = async (format) => {
+    const node = tweetRef.current;
+    const scale = 2;
+
+    let dataUrl;
+
+    const style = {
+      transform: "scale(1.9)",
+      transformOrigin: "top left",
+      left: "0px",
+    };
+
+    const param = {
+      quality: 1,
+      height: node.offsetHeight * scale,
+      width: node.offsetWidth * scale,
+
+      style,
+    };
+
+    switch (format) {
+      case "png": {
+        dataUrl = await domtoimage.toPng(node, param);
+        saveAs(dataUrl, `${new Date().toJSON()}.${format}`);
+        return;
+      }
+
+      case "jpeg": {
+        dataUrl = await domtoimage.toJpeg(node, param);
+        saveAs(dataUrl, `${new Date().toJSON()}.${format}`);
+        return;
+      }
+
+      case "svg": {
+        dataUrl = await domtoimage.toSvg(node, param);
+        saveAs(dataUrl, `${new Date().toJSON()}.${format}`);
+        return;
+      }
+    }
+  };
 
   const propsForSettings = {
     bg,
@@ -52,6 +98,7 @@ export default function Home({ results }) {
     setDateTimeDisplay,
     replyDisplay,
     setReplyDisplay,
+    convert,
   };
   const [ID, setID] = useState(" ");
 
@@ -67,8 +114,6 @@ export default function Home({ results }) {
   const onSubmit = async (e) => {
     e.preventDefault();
   };
-
-  console.log(results);
 
   return (
     <div>
@@ -144,6 +189,7 @@ export default function Home({ results }) {
             image={
               results.includes?.media ? results.includes.media[0].url : null
             }
+            tweetRef={tweetRef}
           />
           <Settings props={propsForSettings} />
         </div>

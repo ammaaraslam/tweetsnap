@@ -22,10 +22,13 @@ import CardContentSizeSelector from "./settings/CardContentSizeSelector";
 import { ImageSizeSelector } from "./settings/ImageSizeSelector";
 import OpacitySelector from "./settings/OpacitySelector";
 import { EngagementsSelector } from "./settings/EngagementsSelector";
+import Preview from "./settings/Preview";
 
 const Settings = ({ props }) => {
   // States
   const [showBgModal, setShowBgModal] = useState(false);
+  const [showPreviewModal, setShowPreviewModal] = useState(false);
+
   const [showColorModal, setShowColorModal] = useState(false);
   // const [bgOpen, setBgOpen] = useState(false);
   // const [cBgOpen, setCBgOpen] = useState(false);
@@ -121,11 +124,14 @@ const Settings = ({ props }) => {
       <div className="p-1 items-center justify-center text-center">
         <div className="inline-flex items-center justify-center pb-2">
           <div className="mr-1">
-            <SettingsButton>
+            <SettingsButton handleOnClick={() => setShowPreviewModal(true)}>
               <FiZoomIn className="mr-1" />
               Preview
             </SettingsButton>
           </div>
+          {showPreviewModal && (
+            <Preview onClose={() => setShowBgModal(false)} />
+          )}
           <div className="ml-0">
             <SettingsButton>
               <IoCopy className="mr-1" />
@@ -133,7 +139,10 @@ const Settings = ({ props }) => {
             </SettingsButton>
           </div>
         </div>
-        <SettingsButton btnType="primary">
+        <SettingsButton
+          handleOnClick={() => props.convert("png")}
+          btnType="primary"
+        >
           Download
           <BsDownload className="ml-3" />
         </SettingsButton>

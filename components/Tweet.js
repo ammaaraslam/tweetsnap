@@ -29,6 +29,7 @@ const Tweet = ({
   tweetURLs,
   tweetImages,
   image,
+  tweetRef,
 }) => {
   const urls = tweetURLs;
 
@@ -73,147 +74,150 @@ const Tweet = ({
   console.log(getHashtag);
   const newDateTime = new Date(dateTime);
   return (
-    <div
-      className="ml-auto mr-auto md:ml-20 rounded-3xl flex justify-center items-center md:scale-100 scale-50 h-3/4 overflow-scroll pt-8 pb-8"
-      style={{ background: bg, width: width, height: height }}
-    >
+    <div ref={tweetRef}>
       <div
-        class="md:w-5/6 md:h-fit w-5/6 h-fit rounded-3xl p-4 mt-auto mb-auto"
-        style={{
-          background: cardColor,
-          opacity: opacity,
-          fontSize: cardContentSize,
-          color: cardFontColor,
-        }}
+        className="ml-auto mr-auto md:ml-20 rounded-3xl flex justify-center items-center md:scale-100 scale-50 h-3/4 overflow-auto pt-8 pb-8"
+        style={{ background: bg, width: width, height: height }}
       >
-        <div class="flex items-center">
-          <a
-            class="flex mr-3"
-            href={`https://twitter.com/${username}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              alt={name}
-              src={profileImageUrl}
-              class="rounded-full w-full h-full"
-            />
-          </a>
-          <a
-            href={`https://twitter.com/${username}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex flex-col ml-0"
-          >
-            <span
-              class="flex items-center font-bold leading-5 text-xl"
-              title={name}
+        <div
+          class="md:w-5/6 md:h-fit w-5/6 h-fit rounded-3xl p-4 mt-auto mb-auto"
+          style={{
+            background: cardColor,
+            opacity: opacity,
+            fontSize: cardContentSize,
+            color: cardFontColor,
+          }}
+        >
+          <div class="flex items-center">
+            <a
+              class="flex mr-3"
+              href={`https://twitter.com/${username}`}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {name}
-              {verified && <MdVerified className="mt-1 ml-1" />}
+              <img
+                alt={name}
+                src={profileImageUrl}
+                class="rounded-full w-full h-full"
+              />
+            </a>
+            <a
+              href={`https://twitter.com/${username}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex flex-col ml-0"
+            >
+              <span
+                class="flex items-center font-bold leading-5 text-xl"
+                title={name}
+              >
+                {name}
+                {verified && <MdVerified className="mt-1 ml-1" />}
+              </span>
+              <span className="text-grey font-normal text-lg">@{username}</span>
+            </a>
+            <a
+              class="ml-auto"
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTwitter className="-mt-5 text-xl" />
+            </a>
+          </div>
+          <div class="mt-4 mb-2 leading-normal whitespace-pre-wrap text-lg font-normal">
+            {tweetText.split(" ").map((str) => {
+              if (str.startsWith("#")) {
+                const hashtag = str.slice(1);
+                return (
+                  <a
+                    href={`https://twitter.com/hashtag/${hashtag}?src=hashtag_click/`}
+                    target="_blank"
+                    className="text-primary"
+                  >
+                    {str}{" "}
+                  </a>
+                );
+              }
+              if (str.startsWith("@")) {
+                const mention = str.slice(1);
+                return (
+                  <a
+                    href={`https://twitter.com/${mention}`}
+                    target="_blank"
+                    className="text-primary"
+                  >
+                    {str}{" "}
+                  </a>
+                );
+              }
+
+              return str + " ";
+            })}
+          </div>
+          <div className="w-full h-3/4">
+            {image && <img src={image} className="mt-2 rounded-2xl" />}
+          </div>
+
+          <div className="text-grey text-base mt-3 mb-1">
+            <a
+              class=" hover:underline"
+              href="https://twitter.com/naval/status/1002104154737684480"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: dateTimeDisplay }}
+            >
+              {newDateTime && format(newDateTime, "h:mm a - LLL d, yyyy ")}
+            </a>
+
+            <span className="ml-1">
+              {dateTimeDisplay == "inline-flex" &&
+              sourceDisplay == "inline-flex"
+                ? "•"
+                : ""}
             </span>
-            <span className="text-grey font-normal text-lg">@{username}</span>
-          </a>
-          <a
-            class="ml-auto"
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaTwitter className="-mt-5 text-xl" />
-          </a>
-        </div>
-        <div class="mt-4 mb-2 leading-normal whitespace-pre-wrap text-lg font-normal">
-          {tweetText.split(" ").map((str) => {
-            if (str.startsWith("#")) {
-              const hashtag = str.slice(1);
-              return (
-                <a
-                  href={`https://twitter.com/hashtag/${hashtag}?src=hashtag_click/`}
-                  target="_blank"
-                  className="text-primary"
-                >
-                  {str}{" "}
-                </a>
-              );
-            }
-            if (str.startsWith("@")) {
-              const mention = str.slice(1);
-              return (
-                <a
-                  href={`https://twitter.com/${mention}`}
-                  target="_blank"
-                  className="text-primary"
-                >
-                  {str}{" "}
-                </a>
-              );
-            }
-
-            return str + " ";
-          })}
-        </div>
-        <div className="w-full h-3/4">
-          {image && <img src={image} className="mt-2 rounded-2xl" />}
-        </div>
-
-        <div className="text-grey text-base mt-3 mb-1">
-          <a
-            class=" hover:underline"
-            href="https://twitter.com/naval/status/1002104154737684480"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ display: dateTimeDisplay }}
-          >
-            {newDateTime && format(newDateTime, "h:mm a - LLL d, yyyy ")}
-          </a>
-
-          <span className="ml-1">
-            {dateTimeDisplay == "inline-flex" && sourceDisplay == "inline-flex"
-              ? "•"
-              : ""}
-          </span>
-          <a
-            class=" hover:underline ml-1"
-            href="https://twitter.com/naval/status/1002104154737684480"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ display: sourceDisplay }}
-          >
-            {source}
-          </a>
-        </div>
-        <div class="flex mt-1 font-normal text-base">
-          <a
-            className="items-center mr-4 hover:text-blue-600 transition hover:underline"
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ display: replyDisplay }}
-          >
-            <span>{replyCount}</span>
-            <span className="text-grey ml-1">Replies</span>
-          </a>
-          <a
-            className="items-center mr-4 hover:text-green-600 transition hover:underline"
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ display: retweetDisplay }}
-          >
-            <span>{retweetCount}</span>
-            <span className="text-grey ml-1">Retweets</span>
-          </a>
-          <a
-            className="items-center hover:text-red-600 transition hover:underline"
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ display: likeDisplay }}
-          >
-            <span>{likeCount}</span>
-            <span className="text-grey ml-1">Likes</span>
-          </a>
+            <a
+              class=" hover:underline ml-1"
+              href="https://twitter.com/naval/status/1002104154737684480"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: sourceDisplay }}
+            >
+              {source}
+            </a>
+          </div>
+          <div class="flex mt-1 font-normal text-base">
+            <a
+              className="items-center mr-4 hover:text-blue-600 transition hover:underline"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: replyDisplay }}
+            >
+              <span>{replyCount}</span>
+              <span className="text-grey ml-1">Replies</span>
+            </a>
+            <a
+              className="items-center mr-4 hover:text-green-600 transition hover:underline"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: retweetDisplay }}
+            >
+              <span>{retweetCount}</span>
+              <span className="text-grey ml-1">Retweets</span>
+            </a>
+            <a
+              className="items-center hover:text-red-600 transition hover:underline"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: likeDisplay }}
+            >
+              <span>{likeCount}</span>
+              <span className="text-grey ml-1">Likes</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
