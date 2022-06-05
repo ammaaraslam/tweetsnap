@@ -21,7 +21,7 @@ export default function Home({ results }) {
   const [width, setWidth] = useState("600px");
   const [height, setHeight] = useState("400px");
   const [cardContentSize, setCardContentSize] = useState("1.125rem");
-  const [likeDisplay, setLikeDisplay] = useState("show");
+  const [likeDisplay, setLikeDisplay] = useState("flex");
   const [retweetDisplay, setRetweetDisplay] = useState("show");
   const [sourceDisplay, setSourceDisplay] = useState("show");
   const [dateTimeDisplay, setDateTimeDisplay] = useState("show");
@@ -129,6 +129,21 @@ export default function Home({ results }) {
             replyDisplay={replyDisplay}
             dateTimeDisplay={dateTimeDisplay}
             sourceDisplay={sourceDisplay}
+            name={results.includes.users[0].name}
+            username={results.includes.users[0].username}
+            verified={results.includes.users[0].verified}
+            profileImageUrl={results.includes.users[0].profile_image_url}
+            text={results.data.text}
+            source={results.data.source}
+            likeCount={results.data.public_metrics.like_count}
+            replyCount={results.data.public_metrics.reply_count}
+            retweetCount={results.data.public_metrics.retweet_count}
+            dateTime={results.data.created_at}
+            urls={results.data?.entities.urls}
+            tweetImages={results.includes.media}
+            isTweetImages={
+              results.includes?.media ? results.includes.media[0].url : null
+            }
           />
           <Settings props={propsForSettings} />
         </div>
@@ -183,11 +198,24 @@ export async function getServerSideProps(context) {
     `https://api.twitter.com/2/tweets/${context.query.term}?expansions=author_id,attachments.media_keys&user.fields=profile_image_url,verified&tweet.fields=created_at,attachments,public_metrics,entities,source&media.fields=preview_image_url,url`,
     { headers }
   );
+  const initialRes = await fetch(
+    `https://api.twitter.com/2/tweets/1533380474243977217?expansions=author_id,attachments.media_keys&user.fields=profile_image_url,verified&tweet.fields=created_at,attachments,public_metrics,entities,source&media.fields=preview_image_url,url`,
+    { headers }
+  );
 
-  const results = await res.json();
-  return {
-    props: {
-      results,
-    },
-  };
+  if (!context.query.term) {
+    const results = await initialRes.json();
+    return {
+      props: {
+        results,
+      },
+    };
+  } else {
+    const results = await res.json();
+    return {
+      props: {
+        results,
+      },
+    };
+  }
 }

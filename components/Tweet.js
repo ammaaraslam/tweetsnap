@@ -15,8 +15,51 @@ const Tweet = ({
   replyDisplay,
   dateTimeDisplay,
   sourceDisplay,
-  bullDisplay,
+  name,
+  username,
+  verified,
+  profileImageUrl,
+  text,
+  source,
+  likeCount,
+  replyCount,
+  retweetCount,
+  dateTime,
+  urls,
+  tweetImages,
+  isTweetImages,
 }) => {
+  const linkregex = /(https?:\/\/[^\s]+)/g;
+  const link_occurs = text.match(linkregex);
+
+  if (urls && tweetImages) {
+    text = text.replace(
+      text.slice(urls[urls.length - 1].start, urls[urls.length - 1].end + 1),
+      ""
+    );
+  }
+
+  link_occurs?.forEach((link, i) => {
+    if (!tweetImages) {
+      const corres_url = urls[i];
+      text = text.replace(
+        text.slice(corres_url.start, corres_url.end),
+        corres_url.expanded_url
+      );
+    } else {
+      if (i === link_occurs.length - 1) {
+        return;
+      } else {
+        const corres_url = urls[i];
+        text = text.replace(
+          text.slice(corres_url.start, corres_url.end),
+          corres_url.expanded_url
+        );
+      }
+    }
+  });
+
+  text = text.replace("&amp;", "&");
   return (
     <div
       className="ml-auto mr-auto md:ml-20 rounded-3xl flex justify-center items-center md:scale-100 scale-50"
@@ -34,36 +77,36 @@ const Tweet = ({
         <div class="flex items-center">
           <a
             class="flex mr-3"
-            href="https://twitter.com"
+            href={`https://twitter.com/${username}`}
             target="_blank"
             rel="noopener noreferrer"
           >
             <Image
-              alt="Naval"
+              alt={name}
               width={60}
               height={60}
-              src="https://pbs.twimg.com/profile_images/1256841238298292232/ycqwaMI2_400x400.jpg"
+              src={profileImageUrl}
               class="rounded-full"
             />
           </a>
           <a
-            href="https://twitter.com/naval"
+            href={`https://twitter.com/${username}`}
             target="_blank"
             rel="noopener noreferrer"
             class="flex flex-col ml-0"
           >
             <span
               class="flex items-center font-bold leading-5 text-xl"
-              title="{author.name}"
+              title={name}
             >
-              TweetGuy
+              {name}
               <MdVerified className="mt-1" />
             </span>
-            <span className="text-grey font-normal text-lg">@tweetguy</span>
+            <span className="text-grey font-normal text-lg">{username}</span>
           </a>
           <a
             class="ml-auto"
-            href="https://twitter.com/naval"
+            href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -71,8 +114,10 @@ const Tweet = ({
           </a>
         </div>
         <div class="mt-4 mb-2 leading-normal whitespace-pre-wrap text-lg font-normal">
-          Some thing something something something something.
+          {text}
         </div>
+        {isTweetImages && <Image src={isTweetImages} mt="2" fit="cover" />}
+
         <div className="text-grey text-base mt-3 mb-1">
           <a
             class=" hover:underline"
@@ -81,7 +126,7 @@ const Tweet = ({
             rel="noopener noreferrer"
             style={{ display: dateTimeDisplay }}
           >
-            8:27 AM - June 01, 2022
+            {dateTime}
           </a>
 
           <span className="ml-1">
@@ -96,7 +141,7 @@ const Tweet = ({
             rel="noopener noreferrer"
             style={{ display: sourceDisplay }}
           >
-            Twitter for Web
+            {source}
           </a>
         </div>
         <div class="flex mt-1 font-normal text-base">
@@ -107,7 +152,7 @@ const Tweet = ({
             rel="noopener noreferrer"
             style={{ display: replyDisplay }}
           >
-            <span>117</span>
+            <span>{replyCount}</span>
             <span className="text-grey ml-1">Replies</span>
           </a>
           <a
@@ -117,7 +162,7 @@ const Tweet = ({
             rel="noopener noreferrer"
             style={{ display: retweetDisplay }}
           >
-            <span>5,434</span>
+            <span>{retweetCount}</span>
             <span className="text-grey ml-1">Retweets</span>
           </a>
           <a
@@ -127,7 +172,7 @@ const Tweet = ({
             rel="noopener noreferrer"
             style={{ display: likeDisplay }}
           >
-            <span>23,519</span>
+            <span>{likeCount}</span>
             <span className="text-grey ml-1">Likes</span>
           </a>
         </div>
