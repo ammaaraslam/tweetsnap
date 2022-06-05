@@ -108,13 +108,13 @@ const Tweet = ({
               class="flex flex-col ml-0"
             >
               <span
-                class="flex items-center font-bold leading-5 text-xl font-sans"
+                class="flex items-center font-bold leading-5  font-sans"
                 title={name}
               >
                 {name}
                 {verified && <MdVerified className="mt-1 ml-1" />}
               </span>
-              <span className="text-grey font-normal text-lg">@{username}</span>
+              <span className="text-grey font-normal ">@{username}</span>
             </a>
             <a
               class="ml-auto"
@@ -122,10 +122,10 @@ const Tweet = ({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaTwitter className="-mt-5 text-xl" />
+              <FaTwitter className="-mt-5 " />
             </a>
           </div>
-          <div class="mt-4 mb-2 leading-normal whitespace-pre-wrap text-lg font-normal font-serif">
+          <div class="mt-4 mb-2 leading-normal whitespace-pre-wrap  font-normal font-serif">
             {tweetText.split(" ").map((str) => {
               if (str.startsWith("#")) {
                 const hashtag = str.slice(1);
@@ -159,7 +159,7 @@ const Tweet = ({
             {image && <img src={image} className="mt-2 rounded-2xl" />}
           </div>
 
-          <div className="text-grey text-base mt-3 mb-1">
+          <div className="text-grey  mt-3 mb-1">
             <a
               class=" hover:underline font-sans"
               href="https://twitter.com/naval/status/1002104154737684480"
@@ -186,9 +186,9 @@ const Tweet = ({
               {source}
             </a>
           </div>
-          <div class="flex mt-1 font-normal text-base">
+          <div class="flex mt-1">
             <a
-              className="items-center mr-4 hover:text-blue-600 transition hover:underline"
+              className="items-center mr-4  transition hover:underline"
               href="#"
               target="_blank"
               rel="noopener noreferrer"
@@ -198,7 +198,7 @@ const Tweet = ({
               <span className="text-grey ml-1">Replies</span>
             </a>
             <a
-              className="items-center mr-4 hover:text-green-600 transition hover:underline"
+              className="items-center mr-4 transition hover:underline"
               href="#"
               target="_blank"
               rel="noopener noreferrer"

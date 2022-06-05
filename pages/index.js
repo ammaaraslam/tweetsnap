@@ -122,7 +122,7 @@ export default function Home({ results }) {
         <link rel="icon" href="/Logo.svg" />
       </Head>
 
-      <main className="w-full md:h-screen h-fit bg-light dark:bg-dark overflow-auto transition-all duration-300 font-sans">
+      <main className="w-full md:h-screen h-fit bg-light dark:bg-dark overflow-auto transition-all duration-300 fonts">
         {/* Modal */}
         <Modal />
         {/* Header - Logo + Search + Theme Toggle */}
@@ -218,7 +218,7 @@ export default function Home({ results }) {
 //   };
 
 //   const res = await fetch(
-//     `https://api.twitter.com/2/tweets/1375809527690317825?expansions=author_id,attachments.media_keys&user.fields=profile_image_url,verified&tweet.fields=created_at,attachments,public_metrics,entities,source&media.fields=preview_image_url,url`,
+//     `https://api.twitter.com/2/tweets/1475915874091606021?expansions=author_id,attachments.media_keys&user.fields=profile_image_url,verified&tweet.fields=created_at,attachments,public_metrics,entities,source&media.fields=preview_image_url,url`,
 //     { headers }
 //   );
 //   const initialTweet = await res.json();
@@ -244,7 +244,7 @@ export async function getServerSideProps(context) {
     { headers }
   );
   const initialRes = await fetch(
-    `https://api.twitter.com/2/tweets/1533448928242417666?expansions=author_id,attachments.media_keys&user.fields=profile_image_url,verified&tweet.fields=created_at,attachments,public_metrics,entities,source&media.fields=preview_image_url,url`,
+    `https://api.twitter.com/2/tweets/1475915874091606021?expansions=author_id,attachments.media_keys&user.fields=profile_image_url,verified&tweet.fields=created_at,attachments,public_metrics,entities,source&media.fields=preview_image_url,url`,
     { headers }
   );
 

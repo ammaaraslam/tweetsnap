@@ -10,7 +10,7 @@ export const SettingsActionButton = ({ children, handleOnClick }) => {
   );
 };
 export const SettingsBtnText = ({ children }) => {
-  return <p className={`p-0 text-xs font-medium`}>{children}</p>;
+  return <p className={`p-0 text-xs font-semibold`}>{children}</p>;
 };
 export const SettingsButton = ({ children, handleOnClick, btnType }) => {
   const type = btnType;
