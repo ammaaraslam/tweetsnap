@@ -4,10 +4,12 @@ import Modal from "../components/Modal";
 import Head from "next/head";
 import Tweet from "../components/Tweet";
 import Settings from "../components/Settings";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useRouter } from "next/router";
 import SearchBar from "../components/SearchBar";
+import { MdOutlineCamera } from "react-icons/md";
 
-export default function Home() {
+export default function Home({ results }) {
   const credits = "</> with 💙 by Ammaar Aslam";
   const [bg, setBg] = useState(
     "linear-gradient(106.8deg, rgb(117, 255, 220) 6%, rgb(163, 216, 255) 47.6%, rgb(248, 215, 251) 87.8%)"
@@ -51,10 +53,22 @@ export default function Home() {
     replyDisplay,
     setReplyDisplay,
   };
+  const [ID, setID] = useState(" ");
 
+  const router = useRouter();
+  const searchInputRef = useRef(null);
+  function search(e) {
+    e.preventDefault();
+    const url = searchInputRef.current.value;
+    if (!url) return;
+    const id = url.split("/")[5];
+    router.push(`/?term=${id}`);
+  }
   const onSubmit = async (e) => {
     e.preventDefault();
   };
+
+  console.log(results);
 
   return (
     <div>
@@ -79,7 +93,27 @@ export default function Home() {
             </ul>
           </nav>
         </header>
-        <SearchBar onSubmit={onSubmit} />
+        <form
+          onSubmit={onSubmit}
+          className="mb-0 mt-4 w-3/4 md:w-1/2 ml-auto mr-auto md:-mt-11"
+        >
+          <label className="hidden" for="search-form">
+            Search
+          </label>
+          <input
+            ref={searchInputRef}
+            className="h-12 font-medium text-secondary pl-2 pr-16 outline-none bg-text dark:bg-textDark border-2 border-textS dark:border-textSDark rounded-2xl w-full placeholder:text-secondary placeholder:mt-auto placeholder:mb-auto dark:placeholder:text-secondary focus:bg-textS dark:focus:bg-textSDark transition-all duration-200"
+            placeholder="Paste/Enter Link to you Tweet"
+            type="text"
+          />
+          <button
+            type="submit"
+            onClick={search}
+            className="p-2 font-medium w-16 h-12 items-center text-center text-secondary hover:text-textLight dark:hover:text-textDark focus:text-textLight dark:focus:text-textDark bg-text dark:bg-textDark border-2 border-secondary dark:border-secondary focus:bg-secondary dark:focus:bg-secondary hover:bg-secondary dark:hover:bg-secondary absolute rounded-2xl -translate-x-16 transition-all duration-200"
+          >
+            <MdOutlineCamera className="ml-auto mr-auto text-2xl" />
+          </button>
+        </form>
         {/* Main Body */}
         <div className="w-full h-3/4 mt-7 md:flex items-center justify-between">
           <Tweet
@@ -139,3 +173,21 @@ export default function Home() {
 //     },
 //   };
 // };
+
+export async function getServerSideProps(context) {
+  const headers = {
+    Authorization: `Bearer AAAAAAAAAAAAAAAAAAAAAOOIdAEAAAAAX1glYT8gJk%2FhCgNKS0rioot%2F140%3DIDGbmPq2jjz9F1d55HlzpgztNDrx1cd6YXiTLV8b2wgcO8J65q`,
+  };
+
+  const res = await fetch(
+    `https://api.twitter.com/2/tweets/${context.query.term}?expansions=author_id,attachments.media_keys&user.fields=profile_image_url,verified&tweet.fields=created_at,attachments,public_metrics,entities,source&media.fields=preview_image_url,url`,
+    { headers }
+  );
+
+  const results = await res.json();
+  return {
+    props: {
+      results,
+    },
+  };
+}
