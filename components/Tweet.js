@@ -68,6 +68,9 @@ const Tweet = ({
   });
 
   tweetText = tweetText.replace("&amp;", "&");
+  const getHashtag = tweetText.match("#");
+  console.log(link_occurs);
+  console.log(getHashtag);
   const newDateTime = new Date(dateTime);
   return (
     <div
@@ -90,12 +93,10 @@ const Tweet = ({
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
+            <img
               alt={name}
-              width={60}
-              height={60}
               src={profileImageUrl}
-              class="rounded-full"
+              class="rounded-full w-full h-full"
             />
           </a>
           <a
@@ -109,9 +110,9 @@ const Tweet = ({
               title={name}
             >
               {name}
-              <MdVerified className="mt-1" />
+              {verified && <MdVerified className="mt-1 ml-1" />}
             </span>
-            <span className="text-grey font-normal text-lg">{username}</span>
+            <span className="text-grey font-normal text-lg">@{username}</span>
           </a>
           <a
             class="ml-auto"
@@ -123,7 +124,34 @@ const Tweet = ({
           </a>
         </div>
         <div class="mt-4 mb-2 leading-normal whitespace-pre-wrap text-lg font-normal">
-          {tweetText}
+          {tweetText.split(" ").map((str) => {
+            if (str.startsWith("#")) {
+              const hashtag = str.slice(1);
+              return (
+                <a
+                  href={`https://twitter.com/hashtag/${hashtag}?src=hashtag_click/`}
+                  target="_blank"
+                  className="text-primary"
+                >
+                  {str}{" "}
+                </a>
+              );
+            }
+            if (str.startsWith("@")) {
+              const mention = str.slice(1);
+              return (
+                <a
+                  href={`https://twitter.com/${mention}`}
+                  target="_blank"
+                  className="text-primary"
+                >
+                  {str}{" "}
+                </a>
+              );
+            }
+
+            return str + " ";
+          })}
         </div>
         <div className="w-full h-3/4">
           {image && <img src={image} className="mt-2 rounded-2xl" />}
