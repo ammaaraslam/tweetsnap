@@ -114,7 +114,7 @@ const Settings = ({ props }) => {
         </SettingsActionButton>
         {engagementsOpen && (
           <Popover position="right" useRef={ref}>
-            <EngagementsSelector />
+            <EngagementsSelector props={props} />
           </Popover>
         )}
       </div>

@@ -10,6 +10,7 @@ const Tweet = ({
   height,
   cardContentSize,
   cardFontColor,
+  likeDisplay,
 }) => {
   return (
     <div
@@ -88,7 +89,7 @@ const Tweet = ({
         </div>
         <div class="flex mt-1 font-normal text-base">
           <a
-            className="flex items-center mr-4  hover:text-blue-600 transition hover:underline"
+            className="flex items-center mr-4 hover:text-blue-600 transition hover:underline"
             href="#"
             target="_blank"
             rel="noopener noreferrer"
@@ -106,10 +107,11 @@ const Tweet = ({
             <span className="text-grey ml-1">Retweets</span>
           </a>
           <a
-            className="flex items-center hover:text-red-600 transition hover:underline"
+            className="items-center hover:text-red-600 transition hover:underline"
             href="#"
             target="_blank"
             rel="noopener noreferrer"
+            style={{ display: likeDisplay }}
           >
             <span>23,519</span>
             <span className="text-grey ml-1">Likes</span>

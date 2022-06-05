@@ -19,6 +19,7 @@ export default function Home() {
   const [width, setWidth] = useState("600px");
   const [height, setHeight] = useState("400px");
   const [cardContentSize, setCardContentSize] = useState("1.125rem");
+  const [likeDisplay, setLikeDisplay] = useState("show");
 
   const propsForSettings = {
     bg,
@@ -35,6 +36,8 @@ export default function Home() {
     setCardContentSize,
     cardFontColor,
     setCardFontColor,
+    likeDisplay,
+    setLikeDisplay,
   };
 
   const onSubmit = async (e) => {
@@ -75,6 +78,7 @@ export default function Home() {
             height={height}
             cardContentSize={cardContentSize}
             cardFontColor={cardFontColor}
+            likeDisplay={likeDisplay}
           />
           <Settings props={propsForSettings} />
         </div>

@@ -3,18 +3,15 @@ import { PopoverBtns, PopoverBtnText } from "../Popover";
 import { AiOutlineRetweet } from "react-icons/ai";
 import { FaRegComment } from "react-icons/fa";
 import { MdTripOrigin } from "react-icons/md";
-import { BsSuitHeartFill, BsClockFill } from "react-icons/bs";
+import { BsClockFill } from "react-icons/bs";
+import { ShowLikes } from "./EngagementFunctions";
 
-export const EngagementsSelector = () => {
+export const EngagementsSelector = ({ props }) => {
   return (
     <div className="p-3 flex flex-wrap justify-center ml-auto mr-auto overflow-auto whitespace-nowrap items-center">
       <div className="md:mb-2 md:ml-0 ml-2">
-        <PopoverBtns>
-          <BsSuitHeartFill className="ml-auto mr-auto" />
-          <PopoverBtnText>Likes</PopoverBtnText>
-        </PopoverBtns>
-      </div>
-      <div className="md:mb-2 md:ml-0 ml-2">
+        <ShowLikes props={props} />
+
         <PopoverBtns>
           <AiOutlineRetweet className="ml-auto mr-auto" />
           <PopoverBtnText>Retweets</PopoverBtnText>
