@@ -245,7 +245,7 @@ export async function getServerSideProps(context) {
     { headers }
   );
   const initialRes = await fetch(
-    `https://api.twitter.com/2/tweets/1533380474243977217?expansions=author_id,attachments.media_keys&user.fields=profile_image_url,verified&tweet.fields=created_at,attachments,public_metrics,entities,source&media.fields=preview_image_url,url`,
+    `https://api.twitter.com/2/tweets/1533448928242417666?expansions=author_id,attachments.media_keys&user.fields=profile_image_url,verified&tweet.fields=created_at,attachments,public_metrics,entities,source&media.fields=preview_image_url,url`,
     { headers }
   );
 
