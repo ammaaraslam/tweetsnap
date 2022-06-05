@@ -9,7 +9,6 @@ import { useRouter } from "next/router";
 import SearchBar from "../components/SearchBar";
 import { MdOutlineCamera } from "react-icons/md";
 import domtoimage from "dom-to-image";
-import axios from "axios";
 import { saveAs } from "file-saver";
 
 export default function Home({ results }) {

@@ -4,11 +4,11 @@
   </a>
 </p>
 <h1 align="center">
-  <a href="https://tweetsnap.vercel.app" target="blank">TweetSnap</a>
+  <a href="https://tweetsnap.vercel.app" target="blank"><strong>TweetSnap</strong></a>
 </h1>
 
 <p align="center">
-  Create Beautiful Images of Tweets
+  <strong>Create Beautiful Images of Tweets</strong>
 </p>
 
 <p align="center">
@@ -56,4 +56,42 @@
 </a>
 
 
->🚨🚧Still Under Construction🚧🚨<br>
+<p align="center">
+TweetSnap is an opensource platform that lets you create beautiful images of tweets using an easy-to-use and simple interface. It comes packed with tons of cool features to make you create a unique image.
+</p>
+
+## 🧐 **Features**
+
+Here are some of the awesome features of TweetSnap.
+- 🌓 **Website Light/Dark Mode**
+- 🎨 **Change background color of images**
+-  ⏬ **Download as PNG**
+- 📱 **Size support for** ***Instagram Posts, Instagram Stories, FaceBook Posts and WhatsApp Status***
+- 🌱 **Show/Hide Tweet Metrics** ***(Likes, Retweets, Replies, Date/Time, Source)***
+- 🌓 **Light/Dark mode support for Tweet**
+- 🔠 **Resize Content of Tweet**
+  
+> **More Features Coming Soon!!🚀**<br>
+> If have any suggestions for future features, let me know here or shoot me a tweet [@itsammaar_7](https://twitter.com/itsammaar_7)
+
+## 🏗 **Built With**
+
+Here is what TweetSnap uses behind the scenes.
+
+- [NextJS](https://nextjs.org/)
+- [TailwindCSS](https://tailwindcss.com/) - Styling
+- [Vercel](https://vercel.com/) - Hosting
+- [React Icons](https://react-icons.github.io/react-icons) - Beautiful Icons
+- [Next Themes](https://github.com/pacocoursey/next-themes) - Theming
+- [file-saver](https://github.com/eligrey/FileSaver.js) - Download Image
+- [dom-to-image](https://github.com/tsayen/dom-to-image) - Convert to PNG
+- [date-fns](https://date-fns.org/) - Format Data/Time
+
+## 👨‍💻 **Author**
+<strong><h2>Ammaar Aslam</h2></strong>
+<p>
+<strong>Twitter 🐦</strong> - <a href="https://twitter.com/itsammaar_7" target="_blank">@itsammaar_7</a> <br>
+<strong>Instagram 📸</strong> - <a href="https://www.instagram.com/its.ammaar_7" target="_blank">@itsammaar_7</a> <br>
+<strong>GitHub 🐱</strong> - <a href="https://github.com/ammaaraslam" target="_blank">@ammaaraslam</a> <br>
+<strong>Hashnode 📚</strong> - <a href="https://hashnode.com/@ammaaraslam" target="_blank">@ammaaraslam</a> <br>
+</p>
