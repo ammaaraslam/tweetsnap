@@ -11,6 +11,11 @@ const Tweet = ({
   cardContentSize,
   cardFontColor,
   likeDisplay,
+  retweetDisplay,
+  replyDisplay,
+  dateTimeDisplay,
+  sourceDisplay,
+  bullDisplay,
 }) => {
   return (
     <div
@@ -74,34 +79,43 @@ const Tweet = ({
             href="https://twitter.com/naval/status/1002104154737684480"
             target="_blank"
             rel="noopener noreferrer"
+            style={{ display: dateTimeDisplay }}
           >
             8:27 AM - June 01, 2022
           </a>
-          <span className="ml-1">•</span>
+
+          <span className="ml-1">
+            {dateTimeDisplay == "inline-flex" && sourceDisplay == "inline-flex"
+              ? "•"
+              : ""}
+          </span>
           <a
             class=" hover:underline ml-1"
             href="https://twitter.com/naval/status/1002104154737684480"
             target="_blank"
             rel="noopener noreferrer"
+            style={{ display: sourceDisplay }}
           >
             Twitter for Web
           </a>
         </div>
         <div class="flex mt-1 font-normal text-base">
           <a
-            className="flex items-center mr-4 hover:text-blue-600 transition hover:underline"
+            className="items-center mr-4 hover:text-blue-600 transition hover:underline"
             href="#"
             target="_blank"
             rel="noopener noreferrer"
+            style={{ display: replyDisplay }}
           >
             <span>117</span>
             <span className="text-grey ml-1">Replies</span>
           </a>
           <a
-            className="flex items-center mr-4 hover:text-green-600 transition hover:underline"
+            className="items-center mr-4 hover:text-green-600 transition hover:underline"
             href="#"
             target="_blank"
             rel="noopener noreferrer"
+            style={{ display: retweetDisplay }}
           >
             <span>5,434</span>
             <span className="text-grey ml-1">Retweets</span>

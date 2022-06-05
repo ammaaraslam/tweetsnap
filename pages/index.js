@@ -20,6 +20,10 @@ export default function Home() {
   const [height, setHeight] = useState("400px");
   const [cardContentSize, setCardContentSize] = useState("1.125rem");
   const [likeDisplay, setLikeDisplay] = useState("show");
+  const [retweetDisplay, setRetweetDisplay] = useState("show");
+  const [sourceDisplay, setSourceDisplay] = useState("show");
+  const [dateTimeDisplay, setDateTimeDisplay] = useState("show");
+  const [replyDisplay, setReplyDisplay] = useState("show");
 
   const propsForSettings = {
     bg,
@@ -38,6 +42,14 @@ export default function Home() {
     setCardFontColor,
     likeDisplay,
     setLikeDisplay,
+    retweetDisplay,
+    setRetweetDisplay,
+    sourceDisplay,
+    setSourceDisplay,
+    dateTimeDisplay,
+    setDateTimeDisplay,
+    replyDisplay,
+    setReplyDisplay,
   };
 
   const onSubmit = async (e) => {
@@ -79,6 +91,10 @@ export default function Home() {
             cardContentSize={cardContentSize}
             cardFontColor={cardFontColor}
             likeDisplay={likeDisplay}
+            retweetDisplay={retweetDisplay}
+            replyDisplay={replyDisplay}
+            dateTimeDisplay={dateTimeDisplay}
+            sourceDisplay={sourceDisplay}
           />
           <Settings props={propsForSettings} />
         </div>
