@@ -11,6 +11,9 @@ export const ImageSizeSelector = ({ props }) => {
 
   const igPostWidth = "500px";
   const igPostHeight = "650px";
+  const igPostMobileWidth = "150px";
+  const igPostMobileHeight = "160px";
+
   const igStoryWidth = "525px";
   const igStoryHeight = "675px";
   const fbPostWidth = "500px";

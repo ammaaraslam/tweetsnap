@@ -19,7 +19,7 @@ const Tweet = ({
 }) => {
   return (
     <div
-      className="md:w-1/2 md:h-4/6 w-5/6 h-2/5 ml-auto mr-auto md:ml-20 rounded-3xl flex justify-center items-center"
+      className="ml-auto mr-auto md:ml-20 rounded-3xl flex justify-center items-center md:scale-100 scale-50"
       style={{ background: bg, width: width, height: height }}
     >
       <div

@@ -64,7 +64,7 @@ export default function Home() {
         <link rel="icon" href="/Logo.svg" />
       </Head>
 
-      <main className="w-full h-screen bg-light dark:bg-dark md:overflow-hidden transition-all duration-300">
+      <main className="w-full md:h-screen h-fit bg-light dark:bg-dark md:overflow-hidden overflow-auto transition-all duration-300">
         {/* Modal */}
         <Modal />
         {/* Header - Logo + Search + Theme Toggle */}
@@ -99,7 +99,7 @@ export default function Home() {
           <Settings props={propsForSettings} />
         </div>
         {/* Footer */}
-        <div className="absolute inline-flex bottom-0 p-2 w-full justify-center items-center">
+        <div className="inline-flex p-2 w-full justify-center items-center">
           <a
             href="https://twitter.com/itsammaar_7"
             target="_blank"
