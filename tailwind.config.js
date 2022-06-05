@@ -26,6 +26,9 @@ module.exports = {
         6: "10rem",
       },
     },
+    fontFamily: {
+      sans: ['"Oswald"', "sans-serif"],
+    },
     colors: {
       light: "#EBF7FF",
       dark: "#000C14",

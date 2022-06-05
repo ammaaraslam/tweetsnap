@@ -122,7 +122,7 @@ export default function Home({ results }) {
         <link rel="icon" href="/Logo.svg" />
       </Head>
 
-      <main className="w-full md:h-screen h-fit bg-light dark:bg-dark overflow-auto transition-all duration-300">
+      <main className="w-full md:h-screen h-fit bg-light dark:bg-dark overflow-auto transition-all duration-300 font-sans">
         {/* Modal */}
         <Modal />
         {/* Header - Logo + Search + Theme Toggle */}

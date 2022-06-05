@@ -108,7 +108,7 @@ const Tweet = ({
               class="flex flex-col ml-0"
             >
               <span
-                class="flex items-center font-bold leading-5 text-xl"
+                class="flex items-center font-bold leading-5 text-xl font-sans"
                 title={name}
               >
                 {name}
@@ -125,7 +125,7 @@ const Tweet = ({
               <FaTwitter className="-mt-5 text-xl" />
             </a>
           </div>
-          <div class="mt-4 mb-2 leading-normal whitespace-pre-wrap text-lg font-normal">
+          <div class="mt-4 mb-2 leading-normal whitespace-pre-wrap text-lg font-normal font-serif">
             {tweetText.split(" ").map((str) => {
               if (str.startsWith("#")) {
                 const hashtag = str.slice(1);
@@ -161,7 +161,7 @@ const Tweet = ({
 
           <div className="text-grey text-base mt-3 mb-1">
             <a
-              class=" hover:underline"
+              class=" hover:underline font-sans"
               href="https://twitter.com/naval/status/1002104154737684480"
               target="_blank"
               rel="noopener noreferrer"
