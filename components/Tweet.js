@@ -1,6 +1,7 @@
 import { MdVerified } from "react-icons/md";
 import { FaTwitter } from "react-icons/fa";
 import Image from "next/image";
+import format from "date-fns/format";
 
 const Tweet = ({
   bg,
@@ -25,16 +26,23 @@ const Tweet = ({
   replyCount,
   retweetCount,
   dateTime,
-  urls,
+  tweetURLs,
   tweetImages,
-  isTweetImages,
+  image,
 }) => {
+  const urls = tweetURLs;
+
   const linkregex = /(https?:\/\/[^\s]+)/g;
-  const link_occurs = text.match(linkregex);
+
+  let tweetText = text;
+  const link_occurs = tweetText.match(linkregex);
 
   if (urls && tweetImages) {
-    text = text.replace(
-      text.slice(urls[urls.length - 1].start, urls[urls.length - 1].end + 1),
+    tweetText = tweetText.replace(
+      tweetText.slice(
+        urls[urls.length - 1].start,
+        urls[urls.length - 1].end + 1
+      ),
       ""
     );
   }
@@ -42,8 +50,8 @@ const Tweet = ({
   link_occurs?.forEach((link, i) => {
     if (!tweetImages) {
       const corres_url = urls[i];
-      text = text.replace(
-        text.slice(corres_url.start, corres_url.end),
+      tweetText = tweetText.replace(
+        tweetText.slice(corres_url.start, corres_url.end),
         corres_url.expanded_url
       );
     } else {
@@ -51,22 +59,23 @@ const Tweet = ({
         return;
       } else {
         const corres_url = urls[i];
-        text = text.replace(
-          text.slice(corres_url.start, corres_url.end),
+        tweetText = tweetText.replace(
+          tweetText.slice(corres_url.start, corres_url.end),
           corres_url.expanded_url
         );
       }
     }
   });
 
-  text = text.replace("&amp;", "&");
+  tweetText = tweetText.replace("&amp;", "&");
+  const newDateTime = new Date(dateTime);
   return (
     <div
-      className="ml-auto mr-auto md:ml-20 rounded-3xl flex justify-center items-center md:scale-100 scale-50"
+      className="ml-auto mr-auto md:ml-20 rounded-3xl flex justify-center items-center md:scale-100 scale-50 h-3/4 overflow-scroll pt-8 pb-8"
       style={{ background: bg, width: width, height: height }}
     >
       <div
-        class="md:w-5/6 md:h-fit w-5/6 h-fit rounded-3xl p-4"
+        class="md:w-5/6 md:h-fit w-5/6 h-fit rounded-3xl p-4 mt-auto mb-auto"
         style={{
           background: cardColor,
           opacity: opacity,
@@ -114,9 +123,11 @@ const Tweet = ({
           </a>
         </div>
         <div class="mt-4 mb-2 leading-normal whitespace-pre-wrap text-lg font-normal">
-          {text}
+          {tweetText}
         </div>
-        {isTweetImages && <Image src={isTweetImages} mt="2" fit="cover" />}
+        <div className="w-full h-3/4">
+          {image && <img src={image} className="mt-2 rounded-2xl" />}
+        </div>
 
         <div className="text-grey text-base mt-3 mb-1">
           <a
@@ -126,7 +137,7 @@ const Tweet = ({
             rel="noopener noreferrer"
             style={{ display: dateTimeDisplay }}
           >
-            {dateTime}
+            {newDateTime && format(newDateTime, "h:mm a - LLL d, yyyy ")}
           </a>
 
           <span className="ml-1">

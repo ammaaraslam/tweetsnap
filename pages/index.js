@@ -78,7 +78,7 @@ export default function Home({ results }) {
         <link rel="icon" href="/Logo.svg" />
       </Head>
 
-      <main className="w-full md:h-screen h-fit bg-light dark:bg-dark md:overflow-hidden overflow-auto transition-all duration-300">
+      <main className="w-full md:h-screen h-fit bg-light dark:bg-dark overflow-auto transition-all duration-300">
         {/* Modal */}
         <Modal />
         {/* Header - Logo + Search + Theme Toggle */}
@@ -139,16 +139,16 @@ export default function Home({ results }) {
             replyCount={results.data.public_metrics.reply_count}
             retweetCount={results.data.public_metrics.retweet_count}
             dateTime={results.data.created_at}
-            urls={results.data?.entities.urls}
+            tweetURLs={results.data?.entities?.urls}
             tweetImages={results.includes.media}
-            isTweetImages={
+            image={
               results.includes?.media ? results.includes.media[0].url : null
             }
           />
           <Settings props={propsForSettings} />
         </div>
         {/* Footer */}
-        <div className="inline-flex p-2 w-full justify-center items-center">
+        <div className="absolute bottom-1 inline-flex p-2 w-full justify-center items-center">
           <a
             href="https://twitter.com/itsammaar_7"
             target="_blank"
