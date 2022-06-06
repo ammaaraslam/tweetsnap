@@ -3,7 +3,7 @@ import { useState } from "react";
 import { AiOutlineFontSize } from "react-icons/ai";
 
 const small = "1.125rem";
-const big = "1.5rem";
+const big = "1.25rem";
 
 const CardContentSizeSelector = ({ props }) => {
   const [contentSize, setContentSize] = useState(small);
