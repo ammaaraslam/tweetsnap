@@ -3,7 +3,7 @@ export const SettingsActionButton = ({ children, handleOnClick }) => {
     <button
       type="button"
       onClick={handleOnClick}
-      className={`p-2 md:text-3xl text-2xl rounded-xl min-w-5 max-w-5 text-center text-textSDark  hover:text-textS  hover:bg-textSDark dark:hover:bg-textS dark:text-textS dark:hover:text-textSDark focus:text-textS  focus:bg-textSDark dark:focus:bg-textS dark:focus-textS dark:focus:text-textSDark transition-all duration-200`}
+      className={`p-2 md:text-3xl text-2xl rounded-xl min-w-5 max-w-5 text-center text-textSDark  hover:text-textS  hover:bg-textSDark dark:hover:bg-textS dark:text-textS dark:hover:text-textSDark transition-all duration-200`}
     >
       {children}
     </button>
