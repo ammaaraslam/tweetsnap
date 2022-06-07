@@ -12,6 +12,7 @@ import { MdOpacity } from "react-icons/md";
 import { BsTextareaResize, BsDownload } from "react-icons/bs";
 import { IoCopy } from "react-icons/io5";
 import { FiZoomIn } from "react-icons/fi";
+import { CgSpinner } from "react-icons/cg";
 import { Popover } from "./Popover";
 import {
   SettingsActionButton,
@@ -69,6 +70,9 @@ const Settings = ({ props }) => {
     };
   }, [sizeOpen, cSizeOpen, opacityOpen, engagementsOpen]);
 
+  const handleDownloading = () => {
+    setDownloading(true);
+  };
   return (
     <div
       className={`md:w-settings md:h-fit w-11/12 ml-auto mr-auto mt-[5.5rem]  md:mt-0 bg-textS dark:bg-textSDark md:mr-24 rounded-3xl p-2`}
@@ -140,11 +144,18 @@ const Settings = ({ props }) => {
           </div>
         </div> */}
         <SettingsButton
-          handleOnClick={() => props.convert("png")}
+          handleOnClick={() => {
+            props.setDownloading(true);
+            props.convert("png");
+          }}
           btnType="primary"
         >
           Download
-          <BsDownload className="ml-3" />
+          {props.downloading ? (
+            <CgSpinner className="ml-3 animate-spin " />
+          ) : (
+            <BsDownload className="ml-3" />
+          )}
         </SettingsButton>
       </div>
     </div>

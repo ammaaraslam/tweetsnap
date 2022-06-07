@@ -28,6 +28,7 @@ export default function Home({ results }) {
   const [sourceDisplay, setSourceDisplay] = useState("show");
   const [dateTimeDisplay, setDateTimeDisplay] = useState("show");
   const [replyDisplay, setReplyDisplay] = useState("show");
+  const [downloading, setDownloading] = useState(false);
 
   const tweetRef = useRef(null);
 
@@ -55,6 +56,7 @@ export default function Home({ results }) {
       case "png": {
         dataUrl = await domtoimage.toPng(node, param);
         saveAs(dataUrl, `${new Date().toJSON()}.${format}`);
+        setDownloading(false);
         return;
       }
 
@@ -98,6 +100,8 @@ export default function Home({ results }) {
     replyDisplay,
     setReplyDisplay,
     convert,
+    downloading,
+    setDownloading,
   };
   const [ID, setID] = useState(" ");
 
