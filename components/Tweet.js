@@ -96,7 +96,7 @@ const Tweet = ({
           <Loading loaderColor={cardColor} />
         ) : (
           <div
-            class="md:w-5/6 md:h-fit w-11/12 h-fit rounded-3xl md:p-4 p-2 mt-auto mb-auto font-robotoCondensed"
+            class="md:w-5/6 md:h-fit w-11/12 h-fit rounded-3xl md:p-4 p-3 mt-auto mb-auto font-robotoCondensed"
             style={{
               background: cardColor,
               opacity: opacity,

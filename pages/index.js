@@ -228,7 +228,7 @@ export default function Home({ results }) {
           <Settings props={propsForSettings} />
         </div>
         {/* Footer */}
-        <div className="absolute bottom-1 inline-flex p-2 w-full justify-center items-center">
+        <div className="md:absolute bottom-0 inline-flex p-2 w-full justify-center items-center">
           <a
             href="https://twitter.com/itsammaar_7"
             target="_blank"
