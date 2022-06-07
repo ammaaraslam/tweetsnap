@@ -153,7 +153,7 @@ export default function Home({ results }) {
           <button
             type="submit"
             onClick={search}
-            className="p-2 font-medium w-16 h-12 items-center text-center text-secondary hover:text-textLight dark:hover:text-textDark  bg-text dark:bg-textDark border-2 border-secondary dark:border-secondary  hover:bg-secondary dark:hover:bg-secondary absolute rounded-2xl -translate-x-16 transition-all duration-200"
+            className="p-2 font-medium w-16 h-12 items-center text-center text-secondary hover:text-textLight dark:hover:text-textDark  bg-textLight dark:bg-textDark border-2 border-secondary dark:border-secondary  hover:bg-secondary dark:hover:bg-secondary absolute rounded-2xl -translate-x-16 transition-all duration-200"
           >
             <MdOutlineCamera className="ml-auto mr-auto text-2xl" />
           </button>

@@ -34,13 +34,13 @@ const Modal = () => {
                   </p>
                   <p>
                     If you find TweetSnap to be useful, consider following me on
-                    twitter and sharing your valuable feedback
+                    twitter and sharing your valuable feedback{" "}
                     <a
                       href="https://twitter.com/itsammaar_7"
                       target="_blank"
                       className="text-primary"
                     >
-                      @itsammaar_7
+                      @itsammaar_7{" "}
                     </a>
                     and let me know how I can improve this website.
                   </p>

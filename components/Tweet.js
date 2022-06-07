@@ -170,14 +170,14 @@ const Tweet = ({
               {newDateTime && format(newDateTime, "h:mm a - LLL d, yyyy ")}
             </a>
 
-            <span className="ml-1">
+            <span className="ml-1 mr-1">
               {dateTimeDisplay == "inline-flex" &&
               sourceDisplay == "inline-flex"
                 ? "•"
                 : ""}
             </span>
             <a
-              class=" hover:underline ml-1"
+              class=" hover:underline"
               href="https://twitter.com/naval/status/1002104154737684480"
               target="_blank"
               rel="noopener noreferrer"
