@@ -4,7 +4,7 @@ import Modal from "../components/Modal";
 import Head from "next/head";
 import Tweet from "../components/Tweet";
 import Settings from "../components/Settings";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import SearchBar from "../components/SearchBar";
 import { MdOutlineCamera } from "react-icons/md";
@@ -103,8 +103,6 @@ export default function Home({ results }) {
     downloading,
     setDownloading,
   };
-  const [ID, setID] = useState(" ");
-
   const router = useRouter();
   const searchInputRef = useRef(null);
   function search(e) {
@@ -112,11 +110,35 @@ export default function Home({ results }) {
     const url = searchInputRef.current.value;
     if (!url) return;
     const id = url.split("/")[5];
-    router.push(`/?term=${id}`);
+    router.push(`/?id=${id}`);
   }
   const onSubmit = async (e) => {
     e.preventDefault();
   };
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const jssStyles = document.querySelector("#jss-server-side");
+    if (jssStyles) jssStyles.parentElement.removeChild(jssStyles);
+
+    const start = () => {
+      console.log("start");
+      setLoading(true);
+    };
+    const end = () => {
+      console.log("findished");
+      setLoading(false);
+    };
+
+    router.events.on("routeChangeStart", start);
+    router.events.on("routeChangeComplete", end);
+    router.events.on("routeChangeError", end);
+    return () => {
+      router.events.off("routeChangeStart", start);
+      router.events.off("routeChangeComplete", end);
+      router.events.off("routeChangeError", end);
+    };
+  }, []);
 
   return (
     <div>
@@ -193,6 +215,7 @@ export default function Home({ results }) {
               results.includes?.media ? results.includes.media[0].url : null
             }
             tweetRef={tweetRef}
+            isLoading={loading}
           />
           <Settings props={propsForSettings} />
         </div>
@@ -244,7 +267,7 @@ export async function getServerSideProps(context) {
   };
 
   const res = await fetch(
-    `https://api.twitter.com/2/tweets/${context.query.term}?expansions=author_id,attachments.media_keys&user.fields=profile_image_url,verified&tweet.fields=created_at,attachments,public_metrics,entities,source&media.fields=preview_image_url,url`,
+    `https://api.twitter.com/2/tweets/${context.query.id}?expansions=author_id,attachments.media_keys&user.fields=profile_image_url,verified&tweet.fields=created_at,attachments,public_metrics,entities,source&media.fields=preview_image_url,url`,
     { headers }
   );
   const initialRes = await fetch(
@@ -252,7 +275,7 @@ export async function getServerSideProps(context) {
     { headers }
   );
 
-  if (!context.query.term) {
+  if (!context.query.id) {
     const results = await initialRes.json();
     return {
       props: {
