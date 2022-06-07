@@ -2,8 +2,8 @@ import { PopoverBtns } from "../Popover";
 
 export default function OpacitySelector({ props }) {
   return (
-    <div className="p-2 flex flex-wrap justify-center ml-auto mr-auto overflow-auto whitespace-nowrap items-center">
-      <div className="md:mb-2 md:ml-0 ml-2">
+    <div className="p-2 flex flex-nowrap md:justify-center ml-auto mr-auto overflow-x-auto whitespace-nowrap items-center">
+      <div className="popover-btn md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
             props.setOpacity(1);
