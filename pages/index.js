@@ -45,9 +45,11 @@ export default function Home({ results }) {
     let dataUrl;
 
     const style = {
-      transform: "scale(1.9)",
+      transform: "scale(1.8)",
       transformOrigin: "top left",
       left: "0px",
+      height: "auto",
+      width: "auto",
     };
 
     const param = {
@@ -154,7 +156,7 @@ export default function Home({ results }) {
         <link rel="icon" href="/Logo.svg" />
       </Head>
 
-      <main className="w-full md:h-screen h-fit bg-light dark:bg-dark overflow-auto transition-all duration-300">
+      <main className="w-full md:h-screen h-fit bg-light dark:bg-dark md:overflow-hidden overflow-auto transition-all duration-300">
         {/* Modal */}
         <Modal />
         {/* Header - Logo + Search + Theme Toggle */}
@@ -191,7 +193,7 @@ export default function Home({ results }) {
           </button>
         </form>
         {/* Main Body */}
-        <div className="w-full h-3/4 mt-7 md:flex items-center justify-between">
+        <div className="w-full h-3/4 mt-7 md:flex items-center justify-center md:justify-between">
           <Tweet
             bg={bg}
             cardColor={cardColor}

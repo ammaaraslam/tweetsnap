@@ -87,16 +87,16 @@ const Tweet = ({
   console.log(getHashtag);
   const newDateTime = new Date(dateTime);
   return (
-    <div ref={tweetRef}>
+    <div ref={tweetRef} className="ml-auto mr-auto flex">
       <div
-        className="ml-auto mr-auto md:ml-20 rounded-3xl flex justify-center items-center md:scale-100 scale-50 h-3/4 overflow-auto pt-8 pb-8"
+        className="ml-auto mr-auto md:ml-20 rounded-3xl flex justify-center items-center md:scale-100 scale-95 overflow-auto pt-8 pb-8"
         style={{ background: bg, width: width, height: height }}
       >
         {isLoading ? (
           <Loading loaderColor={cardColor} />
         ) : (
           <div
-            class="md:w-5/6 md:h-fit w-5/6 h-fit rounded-3xl p-4 mt-auto mb-auto font-robotoCondensed"
+            class="md:w-5/6 md:h-fit w-11/12 h-fit rounded-3xl md:p-4 p-2 mt-auto mb-auto font-robotoCondensed"
             style={{
               background: cardColor,
               opacity: opacity,
