@@ -156,7 +156,7 @@ export default function Home({ results }) {
         <link rel="icon" href="/Logo.svg" />
       </Head>
 
-      <main className="w-full md:h-screen h-fit bg-light dark:bg-dark overflow-auto transition-all duration-300">
+      <main className="w-full md:h-screen h-fit bg-light dark:bg-dark md:overflow-hidden overflow-auto transition-all duration-300">
         {/* Modal */}
         <Modal />
         {/* Header - Logo + Search + Theme Toggle */}
@@ -193,7 +193,7 @@ export default function Home({ results }) {
           </button>
         </form>
         {/* Main Body */}
-        <div className="w-full h-3/4 mt-7 md:flex items-center justify-between">
+        <div className="w-full h-3/4 mt-7 md:flex items-center justify-center md:justify-between">
           <Tweet
             bg={bg}
             cardColor={cardColor}
@@ -228,7 +228,7 @@ export default function Home({ results }) {
           <Settings props={propsForSettings} />
         </div>
         {/* Footer */}
-        <div className="absolute bottom-1 inline-flex p-2 w-full justify-center items-center">
+        <div className="md:absolute bottom-0 inline-flex p-2 w-full justify-center items-center">
           <a
             href="https://twitter.com/itsammaar_7"
             target="_blank"
