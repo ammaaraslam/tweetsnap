@@ -7,7 +7,7 @@ const SettingsModal = ({ children, onClose, title }) => {
         <button
           type="button"
           onClick={onClose}
-          className="float-right p-1 text-2xl rounded-xl text-secondary border-2 border-secondary hover:text-dark hover:bg-secondary transition-all duration-200 ease-in-out"
+          className="float-right p-1 text-2xl rounded-xl text-secondary border-2 border-secondary hover:text-dark hover:bg-secondary transition-all duration-300 ease-in-out"
         >
           <IoClose />
         </button>

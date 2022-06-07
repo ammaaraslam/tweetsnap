@@ -17,7 +17,7 @@ function ThemeToggle() {
       <button
         type="button"
         onClick={() => setTheme("light")}
-        className="p-2 text-2xl rounded-xl text-primary border-2 border-primary hover:text-dark hover:bg-primary transition-all duration-200 ease-in-out"
+        className="p-2 text-2xl rounded-xl text-primary border-2 border-primary hover:text-dark hover:bg-primary transition-all duration-300 ease-in-out"
       >
         <IoSunny />
       </button>
@@ -27,7 +27,7 @@ function ThemeToggle() {
     <button
       type="button"
       onClick={() => setTheme("dark")}
-      className="p-2 text-2xl rounded-xl text-primary border-2 border-primary hover:text-light hover:bg-primary transition-all duration-200 ease-in-out"
+      className="p-2 text-2xl rounded-xl text-primary border-2 border-primary hover:text-light hover:bg-primary transition-all duration-300 ease-in-out"
     >
       <IoMoon />
     </button>

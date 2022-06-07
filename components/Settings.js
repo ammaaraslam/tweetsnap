@@ -71,7 +71,7 @@ const Settings = ({ props }) => {
 
   return (
     <div
-      className={`md:w-settings md:h-4/5 w-11/12 ml-auto mr-auto mt-[5.5rem]  md:mt-0 bg-textS dark:bg-textSDark md:mr-24 rounded-3xl p-2 transition-all duration-200`}
+      className={`md:w-settings md:h-4/5 w-11/12 ml-auto mr-auto mt-[5.5rem]  md:mt-0 bg-textS dark:bg-textSDark md:mr-24 rounded-3xl p-2`}
     >
       <div className="grid list-none justify-items-center grid-cols-3 md:grid-cols-2 gap-x-0 md:gap-y-9 md:pt-6 md:pb-9 pb-3 md:pl-1 md:pr-1">
         <SettingsActionButton handleOnClick={() => setShowBgModal(true)}>

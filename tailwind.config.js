@@ -26,6 +26,11 @@ module.exports = {
         6: "10rem",
       },
     },
+    fontFamily: {
+      poppins: ["Poppins", "sans-serif"],
+      franklin: ["Libre Franklin", "sans-serif"],
+      robotoCondensed: ["Roboto Condensed", "sans-serif"],
+    },
     colors: {
       light: "#EBF7FF",
       dark: "#000C14",

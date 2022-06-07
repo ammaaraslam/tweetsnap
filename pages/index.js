@@ -122,7 +122,7 @@ export default function Home({ results }) {
         <link rel="icon" href="/Logo.svg" />
       </Head>
 
-      <main className="w-full md:h-screen h-fit bg-light dark:bg-dark overflow-auto transition-all duration-300 fonts">
+      <main className="w-full md:h-screen h-fit bg-light dark:bg-dark overflow-auto transition-all duration-300">
         {/* Modal */}
         <Modal />
         {/* Header - Logo + Search + Theme Toggle */}
@@ -146,14 +146,14 @@ export default function Home({ results }) {
           </label>
           <input
             ref={searchInputRef}
-            className="h-12 font-medium text-secondary pl-2 pr-16 outline-none bg-text dark:bg-textDark border-2 border-textS dark:border-textSDark rounded-2xl w-full placeholder:text-secondary placeholder:mt-auto placeholder:mb-auto dark:placeholder:text-secondary focus:bg-textS dark:focus:bg-textSDark transition-all duration-200"
+            className="h-12 font-medium text-secondary pl-2 pr-16 outline-none bg-text dark:bg-textDark border-2 border-textS dark:border-textSDark rounded-2xl w-full placeholder:text-secondary placeholder:mt-auto placeholder:mb-auto dark:placeholder:text-secondary focus:bg-textS dark:focus:bg-textSDark transition-all duration-300"
             placeholder="Paste/Enter Link to you Tweet"
             type="text"
           />
           <button
             type="submit"
             onClick={search}
-            className="p-2 font-medium w-16 h-12 items-center text-center text-secondary hover:text-textLight dark:hover:text-textDark  bg-textLight dark:bg-textDark border-2 border-secondary dark:border-secondary  hover:bg-secondary dark:hover:bg-secondary absolute rounded-2xl -translate-x-16 transition-all duration-200"
+            className="p-2 font-medium w-16 h-12 items-center text-center text-secondary hover:text-textLight dark:hover:text-textDark  bg-textLight dark:bg-textDark border-2 border-secondary dark:border-secondary  hover:bg-secondary dark:hover:bg-secondary absolute rounded-2xl -translate-x-16 transition-all duration-300"
           >
             <MdOutlineCamera className="ml-auto mr-auto text-2xl" />
           </button>
@@ -197,7 +197,7 @@ export default function Home({ results }) {
           <a
             href="https://twitter.com/itsammaar_7"
             target="_blank"
-            className="text-center font-semibold text-textDark dark:text-textLight hover:text-secondary dark:hover:text-secondary transition-all duration-200"
+            className="text-center font-semibold text-textDark dark:text-textLight hover:text-secondary dark:hover:text-secondary transition-all duration-300"
           >
             {credits}
           </a>

@@ -80,7 +80,7 @@ const Tweet = ({
         style={{ background: bg, width: width, height: height }}
       >
         <div
-          class="md:w-5/6 md:h-fit w-5/6 h-fit rounded-3xl p-4 mt-auto mb-auto"
+          class="md:w-5/6 md:h-fit w-5/6 h-fit rounded-3xl p-4 mt-auto mb-auto font-robotoCondensed"
           style={{
             background: cardColor,
             opacity: opacity,
@@ -188,7 +188,7 @@ const Tweet = ({
           </div>
           <div class="flex mt-1">
             <a
-              className="items-center mr-4  transition hover:underline"
+              className="items-center mr-3  transition hover:underline"
               href="#"
               target="_blank"
               rel="noopener noreferrer"
@@ -198,7 +198,7 @@ const Tweet = ({
               <span className="text-grey ml-1">Replies</span>
             </a>
             <a
-              className="items-center mr-4 transition hover:underline"
+              className="items-center mr-3 transition hover:underline"
               href="#"
               target="_blank"
               rel="noopener noreferrer"

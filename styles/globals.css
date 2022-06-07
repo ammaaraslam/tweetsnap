@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url("https://fonts.googleapis.com/css2?family=Passion+One:wght@700&display=swap");
 ::-webkit-scrollbar {
   width: 2px;
   height: 2px;
