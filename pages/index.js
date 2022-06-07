@@ -245,36 +245,9 @@ export default function Home({ results }) {
   );
 }
 
-// export const getServerSideProps = async () => {
-//   const fetchedTweet = await fetchNewTweet();
-//   return { props: { fetchedTweet } };
-// };
-
-// export const getServerSideProps = async () => {
-//   const headers = {
-//     Authorization: `Bearer AAAAAAAAAAAAAAAAAAAAAOOIdAEAAAAAX1glYT8gJk%2FhCgNKS0rioot%2F140%3DIDGbmPq2jjz9F1d55HlzpgztNDrx1cd6YXiTLV8b2wgcO8J65q`,
-//   };
-
-//   const res = await fetch(
-//     `https://api.twitter.com/2/tweets/1475915874091606021?expansions=author_id,attachments.media_keys&user.fields=profile_image_url,verified&tweet.fields=created_at,attachments,public_metrics,entities,source&media.fields=preview_image_url,url`,
-//     { headers }
-//   );
-//   const initialTweet = await res.json();
-//   //   // const res = await fetch(
-//   //   //   `https://api.twitter.com/2/tweets/1375809527690317825?expansions=author_id,attachments.media_keys&user.fields=profile_image_url,verified&tweet.fields=created_at,attachments,public_metrics,entities,source&media.fields=preview_image_url,url`,
-//   //   //   { headers }
-//   //   // );
-//   //   // const articles = await res.json();
-//   return {
-//     props: {
-//       initialTweet,
-//     },
-//   };
-// };
-
 export async function getServerSideProps(context) {
   const headers = {
-    Authorization: `Bearer AAAAAAAAAAAAAAAAAAAAAOOIdAEAAAAAX1glYT8gJk%2FhCgNKS0rioot%2F140%3DIDGbmPq2jjz9F1d55HlzpgztNDrx1cd6YXiTLV8b2wgcO8J65q`,
+    Authorization: `Bearer ${process.env.TWITTER_BEARER_TOKEN}`,
   };
 
   const res = await fetch(
