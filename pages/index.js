@@ -18,11 +18,12 @@ export default function Home({ results }) {
   );
   const [cardColor, setCardColor] = useState("#FFFFFF");
   const [cardFontColor, setCardFontColor] = useState("#000000");
+  const small = "1.125rem";
 
   const [opacity, setOpacity] = useState(1);
   const [width, setWidth] = useState("600px");
   const [height, setHeight] = useState("400px");
-  const [cardContentSize, setCardContentSize] = useState("1.125rem");
+  const [cardContentSize, setCardContentSize] = useState(small);
   const [likeDisplay, setLikeDisplay] = useState("flex");
   const [retweetDisplay, setRetweetDisplay] = useState("show");
   const [sourceDisplay, setSourceDisplay] = useState("show");

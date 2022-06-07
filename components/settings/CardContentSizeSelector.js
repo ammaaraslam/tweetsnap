@@ -6,15 +6,13 @@ const small = "1.125rem";
 const big = "1.25rem";
 
 const CardContentSizeSelector = ({ props }) => {
-  const [contentSize, setContentSize] = useState(small);
-  const currentSize = contentSize;
+  const currentSize = props.cardContentSize;
 
   if (currentSize === small) {
     return (
       <SettingsActionButton
         handleOnClick={() => {
-          setContentSize(big);
-          props.setCardContentSize(contentSize);
+          props.setCardContentSize(big);
         }}
       >
         <AiOutlineFontSize className="ml-auto mr-auto text-2xl" />
@@ -25,8 +23,7 @@ const CardContentSizeSelector = ({ props }) => {
   return (
     <SettingsActionButton
       handleOnClick={() => {
-        setContentSize(small);
-        props.setCardContentSize(contentSize);
+        props.setCardContentSize(small);
       }}
     >
       <AiOutlineFontSize className="ml-auto mr-auto text-3xl" />
