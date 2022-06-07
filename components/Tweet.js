@@ -46,45 +46,9 @@ const Tweet = ({
 }) => {
   const urls = tweetURLs;
 
-  const linkregex = /(https?:\/\/[^\s]+)/g;
-
   let tweetText = text;
-  const link_occurs = tweetText.match(linkregex);
-
-  if (urls && tweetImages) {
-    tweetText = tweetText.replace(
-      tweetText.slice(
-        urls[urls.length - 1].start,
-        urls[urls.length - 1].end + 1
-      ),
-      ""
-    );
-  }
-
-  link_occurs?.forEach((link, i) => {
-    if (!tweetImages) {
-      const corres_url = urls[i];
-      tweetText = tweetText.replace(
-        tweetText.slice(corres_url.start, corres_url.end),
-        corres_url.expanded_url
-      );
-    } else {
-      if (i === link_occurs.length - 1) {
-        return;
-      } else {
-        const corres_url = urls[i];
-        tweetText = tweetText.replace(
-          tweetText.slice(corres_url.start, corres_url.end),
-          corres_url.expanded_url
-        );
-      }
-    }
-  });
 
   tweetText = tweetText.replace("&amp;", "&");
-  const getHashtag = tweetText.match("#");
-  console.log(link_occurs);
-  console.log(getHashtag);
   const newDateTime = new Date(dateTime);
   return (
     <div ref={tweetRef} className="ml-auto mr-auto flex">
@@ -163,6 +127,14 @@ const Tweet = ({
                       target="_blank"
                       className="text-primary"
                     >
+                      {str}{" "}
+                    </a>
+                  );
+                }
+                if (str.startsWith("http") || str.startsWith("https")) {
+                  const url = str;
+                  return (
+                    <a href={url} target="_blank" className="text-primary">
                       {str}{" "}
                     </a>
                   );
