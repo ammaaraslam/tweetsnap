@@ -111,6 +111,7 @@ export default function Home({ results }) {
     downloading,
     setDownloading,
   };
+
   const router = useRouter();
   const searchInputRef = useRef(null);
   function search(e) {
@@ -124,6 +125,7 @@ export default function Home({ results }) {
     e.preventDefault();
   };
   const [loading, setLoading] = useState(false);
+  console.log(results);
 
   useEffect(() => {
     const jssStyles = document.querySelector("#jss-server-side");
@@ -224,6 +226,7 @@ export default function Home({ results }) {
             }
             tweetRef={tweetRef}
             isLoading={loading}
+            tweetID={results.data.id}
           />
           <Settings props={propsForSettings} />
         </div>

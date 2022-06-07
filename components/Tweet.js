@@ -43,6 +43,7 @@ const Tweet = ({
   image,
   tweetRef,
   isLoading,
+  tweetID,
 }) => {
   const urls = tweetURLs;
 
@@ -98,7 +99,7 @@ const Tweet = ({
               </a>
               <a
                 class="ml-auto"
-                href="https://twitter.com"
+                href={`https://twitter.com/${username}/status/${tweetID}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -150,7 +151,7 @@ const Tweet = ({
             <div className="text-grey  mt-3 mb-1">
               <a
                 class=" hover:underline font-sans"
-                href="https://twitter.com/naval/status/1002104154737684480"
+                href={`https://twitter.com/${username}/status/${tweetID}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ display: dateTimeDisplay }}
@@ -166,7 +167,7 @@ const Tweet = ({
               </span>
               <a
                 class=" hover:underline"
-                href="https://twitter.com/naval/status/1002104154737684480"
+                href="https://help.twitter.com/using-twitter/how-to-tweet#source-labels"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ display: sourceDisplay }}
@@ -177,7 +178,7 @@ const Tweet = ({
             <div class="flex mt-1">
               <a
                 className="items-center mr-3  transition hover:underline"
-                href="#"
+                href={`https://twitter.com/${username}/status/${tweetID}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ display: replyDisplay }}
@@ -187,7 +188,7 @@ const Tweet = ({
               </a>
               <a
                 className="items-center mr-3 transition hover:underline"
-                href="#"
+                href={`https://twitter.com/${username}/status/${tweetID}/retweets`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ display: retweetDisplay }}
@@ -197,7 +198,7 @@ const Tweet = ({
               </a>
               <a
                 className="items-center hover:text-red-600 transition hover:underline"
-                href="#"
+                href={`https://twitter.com/${username}/status/${tweetID}/likes`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ display: likeDisplay }}
