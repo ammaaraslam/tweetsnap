@@ -25,7 +25,7 @@ export const ImageSizeSelector = ({ props }) => {
   const [hValue, setHValue] = useState(defaultHeight);
 
   return (
-    <div className="p-2 flex flex-wrap justify-center ml-auto mr-auto overflow-auto items-center">
+    <div className="p-2 flex flex-nowrap md:justify-center ml-auto mr-auto overflow-x-auto whitespace-nowrap items-center">
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
