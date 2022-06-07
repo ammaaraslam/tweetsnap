@@ -16,8 +16,11 @@ export default function Home({ results }) {
   const [bg, setBg] = useState(
     "linear-gradient(106.8deg, rgb(117, 255, 220) 6%, rgb(163, 216, 255) 47.6%, rgb(248, 215, 251) 87.8%)"
   );
-  const [cardColor, setCardColor] = useState("#FFFFFF");
-  const [cardFontColor, setCardFontColor] = useState("#000000");
+  const light = "#FFFFFF";
+  const dark = "#000000";
+
+  const [cardColor, setCardColor] = useState(light);
+  const [cardFontColor, setCardFontColor] = useState(dark);
   const small = "1.125rem";
 
   const [opacity, setOpacity] = useState(1);
