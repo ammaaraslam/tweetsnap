@@ -26,8 +26,8 @@ export default function Home({ results }) {
   const showInline = "inline-flex";
 
   const [opacity, setOpacity] = useState(1);
-  const [width, setWidth] = useState("600px");
-  const [height, setHeight] = useState("400px");
+  const [width, setWidth] = useState("625px");
+  const [height, setHeight] = useState("410px");
   const [cardContentSize, setCardContentSize] = useState(small);
   const [likeDisplay, setLikeDisplay] = useState(show);
   const [retweetDisplay, setRetweetDisplay] = useState(show);

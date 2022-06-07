@@ -11,9 +11,6 @@ export const ImageSizeSelector = ({ props }) => {
 
   const igPostWidth = "500px";
   const igPostHeight = "650px";
-  const igPostMobileWidth = "150px";
-  const igPostMobileHeight = "160px";
-
   const igStoryWidth = "525px";
   const igStoryHeight = "675px";
   const fbPostWidth = "500px";
@@ -21,18 +18,13 @@ export const ImageSizeSelector = ({ props }) => {
   const waStatusWidth = "525px";
   const waStatusHeight = "675px";
 
-  const [wValue, setWValue] = useState(defaultWidth);
-  const [hValue, setHValue] = useState(defaultHeight);
-
   return (
     <div className="p-2 flex md:flex-wrap flex-nowrap md:justify-center ml-auto mr-auto overflow-x-auto items-center">
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setWValue(defaultWidth);
-            props.setWidth(wValue);
-            setHValue(defaultHeight);
-            props.setHeight(hValue);
+            props.setWidth(defaultWidth);
+            props.setHeight(defaultHeight);
           }}
         >
           <BsPhone className="ml-auto mr-auto" />
@@ -42,10 +34,8 @@ export const ImageSizeSelector = ({ props }) => {
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setWValue(igPostWidth);
-            props.setWidth(wValue);
-            setHValue(igPostHeight);
-            props.setHeight(hValue);
+            props.setWidth(igPostWidth);
+            props.setHeight(igPostHeight);
           }}
         >
           <BsInstagram className="ml-auto mr-auto" />
@@ -55,10 +45,8 @@ export const ImageSizeSelector = ({ props }) => {
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setWValue(igStoryWidth);
-            props.setWidth(wValue);
-            setHValue(igStoryHeight);
-            props.setHeight(hValue);
+            props.setWidth(igStoryWidth);
+            props.setHeight(igStoryHeight);
           }}
         >
           <BsInstagram className="ml-auto mr-auto" />
@@ -68,10 +56,8 @@ export const ImageSizeSelector = ({ props }) => {
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setWValue(fbPostWidth);
-            props.setWidth(wValue);
-            setHValue(fbPostHeight);
-            props.setHeight(hValue);
+            props.setWidth(fbPostWidth);
+            props.setHeight(fbPostHeight);
           }}
         >
           <BsFacebook className="ml-auto mr-auto" />
@@ -81,10 +67,8 @@ export const ImageSizeSelector = ({ props }) => {
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setWValue(waStatusWidth);
-            props.setWidth(wValue);
-            setHValue(waStatusHeight);
-            props.setHeight(hValue);
+            props.setWidth(waStatusWidth);
+            props.setHeight(waStatusHeight);
           }}
         >
           <IoLogoWhatsapp className="ml-auto mr-auto" />
