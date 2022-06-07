@@ -10,20 +10,16 @@ import { PopoverBtns, PopoverBtnText } from "../Popover";
 export const ShowLikes = ({ props }) => {
   const show = "flex";
   const hide = "none";
-
-  const [display, setDisplay] = useState(show);
-
-  const currentDisplay = display;
+  const currentDisplay = props.likeDisplay;
   if (currentDisplay == show) {
     return (
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setDisplay(hide);
-            props.setLikeDisplay(display);
+            props.setLikeDisplay(hide);
           }}
         >
-          <IoIosHeart className="ml-auto mr-auto" />
+          <IoIosHeart className="ml-auto mr-auto text-secondary" />
           <PopoverBtnText>Likes</PopoverBtnText>
         </PopoverBtns>
       </div>
@@ -33,11 +29,10 @@ export const ShowLikes = ({ props }) => {
     <div className="md:mb-2 md:ml-0 ml-2">
       <PopoverBtns
         handleOnClick={() => {
-          setDisplay(show);
-          props.setLikeDisplay(display);
+          props.setLikeDisplay(show);
         }}
       >
-        <IoIosHeart className="ml-auto mr-auto text-secondary" />
+        <IoIosHeart className="ml-auto mr-auto" />
         <PopoverBtnText>Likes</PopoverBtnText>
       </PopoverBtns>
     </div>
@@ -48,19 +43,16 @@ export const ShowRetweets = ({ props }) => {
   const show = "flex";
   const hide = "none";
 
-  const [display, setDisplay] = useState(show);
-
-  const currentDisplay = display;
+  const currentDisplay = props.retweetDisplay;
   if (currentDisplay == show) {
     return (
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setDisplay(hide);
-            props.setRetweetDisplay(display);
+            props.setRetweetDisplay(hide);
           }}
         >
-          <AiOutlineRetweet className="ml-auto mr-auto" />
+          <AiOutlineRetweet className="ml-auto mr-auto text-secondary" />
           <PopoverBtnText>Retweets</PopoverBtnText>
         </PopoverBtns>
       </div>
@@ -70,11 +62,10 @@ export const ShowRetweets = ({ props }) => {
     <div className="md:mb-2 md:ml-0 ml-2">
       <PopoverBtns
         handleOnClick={() => {
-          setDisplay(show);
-          props.setRetweetDisplay(display);
+          props.setRetweetDisplay(show);
         }}
       >
-        <AiOutlineRetweet className="ml-auto mr-auto text-secondary" />
+        <AiOutlineRetweet className="ml-auto mr-auto" />
         <PopoverBtnText>Retweets</PopoverBtnText>
       </PopoverBtns>
     </div>
@@ -85,19 +76,16 @@ export const ShowDateTime = ({ props }) => {
   const show = "inline-flex";
   const hide = "none";
 
-  const [display, setDisplay] = useState(show);
-
-  const currentDisplay = display;
+  const currentDisplay = props.dateTimeDisplay;
   if (currentDisplay == show) {
     return (
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setDisplay(hide);
-            props.setDateTimeDisplay(display);
+            props.setDateTimeDisplay(hide);
           }}
         >
-          <BsClockFill className="ml-auto mr-auto" />
+          <BsClockFill className="ml-auto mr-auto text-secondary" />
           <PopoverBtnText>Date/Time</PopoverBtnText>
         </PopoverBtns>
       </div>
@@ -107,11 +95,10 @@ export const ShowDateTime = ({ props }) => {
     <div className="md:mb-2 md:ml-0 ml-2">
       <PopoverBtns
         handleOnClick={() => {
-          setDisplay(show);
-          props.setDateTimeDisplay(display);
+          props.setDateTimeDisplay(show);
         }}
       >
-        <BsClockFill className="ml-auto mr-auto text-secondary" />
+        <BsClockFill className="ml-auto mr-auto" />
         <PopoverBtnText>Date/Time</PopoverBtnText>
       </PopoverBtns>
     </div>
@@ -122,19 +109,16 @@ export const ShowSource = ({ props }) => {
   const show = "inline-flex";
   const hide = "none";
 
-  const [display, setDisplay] = useState(show);
-
-  const currentDisplay = display;
+  const currentDisplay = props.sourceDisplay;
   if (currentDisplay == show) {
     return (
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setDisplay(hide);
-            props.setSourceDisplay(display);
+            props.setSourceDisplay(hide);
           }}
         >
-          <MdTripOrigin className="ml-auto mr-auto" />
+          <MdTripOrigin className="ml-auto mr-auto text-secondary" />
           <PopoverBtnText>Source</PopoverBtnText>
         </PopoverBtns>
       </div>
@@ -144,11 +128,10 @@ export const ShowSource = ({ props }) => {
     <div className="md:mb-2 md:ml-0 ml-2">
       <PopoverBtns
         handleOnClick={() => {
-          setDisplay(show);
-          props.setSourceDisplay(display);
+          props.setSourceDisplay(show);
         }}
       >
-        <MdTripOrigin className="ml-auto mr-auto text-secondary" />
+        <MdTripOrigin className="ml-auto mr-auto" />
         <PopoverBtnText>Source</PopoverBtnText>
       </PopoverBtns>
     </div>
@@ -159,19 +142,16 @@ export const ShowReplies = ({ props }) => {
   const show = "flex";
   const hide = "none";
 
-  const [display, setDisplay] = useState(show);
-
-  const currentDisplay = display;
+  const currentDisplay = props.replyDisplay;
   if (currentDisplay == show) {
     return (
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setDisplay(hide);
-            props.setReplyDisplay(display);
+            props.setReplyDisplay(hide);
           }}
         >
-          <FaRegComment className="ml-auto mr-auto" />
+          <FaRegComment className="ml-auto mr-auto text-secondary" />
           <PopoverBtnText>Replies</PopoverBtnText>
         </PopoverBtns>
       </div>
@@ -181,11 +161,10 @@ export const ShowReplies = ({ props }) => {
     <div className="md:mb-2 md:ml-0 ml-2">
       <PopoverBtns
         handleOnClick={() => {
-          setDisplay(show);
-          props.setReplyDisplay(display);
+          props.setReplyDisplay(show);
         }}
       >
-        <FaRegComment className="ml-auto mr-auto text-secondary" />
+        <FaRegComment className="ml-auto mr-auto" />
         <PopoverBtnText>Replies</PopoverBtnText>
       </PopoverBtns>
     </div>

@@ -22,16 +22,18 @@ export default function Home({ results }) {
   const [cardColor, setCardColor] = useState(light);
   const [cardFontColor, setCardFontColor] = useState(dark);
   const small = "1.125rem";
+  const show = "flex";
+  const showInline = "inline-flex";
 
   const [opacity, setOpacity] = useState(1);
   const [width, setWidth] = useState("600px");
   const [height, setHeight] = useState("400px");
   const [cardContentSize, setCardContentSize] = useState(small);
-  const [likeDisplay, setLikeDisplay] = useState("flex");
-  const [retweetDisplay, setRetweetDisplay] = useState("show");
-  const [sourceDisplay, setSourceDisplay] = useState("show");
-  const [dateTimeDisplay, setDateTimeDisplay] = useState("show");
-  const [replyDisplay, setReplyDisplay] = useState("show");
+  const [likeDisplay, setLikeDisplay] = useState(show);
+  const [retweetDisplay, setRetweetDisplay] = useState(show);
+  const [sourceDisplay, setSourceDisplay] = useState(showInline);
+  const [dateTimeDisplay, setDateTimeDisplay] = useState(showInline);
+  const [replyDisplay, setReplyDisplay] = useState(show);
   const [downloading, setDownloading] = useState(false);
 
   const tweetRef = useRef(null);

@@ -2,24 +2,18 @@ import { IoSunny } from "react-icons/io5";
 import { IoMoon } from "react-icons/io5";
 import { SettingsActionButton, SettingsBtnText } from "./Buttons";
 
-import { useState } from "react";
-
 const light = "#FFFFFF";
 const dark = "#000000";
 
 const CardThemeSelector = ({ props }) => {
-  const [theme, setTheme] = useState(light);
-  const [fontColor, setFontColor] = useState(dark);
-  const currentTheme = theme;
+  const currentTheme = props.cardColor;
 
   if (currentTheme === light) {
     return (
       <SettingsActionButton
         handleOnClick={() => {
-          setTheme(dark);
-          setFontColor(light);
-          props.setCardColor(theme);
-          props.setCardFontColor(fontColor);
+          props.setCardColor(dark);
+          props.setCardFontColor(light);
         }}
       >
         <IoSunny className="ml-auto mr-auto" />
@@ -30,10 +24,8 @@ const CardThemeSelector = ({ props }) => {
   return (
     <SettingsActionButton
       handleOnClick={() => {
-        setTheme(light);
-        props.setCardColor(theme);
-        setFontColor(dark);
-        props.setCardFontColor(fontColor);
+        props.setCardColor(light);
+        props.setCardFontColor(dark);
       }}
     >
       <IoMoon className="ml-auto mr-auto" />
