@@ -1,16 +1,12 @@
-import { useState } from "react";
 import { PopoverBtns } from "../Popover";
 
 export default function OpacitySelector({ props }) {
-  const [value, setValue] = useState(1);
-
   return (
     <div className="p-2 flex flex-wrap justify-center ml-auto mr-auto overflow-auto whitespace-nowrap items-center">
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setValue(1);
-            props.setOpacity(value);
+            props.setOpacity(1);
           }}
         >
           1x
@@ -19,8 +15,7 @@ export default function OpacitySelector({ props }) {
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setValue(0.9);
-            props.setOpacity(value);
+            props.setOpacity(0.9);
           }}
         >
           0.9x
@@ -30,8 +25,7 @@ export default function OpacitySelector({ props }) {
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setValue(0.8);
-            props.setOpacity(value);
+            props.setOpacity(0.8);
           }}
         >
           0.8x
@@ -40,8 +34,7 @@ export default function OpacitySelector({ props }) {
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setValue(0.7);
-            props.setOpacity(value);
+            props.setOpacity(0.7);
           }}
         >
           0.7x
@@ -50,8 +43,7 @@ export default function OpacitySelector({ props }) {
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setValue(0.6);
-            props.setOpacity(value);
+            props.setOpacity(0.6);
           }}
         >
           0.6x
@@ -60,8 +52,7 @@ export default function OpacitySelector({ props }) {
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setValue(0.5);
-            props.setOpacity(value);
+            props.setOpacity(0.5);
           }}
         >
           0.5x
@@ -70,8 +61,7 @@ export default function OpacitySelector({ props }) {
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setValue(0.4);
-            props.setOpacity(value);
+            props.setOpacity(0.4);
           }}
         >
           0.4x
@@ -80,8 +70,7 @@ export default function OpacitySelector({ props }) {
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setValue(0.3);
-            props.setOpacity(value);
+            props.setOpacity(0.3);
           }}
         >
           0.3x
@@ -90,8 +79,7 @@ export default function OpacitySelector({ props }) {
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setValue(0.2);
-            props.setOpacity(value);
+            props.setOpacity(0.2);
           }}
         >
           0.2x
@@ -100,8 +88,7 @@ export default function OpacitySelector({ props }) {
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setValue(0.1);
-            props.setOpacity(value);
+            props.setOpacity(0.1);
           }}
         >
           0.1x
@@ -110,8 +97,7 @@ export default function OpacitySelector({ props }) {
       <div className="md:mb-2 md:ml-0 ml-2">
         <PopoverBtns
           handleOnClick={() => {
-            setValue(0);
-            props.setOpacity(value);
+            props.setOpacity(0);
           }}
         >
           0x
