@@ -2,6 +2,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import logoLight from "../public/LogoLight.svg";
 import logoDark from "../public/LogoDark.svg";
+import Link from "next/link";
 
 export const LogoChange = () => {
   const { systemTheme, theme } = useTheme();
@@ -9,7 +10,7 @@ export const LogoChange = () => {
   if (currentTheme === "dark") {
     return (
       <div className="flex items-center justify-between mb-0 ml-4 transition-all duration-300">
-        <a className="p-0 inline-flex items-center justify-center" href="/">
+        <Link className="p-0 inline-flex items-center justify-center" href="/">
           <Image
             src={logoDark}
             alt="TweetSnap Logo Dark"
@@ -22,13 +23,13 @@ export const LogoChange = () => {
           >
             TweetSnap
           </span>
-        </a>
+        </Link>
       </div>
     );
   } else {
     return (
       <div className="flex items-center justify-between mb-0 ml-4 transition-all duration-300">
-        <a className="p-0 inline-flex items-center justify-center" href="/">
+        <Link className="p-0 inline-flex items-center justify-center" href="/">
           <Image
             src={logoLight}
             alt="TweetSnap Logo Light"
@@ -41,7 +42,7 @@ export const LogoChange = () => {
           >
             TweetSnap
           </span>
-        </a>
+        </Link>
       </div>
     );
   }
