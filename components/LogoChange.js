@@ -4,7 +4,7 @@ import logoLight from "../public/LogoLight.svg";
 import logoDark from "../public/LogoDark.svg";
 
 export const LogoChange = () => {
-  const { systemTheme, theme, setTheme } = useTheme();
+  const { systemTheme, theme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
   if (currentTheme === "light") {
     return (
@@ -37,7 +37,7 @@ export const LogoChange = () => {
           />
           <span
             id="logo-title"
-            className="ml-3 font-extrabold text-3xl text-light font-passion"
+            className="ml-3 font-extrabold text-3xl text-light"
           >
             TweetSnap
           </span>

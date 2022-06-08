@@ -153,8 +153,16 @@ export default function Home({ results }) {
   return (
     <div>
       <Head>
-        <title>TweetSnap</title>
-        <meta name="description" content="TweetSnap" />
+        <title>TweetSnap | Create Beautiful Images of Tweets</title>
+        <meta
+          name="description"
+          content="Tweet to image converter built with NextJS and TailwindCSS"
+        />
+        <meta
+          name="keywords"
+          content="Images, Tweet, Tweet Converter, Twitter, NextJS"
+        />
+        <meta name="author" content="Ammaar Aslam" />
         <link rel="icon" href="/Logo.svg" />
       </Head>
 
