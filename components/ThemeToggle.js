@@ -4,12 +4,6 @@ import { IoMoon } from "react-icons/io5";
 import { useState, useEffect } from "react";
 
 function ThemeToggle() {
-  const [mounted, setMounted] = useState(false);
-  // When mounted on client, now we can show the UI
-  useEffect(() => setMounted(true), []);
-
-  if (!mounted) return null;
-
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
   if (currentTheme === "dark") {
