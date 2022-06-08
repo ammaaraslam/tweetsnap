@@ -240,6 +240,7 @@ export default function Home({ results }) {
           <a
             href="https://twitter.com/itsammaar_7"
             target="_blank"
+            rel="noreferrer"
             className="text-center font-semibold text-textDark dark:text-textLight hover:text-secondary dark:hover:text-secondary transition-all duration-300"
           >
             {credits}
