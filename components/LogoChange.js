@@ -11,18 +11,20 @@ export const LogoChange = () => {
     return (
       <div className="flex items-center justify-between mb-0 ml-4 transition-all duration-300">
         <Link className="p-0 inline-flex items-center justify-center" href="/">
-          <Image
-            src={logoDark}
-            alt="TweetSnap Logo Dark"
-            width={55}
-            height={55}
-          />
-          <span
-            id="logo-title"
-            className="ml-3 font-extrabold text-3xl text-light"
-          >
-            TweetSnap
-          </span>
+          <div>
+            <Image
+              src={logoDark}
+              alt="TweetSnap Logo Dark"
+              width={55}
+              height={55}
+            />
+            <span
+              id="logo-title"
+              className="ml-3 font-extrabold text-3xl text-light"
+            >
+              TweetSnap
+            </span>
+          </div>
         </Link>
       </div>
     );
@@ -30,18 +32,20 @@ export const LogoChange = () => {
     return (
       <div className="flex items-center justify-between mb-0 ml-4 transition-all duration-300">
         <Link className="p-0 inline-flex items-center justify-center" href="/">
-          <Image
-            src={logoLight}
-            alt="TweetSnap Logo Light"
-            width={55}
-            height={55}
-          />
-          <span
-            id="logo-title"
-            className="ml-3 font-extrabold text-3xl text-dark"
-          >
-            TweetSnap
-          </span>
+          <div>
+            <Image
+              src={logoLight}
+              alt="TweetSnap Logo Light"
+              width={55}
+              height={55}
+            />
+            <span
+              id="logo-title"
+              className="ml-3 font-extrabold text-3xl text-dark"
+            >
+              TweetSnap
+            </span>
+          </div>
         </Link>
       </div>
     );
