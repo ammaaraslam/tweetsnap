@@ -61,7 +61,7 @@ const Tweet = ({
           <Loading loaderColor={cardColor} />
         ) : (
           <div
-            class="md:w-5/6 md:h-fit w-11/12 h-fit rounded-3xl md:p-4 p-3 mt-auto mb-auto font-robotoCondensed"
+            className="md:w-5/6 md:h-fit w-11/12 h-fit rounded-3xl md:p-4 p-3 mt-auto mb-auto font-robotoCondensed"
             style={{
               background: cardColor,
               opacity: opacity,
@@ -69,9 +69,9 @@ const Tweet = ({
               color: cardFontColor,
             }}
           >
-            <div class="flex items-center">
+            <div className="flex items-center">
               <a
-                class="flex mr-3"
+                className="flex mr-3"
                 href={`https://twitter.com/${username}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -79,17 +79,17 @@ const Tweet = ({
                 <img
                   alt={name}
                   src={profileImageUrl}
-                  class="rounded-full w-full h-full"
+                  className="rounded-full w-full h-full"
                 />
               </a>
               <a
                 href={`https://twitter.com/${username}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex flex-col ml-0"
+                className="flex flex-col ml-0"
               >
                 <span
-                  class="flex items-center font-bold leading-5  font-sans"
+                  className="flex items-center font-bold leading-5  font-sans"
                   title={name}
                 >
                   {name}
@@ -98,7 +98,7 @@ const Tweet = ({
                 <span className="text-grey font-normal ">@{username}</span>
               </a>
               <a
-                class="ml-auto"
+                className="ml-auto"
                 href={`https://twitter.com/${username}/status/${tweetID}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -106,7 +106,7 @@ const Tweet = ({
                 <FaTwitter className="-mt-5 " />
               </a>
             </div>
-            <div class="mt-4 mb-2 leading-normal whitespace-pre-wrap  font-normal font-serif">
+            <div className="mt-4 mb-2 leading-normal whitespace-pre-wrap  font-normal font-serif">
               {tweetText.split(" ").map((str) => {
                 if (str.startsWith("#")) {
                   const hashtag = str.slice(1);
@@ -150,7 +150,7 @@ const Tweet = ({
 
             <div className="text-grey  mt-3 mb-1">
               <a
-                class=" hover:underline font-sans"
+                className=" hover:underline font-sans"
                 href={`https://twitter.com/${username}/status/${tweetID}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -166,7 +166,7 @@ const Tweet = ({
                   : ""}
               </span>
               <a
-                class=" hover:underline"
+                className=" hover:underline"
                 href="https://help.twitter.com/using-twitter/how-to-tweet#source-labels"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -175,7 +175,7 @@ const Tweet = ({
                 {source}
               </a>
             </div>
-            <div class="flex mt-1">
+            <div className="flex mt-1">
               <a
                 className="items-center mr-3  transition hover:underline"
                 href={`https://twitter.com/${username}/status/${tweetID}`}
