@@ -125,18 +125,15 @@ export default function Home({ results }) {
     e.preventDefault();
   };
   const [loading, setLoading] = useState(false);
-  console.log(results);
 
   useEffect(() => {
     const jssStyles = document.querySelector("#jss-server-side");
     if (jssStyles) jssStyles.parentElement.removeChild(jssStyles);
 
     const start = () => {
-      console.log("start");
       setLoading(true);
     };
     const end = () => {
-      console.log("findished");
       setLoading(false);
     };
 
