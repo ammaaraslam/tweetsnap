@@ -18,8 +18,8 @@ const Modal = () => {
               >
                 <IoClose />
               </button>
-              <div className="p-3 mt-3">
-                <div className="flex justify-center ml-auto mr-auto p-2 text-5xl font-extrabold text-center">
+              <div className="p-2 mt-3">
+                <div className="flex justify-center ml-auto mr-auto p-2 text-5xl font-extrabold text-center font-poppins">
                   <h1>
                     Welcome to{" "}
                     <span className="bg-gradient-to-l from-primary to-secondary bg-no-repeat bg-[length:100%_0.8rem] bg-[0_88%] hover:bg-[length:100%_85%] focus:bg-[length:100%_85%] transition-all duration-300">
@@ -28,9 +28,10 @@ const Modal = () => {
                   </h1>
                 </div>
                 <div className="ml-auto mr-auto p-2 text-xl font-semibold text-left">
-                  <p className="pb-2">
+                  <p className="pb-1">
                     Hi! I'm Ammaar Aslam, the creator of this website. I hope
-                    this tool helps you create a beautiful images from tweets.
+                    this tool helps you create beautiful images from tweets the
+                    way you like.
                   </p>
                   <p>
                     If you find TweetSnap to be useful, consider following me on
