@@ -29,9 +29,9 @@ const Modal = () => {
                 </div>
                 <div className="ml-auto mr-auto p-2 text-xl font-semibold text-left">
                   <p className="pb-1">
-                    Hi! I'm Ammaar Aslam, the creator of this website. I hope
-                    this tool helps you create beautiful images from tweets the
-                    way you like.
+                    Hi! I&apos;m Ammaar Aslam, the creator of this website. I
+                    hope this tool helps you create beautiful images from tweets
+                    the way you like.
                   </p>
                   <p>
                     If you find TweetSnap to be useful, consider following me on
@@ -39,6 +39,8 @@ const Modal = () => {
                     <a
                       href="https://twitter.com/itsammaar_7"
                       target="_blank"
+                      without
+                      rel="noreferrer"
                       className="text-primary"
                     >
                       @itsammaar_7{" "}
@@ -48,7 +50,12 @@ const Modal = () => {
                 </div>
               </div>
               <div className="float-right -mt-3">
-                <a href="https://twitter.com/itsammaar_7" target="_blank">
+                <a
+                  href="https://twitter.com/itsammaar_7"
+                  target="_blank"
+                  without
+                  rel="noreferrer"
+                >
                   <RoundedButton>
                     Follow me
                     <BsTwitter className="ml-2" />
