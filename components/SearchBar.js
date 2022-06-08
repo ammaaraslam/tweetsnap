@@ -7,7 +7,7 @@ function SearchBar({ onSubmit }) {
       onSubmit={onSubmit}
       className="mb-0 mt-4 w-3/4 md:w-1/2 ml-auto mr-auto md:-mt-11"
     >
-      <label className="hidden" for="search-form">
+      <label className="hidden" htmlFor="search-form">
         Search
       </label>
       <input
