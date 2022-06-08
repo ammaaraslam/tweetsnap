@@ -114,6 +114,7 @@ const Tweet = ({
                     <a
                       href={`https://twitter.com/hashtag/${hashtag}?src=hashtag_click/`}
                       target="_blank"
+                      rel="noreferrer"
                       className="text-primary"
                     >
                       {str}{" "}
@@ -126,6 +127,7 @@ const Tweet = ({
                     <a
                       href={`https://twitter.com/${mention}`}
                       target="_blank"
+                      rel="noreferrer"
                       className="text-primary"
                     >
                       {str}{" "}
@@ -135,7 +137,12 @@ const Tweet = ({
                 if (str.startsWith("http") || str.startsWith("https")) {
                   const url = str;
                   return (
-                    <a href={url} target="_blank" className="text-primary">
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-primary"
+                    >
                       {str}{" "}
                     </a>
                   );
