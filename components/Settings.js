@@ -24,6 +24,7 @@ import { ImageSizeSelector } from "./settings/ImageSizeSelector";
 import OpacitySelector from "./settings/OpacitySelector";
 import { EngagementsSelector } from "./settings/EngagementsSelector";
 import Preview from "./settings/Preview";
+import Dropdown from "./settings/Dropdown";
 
 const Settings = ({ props }) => {
   // States
@@ -37,6 +38,7 @@ const Settings = ({ props }) => {
   const [cSizeOpen, setCSizeOpen] = useState(false);
   const [opacityOpen, setOpacityOpen] = useState(false);
   const [engagementsOpen, setEngagementsOpen] = useState(false);
+  const [downloadDropdown, setDownloadDropdown] = useState(false);
 
   // Toggle Functions
   // const togglingBg = () => setBgOpen(!bgOpen);
@@ -45,14 +47,26 @@ const Settings = ({ props }) => {
   const togglingCSize = () => setCSizeOpen(!cSizeOpen);
   const togglingOpacity = () => setOpacityOpen(!opacityOpen);
   const togglingEngagements = () => setEngagementsOpen(!engagementsOpen);
+  const togglingDownloadDropdown = () => setDownloadDropdown(!downloadDropdown);
 
   const ref = useRef();
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const toggling = () => setIsOpen(!isOpen);
+
+  const onOptionClicked = (value) => () => {
+    setSelectedOption(value);
+    setIsOpen(false);
+    console.log(selectedOption);
+  };
 
   // Detect Outside Click
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
       if (
-        [sizeOpen, cSizeOpen, opacityOpen, engagementsOpen] &&
+        [sizeOpen, cSizeOpen, opacityOpen, engagementsOpen, downloadDropdown] &&
         ref.current &&
         !ref.current.contains(e.target)
       ) {
@@ -62,17 +76,15 @@ const Settings = ({ props }) => {
         setCSizeOpen(false);
         setOpacityOpen(false);
         setEngagementsOpen(false);
+        setDownloadDropdown(false);
       }
     };
     document.addEventListener("mousedown", checkIfClickedOutside);
     return () => {
       document.removeEventListener("mousedown", checkIfClickedOutside);
     };
-  }, [sizeOpen, cSizeOpen, opacityOpen, engagementsOpen]);
+  }, [sizeOpen, cSizeOpen, opacityOpen, engagementsOpen, downloadDropdown]);
 
-  const handleDownloading = () => {
-    setDownloading(true);
-  };
   return (
     <div
       className={`md:w-settings md:h-fit w-11/12 ml-auto mr-auto mt-[5.5rem]  md:mt-0 bg-textS dark:bg-textSDark md:mr-24 rounded-3xl p-2`}
@@ -144,10 +156,10 @@ const Settings = ({ props }) => {
           </div>
         </div> */}
         <SettingsButton
-          handleOnClick={() => {
-            props.setDownloading(true);
-            props.convert("png");
-          }}
+          handleOnClick={
+            // props.convert("png");
+            toggling
+          }
           btnType="primary"
         >
           Download
