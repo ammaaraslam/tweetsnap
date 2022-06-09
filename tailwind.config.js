@@ -11,6 +11,7 @@ module.exports = {
       },
       width: {
         settings: "23%",
+        downloadDropdown: "21.2%",
       },
       height: {
         "9/10": "90%",

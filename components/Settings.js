@@ -26,6 +26,8 @@ import { EngagementsSelector } from "./settings/EngagementsSelector";
 import Preview from "./settings/Preview";
 import Dropdown from "./settings/Dropdown";
 
+const downloadOptions = ["PNG", "JPEG", "SVG"];
+
 const Settings = ({ props }) => {
   // States
   const [showBgModal, setShowBgModal] = useState(false);
@@ -169,6 +171,7 @@ const Settings = ({ props }) => {
             <BsDownload className="ml-3" />
           )}
         </SettingsButton>
+        {isOpen && <Dropdown dropdownItems={downloadOptions} />}
       </div>
     </div>
   );
