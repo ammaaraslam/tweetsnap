@@ -10,8 +10,8 @@ export const LogoChange = () => {
   if (currentTheme === "dark") {
     return (
       <div className="flex items-center justify-between mb-0 ml-4 transition-all duration-300">
-        <Link className="p-0 inline-flex items-center justify-center" href="/">
-          <div>
+        <Link href="/">
+          <div className="p-0 inline-flex items-center justify-center">
             <Image
               src={logoDark}
               alt="TweetSnap Logo Dark"
@@ -31,8 +31,8 @@ export const LogoChange = () => {
   } else {
     return (
       <div className="flex items-center justify-between mb-0 ml-4 transition-all duration-300">
-        <Link className="p-0 inline-flex items-center justify-center" href="/">
-          <div>
+        <Link href="/">
+          <div className="p-0 inline-flex items-center justify-center">
             <Image
               src={logoLight}
               alt="TweetSnap Logo Light"
