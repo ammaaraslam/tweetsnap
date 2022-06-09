@@ -71,12 +71,16 @@ export default function Home({ results }) {
       case "jpeg": {
         dataUrl = await domtoimage.toJpeg(node, param);
         saveAs(dataUrl, `${new Date().toJSON()}.${format}`);
+        setDownloading(false);
+
         return;
       }
 
       case "svg": {
         dataUrl = await domtoimage.toSvg(node, param);
         saveAs(dataUrl, `${new Date().toJSON()}.${format}`);
+        setDownloading(false);
+
         return;
       }
     }

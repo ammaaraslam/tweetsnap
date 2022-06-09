@@ -6,7 +6,7 @@ import BgSelectorModal from "./settings/BgSelectorModal";
 import CardThemeSelector from "./settings/CardThemeSelector";
 
 // Assets
-import { AiOutlineBgColors, AiOutlineFontSize } from "react-icons/ai";
+import { AiOutlineBgColors } from "react-icons/ai";
 import { GoSettings } from "react-icons/go";
 import { MdOpacity } from "react-icons/md";
 import { BsTextareaResize, BsDownload } from "react-icons/bs";
@@ -26,7 +26,7 @@ import { EngagementsSelector } from "./settings/EngagementsSelector";
 import Preview from "./settings/Preview";
 import Dropdown from "./settings/Dropdown";
 
-const downloadOptions = ["PNG", "JPEG", "SVG"];
+const downloadOptions = ["png", "jpeg", "svg"];
 
 const Settings = ({ props }) => {
   // States
@@ -157,13 +157,7 @@ const Settings = ({ props }) => {
             </SettingsButton>
           </div>
         </div> */}
-        <SettingsButton
-          handleOnClick={
-            // props.convert("png");
-            toggling
-          }
-          btnType="primary"
-        >
+        <SettingsButton handleOnClick={toggling} btnType="primary">
           Download
           {props.downloading ? (
             <CgSpinner className="ml-3 animate-spin " />
@@ -171,7 +165,7 @@ const Settings = ({ props }) => {
             <BsDownload className="ml-3" />
           )}
         </SettingsButton>
-        {isOpen && <Dropdown dropdownItems={downloadOptions} />}
+        {isOpen && <Dropdown dropdownItems={downloadOptions} props={props} />}
       </div>
     </div>
   );
