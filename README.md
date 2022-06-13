@@ -27,7 +27,7 @@
 <a href="https://github.com/ammaaraslam/tweetsnap/stargazers" target="blank">
 <img src="https://img.shields.io/github/stars/ammaaraslam/tweetsnap?style=for-the-badge" alt="tweetsnap stars"/>
 </a>
-<a href="https://github.com/ammaaraslam/tweetsnap/blob/master/LICENSE" target="blank">
+<a href="https://github.com/ammaaraslam/tweetsnap/blob/main/LICENSE" target="blank">
 <img src="https://img.shields.io/github/license/ammaaraslam/tweetsnap?style=for-the-badge" alt="tweetsnap licence" />
 </a>
 <a href="https://github.com/ammaaraslam/tweetsnap/issues" target="blank">
