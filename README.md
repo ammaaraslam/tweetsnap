@@ -12,11 +12,11 @@
 </p>
 
 <p align="center">
-  <a href="https://vercel.com/" target="blank">Request Feature</a> 
+  <a href="https://github.com/ammaaraslam/tweetsnap/issues/new?assignees=&labels=&template=feature_request.md&title=" target="blank">Request Feature</a> 
   ·
-  <a href="https://vercel.com/" target="blank">Report Bug</a> 
+  <a href="https://github.com/ammaaraslam/tweetsnap/issues/new?assignees=&labels=&template=bug_report.md&title=" target="blank">Report Bug</a> 
   ·
-  <a href="https://vercel.com/" target="blank">Contribute</a>
+  <a href="https://github.com/ammaaraslam/tweetsnap" target="blank">Contribute</a>
 </p>
 
 
