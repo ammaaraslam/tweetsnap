@@ -251,7 +251,7 @@ export default function Home({ results }) {
           </a>
         </div>
         <div className="md:absolute bottom-0 md:right-2 inline-flex p-2 w-full justify-center items-center">
-          <a href="https://www.producthunt.com/posts/tweetsnap?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-tweetsnap" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=349422&theme=light" alt="TweetSnap - Create&#0032;beautiful&#0032;images&#0032;from&#0032;tweets | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+          <a href="https://www.producthunt.com/posts/tweetsnap?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-tweetsnap" target="_blank" rel="noreferrer"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=349422&theme=light" alt="TweetSnap - Create&#0032;beautiful&#0032;images&#0032;from&#0032;tweets | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
         </div>
       </main>
     </div>
