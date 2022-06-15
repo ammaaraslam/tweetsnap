@@ -87,6 +87,34 @@ Here is what TweetSnap uses behind the scenes.
 - [dom-to-image](https://github.com/tsayen/dom-to-image) - Convert to PNG
 - [date-fns](https://date-fns.org/) - Format Data/Time
 
+
+
+## 🏢 **Contributing**
+Please contribute using the [Github Flow](https://guides.github.com/introduction/flow). Create a branch, add commits and [open up a pull request](https://github.com/ammaaraslam/tweetsnap/compare). *Make sure your PR isn't a duplicate*
+Please also read [`CONTRIBUTING.md`](https://github.com/ammaaraslam/tweetsnap/blob/main/CODE_OF_CONDUCT.md) and [`CODE_OF_CONDUCT.md`](https://github.com/ammaaraslam/tweetsnap/blob/main/CODE_OF_CONDUCT.md)
+
+## ⚙ **Installation**
+1. Clone the Repository
+```sh
+git clone https://github.com/ammaaraslam/tweetsnap.git
+```
+2. Move into the working directory
+```sh
+cd tweetsnap
+```
+3. Install Dependencies
+```sh
+npm install
+```
+4. Create a `.env.local` file and add your twitter bearer token
+```
+TWITTER_BEARER_TOKEN=YOUR_BEARER_TOKEN_HERE
+```
+5. Run the App
+```sh
+npm run dev
+```
+
 ## 👨‍💻 **Author**
 <strong><h2>Ammaar Aslam</h2></strong>
 <p>
