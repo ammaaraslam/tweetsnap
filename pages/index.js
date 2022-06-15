@@ -239,6 +239,21 @@ export default function Home({ results }) {
           />
           <Settings props={propsForSettings} />
         </div>
+        {/* ProductHunt Badge */}
+        <div className="md:absolute bottom-3 md:right-2 md:mt-0 mt-16 inline-flex md:w-fit w-full p-2 justify-center items-center">
+          <a
+            href="https://www.producthunt.com/posts/tweetsnap?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-tweetsnap"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=349422&theme=light"
+              alt="TweetSnap - Create&#0032;beautiful&#0032;images&#0032;from&#0032;tweets | Product Hunt"
+              width="250"
+              height="54"
+            />
+          </a>
+        </div>
         {/* Footer */}
         <div className="md:absolute bottom-0 inline-flex p-2 w-full justify-center items-center">
           <a
