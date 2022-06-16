@@ -127,7 +127,7 @@ const MiscInfoModal = ({ showModal }) => {
                 </a>
               </p>
               <p className="text-textSDark dark:text-textS p-1">
-                - Let's improve TweetSnap together 🙌{" "}
+                - Let&apos;s improve TweetSnap together 🙌{" "}
                 <a
                   href="https://github.com/ammaaraslam/tweetsnap"
                   target="_blank"
