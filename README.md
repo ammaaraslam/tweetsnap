@@ -12,11 +12,11 @@
 </p>
 
 <p align="center">
-  <a href="https://vercel.com/" target="blank">Request Feature</a> 
+  <a href="https://github.com/ammaaraslam/tweetsnap/issues/new?assignees=&labels=&template=feature_request.md&title=" target="blank">Request Feature</a> 
   ·
-  <a href="https://vercel.com/" target="blank">Report Bug</a> 
+  <a href="https://github.com/ammaaraslam/tweetsnap/issues/new?assignees=&labels=&template=bug_report.md&title=" target="blank">Report Bug</a> 
   ·
-  <a href="https://vercel.com/" target="blank">Contribute</a>
+  <a href="https://github.com/ammaaraslam/tweetsnap" target="blank">Contribute</a>
 </p>
 
 
@@ -27,7 +27,7 @@
 <a href="https://github.com/ammaaraslam/tweetsnap/stargazers" target="blank">
 <img src="https://img.shields.io/github/stars/ammaaraslam/tweetsnap?style=for-the-badge" alt="tweetsnap stars"/>
 </a>
-<a href="https://github.com/ammaaraslam/tweetsnap/blob/master/LICENSE" target="blank">
+<a href="https://github.com/ammaaraslam/tweetsnap/blob/main/LICENSE" target="blank">
 <img src="https://img.shields.io/github/license/ammaaraslam/tweetsnap?style=for-the-badge" alt="tweetsnap licence" />
 </a>
 <a href="https://github.com/ammaaraslam/tweetsnap/issues" target="blank">
@@ -86,6 +86,34 @@ Here is what TweetSnap uses behind the scenes.
 - [file-saver](https://github.com/eligrey/FileSaver.js) - Download Image
 - [dom-to-image](https://github.com/tsayen/dom-to-image) - Convert to PNG
 - [date-fns](https://date-fns.org/) - Format Data/Time
+
+
+
+## 🏢 **Contributing**
+Please contribute using the [Github Flow](https://guides.github.com/introduction/flow). Create a branch, add commits and [open up a pull request](https://github.com/ammaaraslam/tweetsnap/compare). *Make sure your PR isn't a duplicate*
+Please also read [`CONTRIBUTING.md`](https://github.com/ammaaraslam/tweetsnap/blob/main/CODE_OF_CONDUCT.md) and [`CODE_OF_CONDUCT.md`](https://github.com/ammaaraslam/tweetsnap/blob/main/CODE_OF_CONDUCT.md)
+
+## ⚙ **Development**
+1. Clone the Repository
+```sh
+git clone https://github.com/ammaaraslam/tweetsnap.git
+```
+2. Move into the working directory
+```sh
+cd tweetsnap
+```
+3. Install Dependencies
+```sh
+npm install
+```
+4. Create a `.env.local` file and add your twitter bearer token
+```
+TWITTER_BEARER_TOKEN=YOUR_BEARER_TOKEN_HERE
+```
+5. Run the App
+```sh
+npm run dev
+```
 
 ## 👨‍💻 **Author**
 <strong><h2>Ammaar Aslam</h2></strong>
