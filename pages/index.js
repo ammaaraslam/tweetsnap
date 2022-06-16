@@ -10,6 +10,8 @@ import SearchBar from "../components/SearchBar";
 import { MdOutlineCamera } from "react-icons/md";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
+import MiscInfo from "../components/MiscInfo";
+
 
 export default function Home({ results }) {
   const credits = "</> with 💙 by Ammaar Aslam";
@@ -238,6 +240,10 @@ export default function Home({ results }) {
             tweetID={results.data.id}
           />
           <Settings props={propsForSettings} />
+        </div>
+        {/* MiscInfo Component */}
+        <div className="md:absolute bottom-3 md:left-2 md:mt-0 mt-16 inline-flex md:w-fit w-full p-2 justify-center items-center">
+          <MiscInfo />
         </div>
         {/* ProductHunt Badge */}
         <div className="md:absolute bottom-3 md:right-2 md:mt-0 mt-16 inline-flex md:w-fit w-full p-2 justify-center items-center">
