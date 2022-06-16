@@ -93,7 +93,7 @@ Here is what TweetSnap uses behind the scenes.
 Please contribute using the [Github Flow](https://guides.github.com/introduction/flow). Create a branch, add commits and [open up a pull request](https://github.com/ammaaraslam/tweetsnap/compare). *Make sure your PR isn't a duplicate*
 Please also read [`CONTRIBUTING.md`](https://github.com/ammaaraslam/tweetsnap/blob/main/CODE_OF_CONDUCT.md) and [`CODE_OF_CONDUCT.md`](https://github.com/ammaaraslam/tweetsnap/blob/main/CODE_OF_CONDUCT.md)
 
-## ⚙ **Installation**
+## ⚙ **Development**
 1. Clone the Repository
 ```sh
 git clone https://github.com/ammaaraslam/tweetsnap.git
