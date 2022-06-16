@@ -48,7 +48,7 @@ const MiscInfoModal = ({ showModal }) => {
             <div className="pt-1 pb-0 text-xl font-bold text-center">
               TweetSnap is proudly built with{" "}
               <a
-                href="https://github.com/ammaaraslam/tweetsnap/issues/new?assignees=&labels=&template=bug_report.md&title="
+                href="https://nextjs.org/"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex underline decoration-secondary dark:hover:text-secondary hover:text-secondary transition-all duration-150"
@@ -57,7 +57,7 @@ const MiscInfoModal = ({ showModal }) => {
               </a>{" "}
               &{" "}
               <a
-                href="https://github.com/ammaaraslam/tweetsnap/issues/new?assignees=&labels=&template=bug_report.md&title="
+                href="https://tailwindcss.com/"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex underline decoration-secondary dark:hover:text-secondary hover:text-secondary transition-all duration-150"
@@ -66,7 +66,7 @@ const MiscInfoModal = ({ showModal }) => {
               </a>{" "}
               and hosted on{" "}
               <a
-                href="https://github.com/ammaaraslam/tweetsnap/issues/new?assignees=&labels=&template=bug_report.md&title="
+                href="https://vercel.com/"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex underline decoration-secondary dark:hover:text-secondary hover:text-secondary transition-all duration-150"
