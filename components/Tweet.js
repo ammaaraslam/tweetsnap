@@ -4,15 +4,64 @@ import Image from "next/image";
 import format from "date-fns/format";
 import { CgSpinner } from "react-icons/cg";
 
-const Loading = ({ loaderColor }) => {
-  return (
-    <div>
-      <CgSpinner
-        className="ml-auto mr-auto animate-spin text-6xl"
-        style={{ color: loaderColor }}
-      />
-    </div>
-  );
+const Loading = ({ loaderBG }) => {
+  if (loaderBG == "#000000") {
+    return (
+      <div className="md:w-5/6 md:h-fit w-11/12 h-fit rounded-3xl md:p-4 p-3 mt-auto mb-auto font-robotoCondensed bg-dark">
+        <div className="animate-pulse">
+          <div className="flex items-center">
+            <div className="rounded-full h-10 w-10 bg-textSDark"></div>
+            <div className="flex flex-col ml-2">
+              <div className="flex items-center font-bold leading-5 w-36 h-4 font-sans bg-textSDark"></div>
+              <div className="text-grey font-normal w-28 h-3 mt-1 bg-textSDark"></div>
+            </div>
+            <a className="ml-auto">
+              <FaTwitter className="-mt-2 text-grey text-xl" />
+            </a>
+          </div>
+          <div className="mt-4 mb-2 leading-normal whitespace-pre-wrap bg-textSDark font-normal font-serif w-full h-44"></div>
+          <div className="text-grey  mt-3 mb-1">
+            <div className="w-32 h-4 bg-textSDark inline-flex"></div>
+            <span className="ml-1 mr-1">•</span>
+            <div className="w-32 h-4 bg-textSDark inline-flex"></div>
+          </div>
+          <div className="mt-1">
+            <div className="w-28 h-4 mr-2 bg-textSDark inline-flex"></div>
+            <div className="w-28 h-4 mr-2 bg-textSDark inline-flex"></div>
+            <div className="w-28 h-4 mr-2 bg-textSDark inline-flex"></div>
+          </div>
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="md:w-5/6 md:h-fit w-11/12 h-fit rounded-3xl md:p-4 p-3 mt-auto mb-auto font-robotoCondensed bg-light">
+        <div className="animate-pulse">
+          <div className="flex items-center">
+            <div className="rounded-full h-10 w-10 bg-textS"></div>
+            <div className="flex flex-col ml-2">
+              <div className="flex items-center font-bold leading-5 w-36 h-4 font-sans bg-textS"></div>
+              <div className="bg-textS font-normal w-28 h-3 mt-1"></div>
+            </div>
+            <a className="ml-auto">
+              <FaTwitter className="-mt-2 text-lightGrey text-xl" />
+            </a>
+          </div>
+          <div className="mt-4 mb-2 leading-normal whitespace-pre-wrap bg-textS font-normal font-serif w-full h-44"></div>
+          <div className="text-lightGrey  mt-3 mb-1">
+            <div className="w-32 h-4 bg-textS inline-flex"></div>
+            <span className="ml-1 mr-1">•</span>
+            <div className="w-32 h-4 bg-textS inline-flex"></div>
+          </div>
+          <div className="mt-1">
+            <div className="w-28 h-4 mr-2 bg-textS inline-flex"></div>
+            <div className="w-28 h-4 mr-2 bg-textS inline-flex"></div>
+            <div className="w-28 h-4 mr-2 bg-textS inline-flex"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 };
 
 const Tweet = ({
@@ -58,7 +107,7 @@ const Tweet = ({
         style={{ background: bg, width: width, height: height }}
       >
         {isLoading ? (
-          <Loading loaderColor={cardColor} />
+          <Loading loaderBG={cardColor} />
         ) : (
           <div
             className="md:w-5/6 md:h-fit w-11/12 h-fit rounded-3xl md:p-4 p-3 mt-auto mb-auto font-robotoCondensed"

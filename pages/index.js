@@ -12,7 +12,6 @@ import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
 import MiscInfo from "../components/MiscInfo";
 
-
 export default function Home({ results }) {
   const credits = "</> with 💙 by Ammaar Aslam";
   const [bg, setBg] = useState(
@@ -271,7 +270,6 @@ export default function Home({ results }) {
             {credits}
           </a>
         </div>
-        
       </main>
     </div>
   );
