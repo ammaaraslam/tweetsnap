@@ -44,7 +44,7 @@ module.exports = {
       textS: "#D6EFFF",
       textSDark: "#003152",
       blue: "#1d9bf0",
-      grey: "#003152",
+      grey: "#6a6f73",
       red: "#FF0000",
       green: "#00FF00",
       lightGrey: "#D6EFFF",
