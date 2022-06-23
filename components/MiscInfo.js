@@ -12,7 +12,7 @@ const MiscInfo = () => {
       <button
         type="button"
         onClick={() => setShowMiscInfoModal(true)}
-        className="p-2 text-2xl rounded-xl text-primary border-2 border-primary hover:text-light dark:hover:text-dark hover:bg-primary transition-all duration-300 ease-in-out"
+        className="p-2 text-2xl rounded-xl text-secondary border-2 border-secondary hover:text-light dark:hover:text-dark hover:bg-secondary transition-all duration-300 ease-in-out"
       >
         <FaGem />
       </button>
