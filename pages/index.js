@@ -86,7 +86,6 @@ export default function Home({ results }) {
       }
     }
   };
-
   const propsForSettings = {
     bg,
     setBg,
