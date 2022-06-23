@@ -260,7 +260,7 @@ export default function Home({ results }) {
         </div>
         {/* ProductHunt Badge */}
         <div className="md:absolute bottom-3 md:right-2 md:mt-0 mt-16 inline-flex md:w-fit w-full p-2 justify-center items-center">
-          <Script
+          <script
             data-name="BMC-Widget"
             data-cfasync="false"
             src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
@@ -271,7 +271,8 @@ export default function Home({ results }) {
             data-position="Right"
             data-x_margin="18"
             data-y_margin="18"
-          />
+            async
+          ></script>
         </div>
         {/* Footer */}
         <div className="md:absolute bottom-0 inline-flex p-2 w-full justify-center items-center">
