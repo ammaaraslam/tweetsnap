@@ -177,6 +177,9 @@ export default function Home({ results }) {
             <ul className="list-reset flex items-center">
               {/* <li className="mr-7">{renderThemeToggle()}</li> */}
               <li className="mr-4">
+                <MiscInfo />
+              </li>
+              <li className="mr-4">
                 <ThemeToggle />
               </li>
             </ul>
@@ -240,11 +243,7 @@ export default function Home({ results }) {
           <Settings props={propsForSettings} />
         </div>
         {/* MiscInfo Component */}
-        <div className="md:absolute bottom-3 md:left-2 md:mt-0 mt-16 inline-flex md:w-fit w-full p-2 justify-center items-center">
-          <MiscInfo />
-        </div>
-        {/* ProductHunt Badge */}
-        <div className="md:absolute bottom-3 md:right-2 md:mt-0 mt-16 inline-flex md:w-fit w-full p-2 justify-center items-center">
+        <div className="md:absolute bottom-3 md:left-2 md:mt-0 mt-16 md:w-fit w-full p-2 justify-center items-center">
           <a
             href="https://www.producthunt.com/posts/tweetsnap?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-tweetsnap"
             target="_blank"
@@ -257,6 +256,21 @@ export default function Home({ results }) {
               height="54"
             />
           </a>
+        </div>
+        {/* ProductHunt Badge */}
+        <div className="md:absolute bottom-3 md:right-2 md:mt-0 mt-16 inline-flex md:w-fit w-full p-2 justify-center items-center">
+          <script
+            data-name="BMC-Widget"
+            data-cfasync="false"
+            src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+            data-id="ammaaraslam"
+            data-description="Support me on Buy me a coffee!"
+            data-message="Thanks for Checking out TweetSnap! If you enjoyed using this tool consider Buying me a Pizza 🍕. Your Support means alot!"
+            data-color="#5F7FFF"
+            data-position="Right"
+            data-x_margin="18"
+            data-y_margin="18"
+          ></script>
         </div>
         {/* Footer */}
         <div className="md:absolute bottom-0 inline-flex p-2 w-full justify-center items-center">
