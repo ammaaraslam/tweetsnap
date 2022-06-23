@@ -67,7 +67,6 @@ const Loading = ({ loaderBG }) => {
 const Tweet = ({
   bg,
   cardColor,
-  opacity,
   width,
   height,
   cardContentSize,
@@ -88,7 +87,6 @@ const Tweet = ({
   retweetCount,
   dateTime,
   tweetURLs,
-  tweetImages,
   image,
   tweetRef,
   isLoading,
@@ -113,7 +111,6 @@ const Tweet = ({
             className="md:w-5/6 md:h-fit w-11/12 h-fit rounded-3xl md:p-4 p-3 mt-auto mb-auto font-robotoCondensed"
             style={{
               background: cardColor,
-              opacity: opacity,
               fontSize: cardContentSize,
               color: cardFontColor,
             }}
