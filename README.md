@@ -124,3 +124,11 @@ npm run dev
 <strong>GitHub 🐱</strong> - <a href="https://github.com/ammaaraslam" target="_blank">@ammaaraslam</a> <br>
 <strong>Hashnode 📚</strong> - <a href="https://hashnode.com/@ammaaraslam" target="_blank">@ammaaraslam</a> <br>
 </p>
+
+## 🙏 Support
+
+If you found the app helpful, consider supporting me with a coffee.
+
+<a href="https://www.buymeacoffee.com/ammaaraslam" target="_blank">
+<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50px">
+</a>
