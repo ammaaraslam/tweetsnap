@@ -123,7 +123,7 @@ export default function Home({ results }) {
     e.preventDefault();
     const url = searchInputRef.current.value;
     if (!url) return;
-    const id = url.split("/")[5];
+    const id = url.split("/").pop().split("?")[0];
     router.push(`/?id=${id}`);
   }
   const onSubmit = async (e) => {
