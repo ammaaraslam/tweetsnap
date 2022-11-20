@@ -40,10 +40,9 @@ export default function Home({ results }) {
 
   const tweetRef = useRef(null);
 
+  //download image
   const convert = async (format) => {
     const node = tweetRef.current;
-    const scale = 2;
-
     let dataUrl;
 
     const style = {
@@ -55,13 +54,14 @@ export default function Home({ results }) {
     };
 
     const param = {
-      quality: 1,
-      height: node.offsetHeight * scale,
-      width: node.offsetWidth * scale,
+      quality: 2,
+      height: node.offsetHeight * 1.8,
+      width: node.offsetWidth * 1.84,
 
       style,
     };
 
+    //image download options
     switch (format) {
       case "png": {
         dataUrl = await domtoimage.toPng(node, param);
