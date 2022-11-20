@@ -103,7 +103,7 @@ const Tweet = ({
     <div className=" mx-auto">
       <div ref={tweetRef} className=" flex">
         <div
-          className=" rounded-3xl flex justify-center items-center md:scale-100 scale-95 overflow-hidden pt-8 pb-8"
+          className=" rounded-3xl flex justify-center items-center md:scale-100 scale-95 overflow-hidden py-10 "
           style={{ background: bg, width: width, height: height }}
         >
           {isLoading ? (
@@ -200,7 +200,12 @@ const Tweet = ({
                 })}
               </div>
               <div className="w-full h-3/4">
-                {image && <img src={image} className="mt-2 rounded-2xl" />}
+                {image && (
+                  <img
+                    src={image}
+                    className="mt-2 rounded-2xl h-[280px] w-full object-cover"
+                  />
+                )}
               </div>
 
               <div className="text-grey  mt-3 mb-1">

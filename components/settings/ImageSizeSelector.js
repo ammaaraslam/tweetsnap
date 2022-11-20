@@ -7,7 +7,7 @@ import { BsPhone, BsFacebook, BsInstagram } from "react-icons/bs";
 
 export const ImageSizeSelector = ({ props }) => {
   const defaultWidth = "625px";
-  const defaultHeight = "410px";
+  const defaultHeight = "auto";
 
   const igPostWidth = "500px";
   const igPostHeight = "650px";
