@@ -29,7 +29,7 @@ export default function Home({ results }) {
 
   const [opacity, setOpacity] = useState(1);
   const [width, setWidth] = useState("625px");
-  const [height, setHeight] = useState("410px");
+  const [height, setHeight] = useState("auto");
   const [cardContentSize, setCardContentSize] = useState(small);
   const [likeDisplay, setLikeDisplay] = useState(show);
   const [retweetDisplay, setRetweetDisplay] = useState(show);
@@ -168,7 +168,7 @@ export default function Home({ results }) {
         <link rel="icon" href="/Logo.svg" />
       </Head>
 
-      <main className="w-full md:h-screen h-fit bg-light dark:bg-dark md:overflow-hidden overflow-auto transition-all duration-300">
+      <main className="w-full overflow-auto transition-all duration-300">
         {/* Modal */}
         <Modal />
         {/* Header - Logo + Search + Theme Toggle */}
@@ -208,7 +208,7 @@ export default function Home({ results }) {
           </button>
         </form>
         {/* Main Body */}
-        <div className="w-full h-3/4 mt-7 md:flex items-center justify-center md:justify-between">
+        <div className="w-full h-3/4 py-20 my-7 md:flex items-center justify-center md:justify-between">
           <Tweet
             bg={bg}
             cardColor={cardColor}
@@ -244,7 +244,7 @@ export default function Home({ results }) {
           <Settings props={propsForSettings} />
         </div>
         {/* MiscInfo Component */}
-        <div className="md:absolute bottom-3 md:left-2 md:mt-0 mt-16 md:w-fit w-full p-2 justify-center items-center">
+        <div className="md:fixed bottom-3 md:left-2 md:mt-0 mt-16 md:w-fit w-full p-2 justify-center items-center">
           <a
             href="https://www.producthunt.com/posts/tweetsnap?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-tweetsnap"
             target="_blank"
@@ -259,7 +259,7 @@ export default function Home({ results }) {
           </a>
         </div>
         {/* ProductHunt Badge */}
-        <div className="md:absolute bottom-3 md:right-2 md:mt-0 mt-16 inline-flex md:w-fit w-full p-2 justify-center items-center">
+        <div className="md:fixed bottom-3 md:right-2 md:mt-0 mt-16 inline-flex md:w-fit w-full p-2 justify-center items-center">
           <script
             data-name="BMC-Widget"
             data-cfasync="false"
@@ -275,7 +275,7 @@ export default function Home({ results }) {
           ></script>
         </div>
         {/* Footer */}
-        <div className="md:absolute bottom-0 inline-flex p-2 w-full justify-center items-center">
+        <div className="md:fixed bottom-0 inline-flex p-2 w-full justify-center items-center">
           <a
             href="https://twitter.com/itsammaar_7"
             target="_blank"

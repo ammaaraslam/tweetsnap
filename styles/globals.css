@@ -16,6 +16,11 @@
   background: transpatent;
   border-radius: 100vh;
 }
+
+body {
+  @apply bg-light dark:bg-dark overflow-x-hidden;
+}
+
 input[type="range"][orient="vertical"] {
   writing-mode: bt-lr; /* IE */
   -webkit-appearance: slider-vertical; /* Chromium */
